@@ -23,10 +23,11 @@ t:([]
 T:`t
 Z:`z
 G:`trader`sector`strategy`symbol`date
-F:`N_`price`quantity`time
+F:`N_`price`wprice`quantity`time
 A:()!()
 A[`N_]:(count;`price)
 A[`price]:(sum;`price)
+A[`wprice]:(wavg;`quantity;`price)
 A[`quantity]:(sum;`quantity)
 A[`f]:(sum;`f);
 A[`g]:(sum;`g);
