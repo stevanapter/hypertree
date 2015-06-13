@@ -9,29 +9,31 @@ trader:`chico`harpo`groucho`zeppo`moe`larry`curly`shemp`abbott`costello
 sector:`energy`materials`industrials`financials`healthcare`utilities`infotech
 strategy:`statarb`pairs`mergerarb`house`chart`indexarb
 
-n:100000
+n:1000
 t:([]
  symbol:n?symbol;
  sector:n?sector;
  trader:n?trader;
  strategy:n?strategy;
+ f:n?100;
+ g:n?100;
  price:{0.01*"i"$100*x}20+n?400.;
- quantity:-1 1[n?2]*n?100; 
- date:2000.01.01+asc n?5;
- time:09:30:00.0+n?06:30)
-
-t:update pnl:quantity*price-prev price by symbol from t
+ quantity:-1 1[n?2]*n?100)
 
 T:`t
 Z:`z
-/ T:(`t;.af.get`:eg/t)
-G:`trader`sector`strategy`symbol`date
-F:`N_`pnl`wprice`price`quantity`date`time`symbol`date
-A[`price]:(avg;`price)
-A[`wprice]:(wavg;`quantity;`price)
-A[`pnl]:(avg;`pnl)
-A[`N_]:(count;`quantity)
-A[`symbol]:(.ht.seq;`symbol)
+G:`trader`sector`strategy
+F:`N_`price`quantity
+A:()!()
+A[`N_]:(count;`price)
+A[`price]:(sum;`price)
+A[`quantity]:(sum;`quantity)
+A[`f]:(sum;`f);
+A[`g]:(sum;`g);
+A[`symbol]:(first;`symbol)
+A[`sector]:(first;`sector)
+A[`trader]:(first;`trader)
+A[`strategy]:(first;`strategy)
 
 O.columns.price:`USD
 O.columns.pnl:`USD

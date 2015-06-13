@@ -11,9 +11,9 @@ findp:{[t;p]@[count[t]#0b;raze?[t;;();`i]'[{flip(=;key x;flip enlist get x)}each
 find:{[t;k;p]$[0=count k;();all b:$[not[type p]|30>count p;findp[t]p;(k#t)in p];();enlist b]}
 calc:{[t;w;h;a;n]k:$[99h=type h;n,key h;n]_a;r:?[t;w;h;k];v:t[n][;0N];$[98h=type key r;@[0!r;n;:;v];r,n!v]}
 used:{exec n from x where min'[v{x\'[til count x]}n?-1_'n]}
-parent:{update o_:i in p_ from update p_:n_ ? -1_'n_ from x}
-rollup_:{[p;z;t;g;a]parent delete from z where(-1_'exec n_ from z)in get each p}
-rollup:{[p;z;t;g;a]parent g xasc$[z~();cols[m]xcols root[t;g]a;cols[m]#z],m:steps[t;g;a]p}
+sys:{update o_:i in p_ from update p_:n_ ? -1_'n_ from x}
+rollup_:{[p;z;t;g;a]sys delete from z where(-1_'exec n_ from z)in get each p}
+rollup:{[p;z;t;g;a]sys g xasc$[z~();cols[m]xcols root[t;g]a;cols[m]#z],m:steps[t;g;a]p}
 treetable:{[z;t;f;g;a;p;p_]$[z~();rollup used p;count[p:used p]>count p_:used p_;rollup p except p_;rollup_ p_ except p][z;t;g](g,f)#a}
 
 symbol:`msft`amat`csco`intc`yhoo`aapl

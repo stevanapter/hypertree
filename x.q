@@ -49,7 +49,7 @@ U:0b
 V:1b
 
 / pivot state = ((z-col;Q);selects;groups)
-W:.ht.W
+W:(();();())
 
 / allow X-axis drilldown (pivot)
 X:1b
