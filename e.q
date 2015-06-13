@@ -4,11 +4,11 @@
 .js.col:{[d]}
 .js.cell:{[d]}
 .js.sorts:{[d]`S set .js.sad[Q]d[`cols]!d`sorts;$[0=count S;.js.set d;[Z set .ht.sort[get Z;G;key S]get S;.js.ret d]]}
-.js.groups:{[d]}
+.js.groups:{[d]if[V;`F`G set'.js.sym d`visible`groups;`P set .ht.vpaths[P]G;Z set();:.js.set d]}
 .js.get:{[d]`R set`start`end!"j"$d`start`end;.js.ret d}
-.js.reset:{[d]}
-.js.expand:{[d]}
-.js.collapse:{[d]}
+.js.reset:{[d](Z,`S`P)set'(();.ht.S;.ht.P);.js.set d}
+.js.expand:{[d]if[Y;if[count G;`P set .ht.expand[T]G;:.js.set d]]}
+.js.collapse:{[d]if[Y;if[count G;Z set();`P set .ht.P;:.js.set d]]}
 
 / event utilities
 .js.sad:{k!{$[z in`a`d;z;not x[y]in"sc";z;lower z]}[x]'[k:key y;get y]}

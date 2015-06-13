@@ -36,6 +36,21 @@ S:()!()
 / open/close at a node
 row:{[b;p;g;n]`n xasc'(p[0],([n:enlist(count[n]#g)!n,()]v:enlist b);p 0)}
 
+/ keep valid paths
+vpaths:{[p;g](1!(0!p 0)where til[count g]{(count[y]#x)~y}/:g?/:key each exec n from p 0;P 1)}
+
+/ open/close to group (h=` -> open to leaves)
+opento:{[t;g;h]inst distinct I,raze t to/:(1+til count k)#\:k:(g?h)#g}
+
+/ instruction table
+inst:{[m]([n:m]v:count[m]#1b)}
+
+/ instruction
+to:{I,y!/:flip distinct x y}
+
+/ expand to leaves-1
+expand:{[t;g](opento[t;g]last g;P 1)}
+
 / rollup: first if 1=count else null
 nul:{first$[1=count distinct x;x;0#x]}
 

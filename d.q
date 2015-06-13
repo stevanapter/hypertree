@@ -15,25 +15,27 @@ t:([]
  sector:n?sector;
  trader:n?trader;
  strategy:n?strategy;
- f:n?100;
- g:n?100;
  price:{0.01*"i"$100*x}20+n?400.;
- quantity:-1 1[n?2]*n?100)
+ quantity:-1 1[n?2]*n?100;
+ date:2000.01.01+asc n?5;
+ time:09:30:00.0+n?06:30)
 
 T:`t
 Z:`z
-G:`trader`sector`strategy
-F:`N_`price`quantity
+G:`trader`sector`strategy`symbol`date
+F:`N_`price`quantity`time
 A:()!()
 A[`N_]:(count;`price)
 A[`price]:(sum;`price)
 A[`quantity]:(sum;`quantity)
 A[`f]:(sum;`f);
 A[`g]:(sum;`g);
-A[`symbol]:(first;`symbol)
-A[`sector]:(first;`sector)
-A[`trader]:(first;`trader)
-A[`strategy]:(first;`strategy)
+A[`date]:(max;`date)
+A[`time]:(max;`time)
+A[`symbol]:(.ht.seq;`symbol)
+A[`sector]:(.ht.seq;`sector)
+A[`trader]:(.ht.seq;`trader)
+A[`strategy]:(.ht.seq;`strategy)
 
 O.columns.price:`USD
 O.columns.pnl:`USD
