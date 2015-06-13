@@ -3,7 +3,7 @@
 .js.row:{[d]if[Y;if[count G;if[0<count n:.js.cnv[G;Q]d`row;if[count[get Z]>r:Z[`n_]?n;`P set .ht.row[not Z[`o_]r;P;G]n;:.js.set d]]]]}
 .js.col:{[d]}
 .js.cell:{[d]}
-.js.sorts:{[d]}
+.js.sorts:{[d]`S set .js.sad[Q]d[`cols]!d`sorts;$[0=count S;.js.set d;[Z set .ht.sort[get Z;G;key S]get S;.js.ret d]]}
 .js.groups:{[d]}
 .js.get:{[d]`R set`start`end!"j"$d`start`end;.js.ret d}
 .js.reset:{[d]}

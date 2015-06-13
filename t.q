@@ -3,7 +3,7 @@
 \d .ht
 
 / construct treetable
-cons:{[z;t;p;a;s;g;f;l]treetable[z;get t;f;g;a;l]. p}
+cons:{[z;t;p;a;s;g;f;l]sort[treetable[z;get t;f;g;a;l]. p;g;key s]get s}
 
 C_:`g_`e_`n_`l_!
 root:{[t;g;a]g xcols flip enlist each calc[t;();();a;g],C_(`;0b;0#`;0)}
