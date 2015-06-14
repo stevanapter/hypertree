@@ -9,22 +9,22 @@ cons:{[z;t;p;a;s;g;f]sort[tree[z;t;f;g;rollups[t;g]a]. used each p;g;key s]get s
 tree:{[z;t;f;g;a;p;p_]$[z~();initial;count[p]>count p_;expand1;collapse1][z;t;g;(g,f)#a;p]p_}
 initial:{[z;t;g;a;p;p_]rollup[z;t;g;a;p]}
 expand1:{[z;t;g;a;p;q]rollup[z;t;g;a]p except q}
-rollup:{[z;t;g;a;p]sys g xasc$[z~();cols[m]xcols root[t;g]a;cols[m]#z],m:steps[t;g;a]p}
-collapse1:{[z;t;g;a;p;q]sys delete from z where(-1_'exec n_ from z)in get each q except p}
+rollup:{[z;t;g;a;p]op g xasc$[z~();cols[m]xcols root[t;g]a;cols[m]#z],m:steps[t;g;a]p}
+collapse1:{[z;t;g;a;p;q]op delete from z where(-1_'exec n_ from z)in get each q except p}
 
 / treetable calculation
-root:{[t;g;a]g xcols flip enlist each calc[t;();();a;g],C_(`;0b;0#`;0)}
+root:{[t;g;a]g xcols flip enlist each calc[t;();();a;g],genl(`;0b;0#`;0)}
 steps:{[t;g;a;p]raze nodes[get t;g;a]'[key q;get q:p group key each p]}
 nodes:{[t;g;a;k;p]key[a]xcols$[g~k;leaf;node][t;find[t;k]p;g;a]k}
-leaf:{[t;w;g;a;k]virtual[(b except c)#a]?[t;w;0b;({x!x}(c:cols t)inter b:key a),C_(`i;1b;(flip;enlist,g,`i);1+count g)]}
-node:{[t;w;g;a;k]h:k,first c:g except k;![calc[t;w;h!h;a]1_c;();0b;C_(last h;0b;(flip;enlist,h);count h)]}
+leaf:{[t;w;g;a;k]virtual[(b except c)#a]?[t;w;0b;({x!x}(c:cols t)inter b:key a),genl(`i;1b;(flip;enlist,g,`i);1+count g)]}
+node:{[t;w;g;a;k]h:k,first c:g except k;![calc[t;w;h!h;a]1_c;();0b;genl(last h;0b;(flip;enlist,h);count h)]}
 virtual:{[a;u]![u;();0b;?[0#u;();();(first 0#),/:enlist each a]]}
 calc:{[t;w;h;a;n]k:$[99h=type h;n,key h;n]_a;r:?[t;w;h;k];v:t[n][;0N];$[98h=type key r;@[0!r;n;:;v];r,n!v]}
 find:{[t;k;p]$[0=count k;();all b:$[not[type p]|30>count p;findp[t]p;(k#t)in p];();enlist b]}
 findp:{[t;p]@[count[t]#0b;raze?[t;;();`i]'[{flip(=;key x;flip enlist get x)}each p];:;1b]}
 used:{exec n from x where min'[v{x\'[til count x]}n?-1_'n]}
-sys:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
-C_:`g_`e_`n_`l_!
+op:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
+genl:`g_`e_`n_`l_!
 
 / system constants
 I:enlist(0#`)!0#`
