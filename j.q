@@ -10,9 +10,9 @@
 
 / object -> js
 .js.obj:{(!). flip((`Z 		;.js.sub[get Z;J]R);
+                   (`F        ;key[Q]except G,I);
                    (`G 		;G);
-                   (`H 		;H);
-                   (`F 		;key[Q]except G,I);
+                   (`H 		;exec c from meta first T where t in"bhijspmdznuvt");
                    (`I 		;I);
                    (`Q 		;Q);
                    (`S 		;`cols`sorts!(key S;get S));
@@ -20,10 +20,13 @@
                    (`N 		;count get Z);
                    (`T 		;first T);
                    (`O 		;.js.nnd O);
-                   (`C        ;()!());
+                   (`C        ;.js.cic Q);
                    (`U 		;not U);
                    (`V 		;1b);
                    (`M 		;.js.msg[G]S))}
+
+/ icons
+.js.cic:{[q]key[q]!count[q]#`d}
 
 / state -> message
 .js.msg:{[g;s]

@@ -25,6 +25,11 @@ findp:{[t;p]@[count[t]#0b;raze?[t;;();`i]'[{flip(=;key x;flip enlist get x)}each
 used:{exec n from x where min'[v{x\'[til count x]}n?-1_'n]}
 op:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
 
+/ col event
+col:{[z;k;c]$[c=`g_;colup;coldown][z;k]c}
+coldown:{[z;k;c]}
+coldown:{[z;k;c]}
+
 / system constants
 I:enlist(0#`)!0#`
 P:(([n:I]v:enlist 1b);([n:()]v:til 0))
