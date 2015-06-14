@@ -3,13 +3,13 @@
 \d .ht
 
 / construct treetable
-cons:{[z;t;p;a;s;g;f;l]sort[treetable[z;get t;f;g;a;l]. used each p;g;key s]get s}
+cons:{[z;t;p;a;s;g;f]sort[treetable[z;get t;f;g;a]. used each p;g;key s]get s}
 
 C_:`g_`e_`n_`l_!
 root:{[t;g;a]g xcols flip enlist each calc[t;();();a;g],C_(`;0b;0#`;0)}
 node:{[t;w;g;a;k]h:k,first c:g except k;![calc[t;w;h!h;a]1_c;();0b;C_(last h;0b;(flip;enlist,h);count h)]}
-leaf:{[t;w;g;a;k]virt[(b except c)#a]?[t;w;0b;({x!x}(c:cols t)inter b:key a),C_(`i;1b;(flip;enlist,g,`i);1+count g)]}
-virt:{[a;u]![u;();0b;?[0#u;();();(first 0#),/:enlist each a]]}
+leaf:{[t;w;g;a;k]virtual[(b except c)#a]?[t;w;0b;({x!x}(c:cols t)inter b:key a),C_(`i;1b;(flip;enlist,g,`i);1+count g)]}
+virtual:{[a;u]![u;();0b;?[0#u;();();(first 0#),/:enlist each a]]}
 nodes:{[t;g;a;k;p]key[a]xcols$[g~k;leaf;node][t;find[t;k]p;g;a]k}
 steps:{[t;g;a;p]raze nodes[0!t;g;a]'[key q;get q:p group key each p]}
 findp:{[t;p]@[count[t]#0b;raze?[t;;();`i]'[{flip(=;key x;flip enlist get x)}each p];:;1b]}
@@ -19,7 +19,7 @@ used:{exec n from x where min'[v{x\'[til count x]}n?-1_'n]}
 sys:{update o_:i in p_ from update p_:n_ ? -1_'n_ from x}
 rollup_:{[p;z;t;g;a]sys delete from z where(-1_'exec n_ from z)in get each p}
 rollup:{[p;z;t;g;a]sys g xasc$[z~();cols[m]xcols root[t;g]a;cols[m]#z],m:steps[t;g;a]p}
-treetable:{[z;t;f;g;a;l;p;p_]$[z~();rollup p;count[p]>count p_;rollup p except p_;rollup_ p_ except p][z;t;g](g,f)#a}
+treetable:{[z;t;f;g;a;p;p_]$[z~();rollup p;count[p]>count p_;rollup p except p_;rollup_ p_ except p][z;t;g](g,f)#a}
 
 / control columns
 C:`n_`e_`l_`o_`p_`g_

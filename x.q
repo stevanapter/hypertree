@@ -48,9 +48,6 @@ U:0b
 / pop up grouping/visibility panel
 V:1b
 
-/ pivot state = ((z-col;Q);selects;groups)
-W:(();();())
-
 / allow X-axis drilldown (pivot)
 X:1b
 

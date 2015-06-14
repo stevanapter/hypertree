@@ -1,6 +1,6 @@
 // js events
 
-.js.row:{[d]if[Y;if[count G;if[0<count n:.js.cnv[G;Q]d`row;if[count[get Z]>r:Z[`n_]?n;`P set .ht.row[not Z[`o_]r;P;G]n;:.js.set d]]]]}
+.js.row:{[d]if[Y;if[h:count G;if[(L|m<h)&0<m:count n:.js.cnv[G;Q]d`row;if[count[get Z]>r:Z[`n_]?n;`P set .ht.row[not Z[`o_]r;P;G]n;:.js.set d]]]]}
 .js.col:{[d]}
 .js.cell:{[d]}
 .js.sorts:{[d]`S set .js.sad[Q]d[`cols]!d`sorts;$[0=count S;.js.set d;[Z set .ht.sort[get Z;G;key S]get S;.js.ret d]]}
@@ -15,4 +15,4 @@
 .js.cnv:{raze@[flip enlist z;i;{y$string x};upper q i:where"s"<>q:y count[z]#x]}
 .js.exe:{.js[x`fn]x}
 .js.val:{$[x in key[`.],raze{` sv'(`,x),/:1_key` sv`,x}each key`;get x;()]}
-.js.set:{Z set .ht.cons[.js.val Z;T;P;A;S;G;F]L;`Z set Z;.js.ret x}
+.js.set:{Z set .ht.cons[.js.val Z;T;P;A;S;G]F;`Z set Z;.js.ret x}
