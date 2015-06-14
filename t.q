@@ -7,7 +7,7 @@ cons:{[z;t;p;a;s;g;f]sort[tree[z;t;f;g;rollups[t;g]a]. used each p;g;key s]get s
 
 / treetable calculations:  initial, expand a node, collapse a node
 tree:{[z;t;f;g;a;p;p_]$[z~();initial;count[p]>count p_;expand1;collapse1][z;t;g;(g,f)#a;p]p_}
-initial:{[z;t;g;a;p;p_]rollup[z;t;g;a;p]}
+initial:{[z;t;g;a;p;p_]rollup[z;t;g;a]p}
 expand1:{[z;t;g;a;p;q]rollup[z;t;g;a]p except q}
 rollup:{[z;t;g;a;p]op g xasc$[z~();cols[m]xcols root[t;g]a;cols[m]#z],m:steps[t;g;a]p}
 collapse1:{[z;t;g;a;p;q]op delete from z where(-1_'exec n_ from z)in get each q except p}
