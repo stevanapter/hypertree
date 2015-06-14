@@ -13,7 +13,6 @@ rollup:{[z;t;g;a;p]sys g xasc$[z~();cols[m]xcols root[t;g]a;cols[m]#z],m:steps[t
 collapse1:{[z;t;g;a;p;q]sys delete from z where(-1_'exec n_ from z)in get each q except p}
 
 / treetable calculation
-C_:`g_`e_`n_`l_!
 root:{[t;g;a]g xcols flip enlist each calc[t;();();a;g],C_(`;0b;0#`;0)}
 steps:{[t;g;a;p]raze nodes[get t;g;a]'[key q;get q:p group key each p]}
 nodes:{[t;g;a;k;p]key[a]xcols$[g~k;leaf;node][t;find[t;k]p;g;a]k}
@@ -25,6 +24,7 @@ find:{[t;k;p]$[0=count k;();all b:$[not[type p]|30>count p;findp[t]p;(k#t)in p];
 findp:{[t;p]@[count[t]#0b;raze?[t;;();`i]'[{flip(=;key x;flip enlist get x)}each p];:;1b]}
 used:{exec n from x where min'[v{x\'[til count x]}n?-1_'n]}
 sys:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
+C_:`g_`e_`n_`l_!
 
 / system constants
 I:enlist(0#`)!0#`
