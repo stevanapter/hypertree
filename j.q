@@ -22,7 +22,7 @@
                    (`O 		;.js.nnd O);
                    (`C        ;()!());
                    (`U 		;not U);
-                   (`V 		;V);
+                   (`V 		;1b);
                    (`M 		;.js.msg[G]S))}
 
 / state -> message

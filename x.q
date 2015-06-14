@@ -45,14 +45,17 @@ T:`
 / drill to underlying table = allow no groups
 U:0b
 
-/ pop up grouping/visibility panel
-V:1b
+/ pivot state
+V:()
 
-/ allow X-axis drilldown (pivot)
-X:1b
+/ pivot column
+W:`
 
-/ allow Y-axis drilldown (treetable)
-Y:1b
+/ pivot x axis
+X:`
+
+/ pivot y axis
+Y:`
 
 / treetable
 Z:`
