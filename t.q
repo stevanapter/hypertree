@@ -3,23 +3,58 @@
 \d .ht
 
 / construct treetable
-cons:{[z;t;p;a;s;g;f]sort[treetable[z;get t;f;g;a]. used each p;g;key s]get s}
+cons:{[z;t;p;a;s;g;f]sort[tree[z;t;f;g;a]. used each p;g;key s]get s}
 
+/ treetable calculations:  initial, expand a node, collapse a node
+tree:{[z;t;f;g;a;p;p_]$[z~();initial;count[p]>count p_;expand1;collapse1][z;t;g;(g,f)#a;p]p_}
+
+/ calculate tree
+initial:{[z;t;g;a;p;p_]rollup[z;t;g;a;p]}
+
+/ expand a node
+expand1:{[z;t;g;a;p;q]rollup[z;t;g;a]p except q}
+
+/ calculate tree / expand a node
+rollup:{[z;t;g;a;p]sys g xasc$[z~();cols[m]xcols root[t;g]a;cols[m]#z],m:steps[t;g;a]p}
+
+/ collapse a node
+collapse1:{[z;t;g;a;p;q]sys delete from z where(-1_'exec n_ from z)in get each q except p}
+
+/ variable system columns
 C_:`g_`e_`n_`l_!
+
+/ calculate root
 root:{[t;g;a]g xcols flip enlist each calc[t;();();a;g],C_(`;0b;0#`;0)}
-node:{[t;w;g;a;k]h:k,first c:g except k;![calc[t;w;h!h;a]1_c;();0b;C_(last h;0b;(flip;enlist,h);count h)]}
-leaf:{[t;w;g;a;k]virtual[(b except c)#a]?[t;w;0b;({x!x}(c:cols t)inter b:key a),C_(`i;1b;(flip;enlist,g,`i);1+count g)]}
-virtual:{[a;u]![u;();0b;?[0#u;();();(first 0#),/:enlist each a]]}
-nodes:{[t;g;a;k;p]key[a]xcols$[g~k;leaf;node][t;find[t;k]p;g;a]k}
+
+/ calculate nodes
 steps:{[t;g;a;p]raze nodes[0!t;g;a]'[key q;get q:p group key each p]}
-findp:{[t;p]@[count[t]#0b;raze?[t;;();`i]'[{flip(=;key x;flip enlist get x)}each p];:;1b]}
-find:{[t;k;p]$[0=count k;();all b:$[not[type p]|30>count p;findp[t]p;(k#t)in p];();enlist b]}
+
+/ calculate a leaf or node
+nodes:{[t;g;a;k;p]key[a]xcols$[g~k;leaf;node][t;find[t;k]p;g;a]k}
+
+/ calculate a leaf
+leaf:{[t;w;g;a;k]virtual[(b except c)#a]?[t;w;0b;({x!x}(c:cols t)inter b:key a),C_(`i;1b;(flip;enlist,g,`i);1+count g)]}
+
+/ calculate a node
+node:{[t;w;g;a;k]h:k,first c:g except k;![calc[t;w;h!h;a]1_c;();0b;C_(last h;0b;(flip;enlist,h);count h)]}
+
+/ calculate a virtual node
+virtual:{[a;u]![u;();0b;?[0#u;();();(first 0#),/:enlist each a]]}
+
+/ rollup calculation
 calc:{[t;w;h;a;n]k:$[99h=type h;n,key h;n]_a;r:?[t;w;h;k];v:t[n][;0N];$[98h=type key r;@[0!r;n;:;v];r,n!v]}
+
+/ find children
+find:{[t;k;p]$[0=count k;();all b:$[not[type p]|30>count p;findp[t]p;(k#t)in p];();enlist b]}
+
+/ find many children
+findp:{[t;p]@[count[get t]#0b;raze?[t;;();`i]'[{flip(=;key x;flip enlist get x)}each p];:;1b]}
+
+/ used node
 used:{exec n from x where min'[v{x\'[til count x]}n?-1_'n]}
-sys:{update o_:i in p_ from update p_:n_ ? -1_'n_ from x}
-rollup_:{[p;z;t;g;a]sys delete from z where(-1_'exec n_ from z)in get each p}
-rollup:{[p;z;t;g;a]sys g xasc$[z~();cols[m]xcols root[t;g]a;cols[m]#z],m:steps[t;g;a]p}
-treetable:{[z;t;f;g;a;p;p_]$[z~();rollup p;count[p]>count p_;rollup p except p_;rollup_ p_ except p][z;t;g](g,f)#a}
+
+/ constant system columns
+sys:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
 
 / control columns
 C:`n_`e_`l_`o_`p_`g_
@@ -92,3 +127,7 @@ level:{[s;g;n;i]c:((m:n&count g)#g),`I_;(delete I_ from t)!flip enlist(t:(c#s)i)
 
 / merge sort-levels
 merge:{[s;g;x;n;i]v:level[s;g;n;i];$[count x;@[v;(keys v)#key x;,;get x];v]}
+
+
+
+
