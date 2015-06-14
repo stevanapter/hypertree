@@ -37,7 +37,7 @@ Q::.ht.qtype get Z
 R:`start`end!0 60
 
 / sorts = cols!(..{`a`d`A`D}..)
-S:.ht.S
+S:()!()
 
 / table
 T:`
