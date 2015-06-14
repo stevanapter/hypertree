@@ -26,17 +26,7 @@ G:`trader`sector`strategy`symbol`date
 F:`N_`price`wprice`quantity`time
 A:()!()
 A[`N_]:(count;`price)
-A[`price]:(sum;`price)
 A[`wprice]:(wavg;`quantity;`price)
-A[`quantity]:(sum;`quantity)
-A[`f]:(sum;`f);
-A[`g]:(sum;`g);
-A[`date]:(max;`date)
-A[`time]:(max;`time)
-A[`symbol]:(.ht.seq;`symbol)
-A[`sector]:(.ht.seq;`sector)
-A[`trader]:(.ht.seq;`trader)
-A[`strategy]:(.ht.seq;`strategy)
 
 O.columns.price:`USD
 O.columns.pnl:`USD

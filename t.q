@@ -3,69 +3,33 @@
 \d .ht
 
 / construct treetable
-cons:{[z;t;p;a;s;g;f]sort[tree[z;t;f;g;a]. used each p;g;key s]get s}
+cons:{[z;t;p;a;s;g;f]sort[tree[z;t;f;g;rollups[t;g]a]. used each p;g;key s]get s}
 
 / treetable calculations:  initial, expand a node, collapse a node
 tree:{[z;t;f;g;a;p;p_]$[z~();initial;count[p]>count p_;expand1;collapse1][z;t;g;(g,f)#a;p]p_}
-
-/ calculate tree
 initial:{[z;t;g;a;p;p_]rollup[z;t;g;a;p]}
-
-/ expand a node
 expand1:{[z;t;g;a;p;q]rollup[z;t;g;a]p except q}
-
-/ calculate tree / expand a node
 rollup:{[z;t;g;a;p]sys g xasc$[z~();cols[m]xcols root[t;g]a;cols[m]#z],m:steps[t;g;a]p}
-
-/ collapse a node
 collapse1:{[z;t;g;a;p;q]sys delete from z where(-1_'exec n_ from z)in get each q except p}
 
-/ variable system columns
+/ treetable calculation
 C_:`g_`e_`n_`l_!
-
-/ calculate root
 root:{[t;g;a]g xcols flip enlist each calc[t;();();a;g],C_(`;0b;0#`;0)}
-
-/ calculate nodes
 steps:{[t;g;a;p]raze nodes[0!t;g;a]'[key q;get q:p group key each p]}
-
-/ calculate a leaf or node
 nodes:{[t;g;a;k;p]key[a]xcols$[g~k;leaf;node][t;find[t;k]p;g;a]k}
-
-/ calculate a leaf
 leaf:{[t;w;g;a;k]virtual[(b except c)#a]?[t;w;0b;({x!x}(c:cols t)inter b:key a),C_(`i;1b;(flip;enlist,g,`i);1+count g)]}
-
-/ calculate a node
 node:{[t;w;g;a;k]h:k,first c:g except k;![calc[t;w;h!h;a]1_c;();0b;C_(last h;0b;(flip;enlist,h);count h)]}
-
-/ calculate a virtual node
 virtual:{[a;u]![u;();0b;?[0#u;();();(first 0#),/:enlist each a]]}
-
-/ rollup calculation
 calc:{[t;w;h;a;n]k:$[99h=type h;n,key h;n]_a;r:?[t;w;h;k];v:t[n][;0N];$[98h=type key r;@[0!r;n;:;v];r,n!v]}
-
-/ find children
 find:{[t;k;p]$[0=count k;();all b:$[not[type p]|30>count p;findp[t]p;(k#t)in p];();enlist b]}
-
-/ find many children
 findp:{[t;p]@[count[get t]#0b;raze?[t;;();`i]'[{flip(=;key x;flip enlist get x)}each p];:;1b]}
-
-/ used node
 used:{exec n from x where min'[v{x\'[til count x]}n?-1_'n]}
-
-/ constant system columns
 sys:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
 
-/ control columns
+/ system constants
 C:`n_`e_`l_`o_`p_`g_
-
-/ initial instruction
 I:enlist(0#`)!0#`
-
-/ instruction state
 P:(([n:I]v:enlist 1b);([n:()]v:til 0))
-
-/ sort dictionary
 S:()!()
 
 / open/close at a node
@@ -76,23 +40,14 @@ vpaths:{[p;g](1!(0!p 0)where til[count g]{(count[y]#x)~y}/:g?/:key each exec n f
 
 / open/close to group (h=` -> open to leaves)
 opento:{[t;g;h]inst distinct I,raze t to/:(1+til count k)#\:k:(g?h)#g}
-
-/ instruction table
 inst:{[m]([n:m]v:count[m]#1b)}
-
-/ instruction
 to:{I,y!/:flip distinct x y}
-
-/ expand to leaves-1
 expand:{[t;g](opento[t;g]last g;P 1)}
 
-/ rollup: first if 1=count else null
+/ rollups
+rollups:{[t;g;a]@[@[a;k;:;A[lower qtype[t]k],'k:cols[t]except key a];g;:;nul,'g]}
 nul:{first$[1=count distinct x;x;0#x]}
-
-/ rollup: first if 1=count else first+
 seq:{$[1=count distinct x;first x;`$string[first x],"+"]}
-
-/ type -> rollup
 A:" bgxhijefcspmdznuvt"!(nul;any;nul;nul;sum;sum;sum;sum;sum;nul;nul;max;max;max;max;sum;max;max;max)
 
 / cast <- type
@@ -105,27 +60,15 @@ sort:{[t;g;c;o]
  n:reverse exec i by L_ from s:dsort[t;g;c;o]where L_>0;
  delete z_ from t 0,raze$[1=count n;s[`I_]n;merge[s;g]/[();key n;get n]]}
 
-/ multi-column non-hierarchical sort (pivot table, no grouping)
-msort:{[t;c;o]t{x y z x}/[::;(`a`d`A`D!(iasc;idesc;iasc abs@;idesc abs@))o;t c]}
-
-/ column sort
-csort:{[c;o]@[flip(@;abs;c;c);i;:;c i:where o in`a`d]}
-
-/ row sort
-rsort:{[t;c;o]{x y z x}/[::;reverse o;?[t;();();enlist,reverse get c]]}
-
-/ expression sort
-esort:{[c]$[1=count c;first c;(flip;(!;enlist key c;enlist,get c))]}
-
-/ data sort
 dsort:{[t;g;c;o]
  a:!/[g,/:(`I_`L_;`i`l_)];c:c!csort[c]o;s:1=count distinct o:(<:;>:)o in`d`D;
  $[s;?[t;();0b;a;0W;(first o;esort c)];?[t;();0b;a]rsort[t;c]o]}
 
-/ sort-level
+msort:{[t;c;o]t{x y z x}/[::;(`a`d`A`D!(iasc;idesc;iasc abs@;idesc abs@))o;t c]}
+csort:{[c;o]@[flip(@;abs;c;c);i;:;c i:where o in`a`d]}
+rsort:{[t;c;o]{x y z x}/[::;reverse o;?[t;();();enlist,reverse get c]]}
+esort:{[c]$[1=count c;first c;(flip;(!;enlist key c;enlist,get c))]}
 level:{[s;g;n;i]c:((m:n&count g)#g),`I_;(delete I_ from t)!flip enlist(t:(c#s)i)`I_}
-
-/ merge sort-levels
 merge:{[s;g;x;n;i]v:level[s;g;n;i];$[count x;@[v;(keys v)#key x;,;get x];v]}
 
 
