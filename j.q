@@ -21,7 +21,7 @@
                    (`T 		;first T);
                    (`O 		;.js.nnd O);
                    (`C        ;.js.cic Q);
-                   (`U 		;not U);
+                   (`U 		;not L);
                    (`V 		;1b);
                    (`M 		;.js.msg[G]S))}
 
