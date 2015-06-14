@@ -10,7 +10,7 @@ E::distinct key[A],cols first T
 F::E except G,I
 
 / grouping columns
-G:()
+G:0#`
 
 / groupable columns
 H::exec c from meta first T where t in"bhijspmdznuvt"
