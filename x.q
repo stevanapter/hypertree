@@ -2,11 +2,12 @@
 
 / dynamic
 
-A:S:()!()
+A:()!()
 F:G:I:0#`
 O.:(::)
 P:.ht.P
 Q::.ht.qtype get Z
+S:()!()
 V:()
 W:X:Y:`
 
