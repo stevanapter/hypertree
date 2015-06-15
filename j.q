@@ -3,7 +3,6 @@
 .js.nnd:{$[99=type x;.z.s each(key[x]except`)#x;x]}
 .js.sub:{i:(::;.js.inf)y;flip each(i 1#x;.js.idx[i 1_x]. z`start`end)}
 .js.idx:{$[0 0W~y,z;x;y>=count x;0#x;((1+z-y)&count r)#r:y _ x]}
-.js.cols:{(x where not x like"*_")except`}
 .js.ret:{x,.js.obj[]}
 .js.sym:{$[()~x;0#`;(t:abs type x)in 0 99h;.z.s each x;10=t;`$x;x]}
 .js.inf:{k:exec c!t$1%0 from meta x where t in"ijf";![x;();0b;key[k]!({@[x;where x in y,neg y;:;first 0#x]};;)'[key k;get k]]}

@@ -26,9 +26,17 @@ used:{exec n from x where min'[v{x\'[til count x]}n?-1_'n]}
 op:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
 
 / col event
-col:{[z;u;k;c]$[c=`g_;pivot_;pivot][z;u;k]c}
-pivot_:{[z;u;k;c]}
-pivot:{[z;u;k;c]}
+col:{[u;k;v]$[v=`g_;pivot_;pivot][u;k]v}
+pivot_:{[u;k;v]enlist[-1_u],get last u}
+
+pivot:{[u;k;c]
+ r:enlist[u,enlist k],get k;
+ v:v;
+ x:u[`G]1;
+ y:u[`G]0;
+ g:U[`G]except x;
+ 
+ }
 
 / system constants
 I:enlist(0#`)!0#`
