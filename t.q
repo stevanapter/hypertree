@@ -25,7 +25,7 @@ findp:{[t;p]@[count[t]#0b;raze?[t;;();`i]'[{flip(=;key x;flip enlist get x)}each
 used:{exec n from x where min'[v{x\'[til count x]}n?-1_'n]}
 op:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
 
-/ pivot events
+/ pivot events (incomplete)
 pivot:{[u;k;c;r]$[c=`g_;unpivot u;prepivot[u;k;c]r]}
 unpivot:{[u](-1_u;last u)}
 
