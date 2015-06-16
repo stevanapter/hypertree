@@ -26,10 +26,10 @@ used:{exec n from x where min'[v{x\'[til count x]}n?-1_'n]}
 op:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
 
 / pivot events
-pivot:{[z;u;k;c;r]$[c=`g_;unpivot u;prepivot[z;u;k;c]r]}
+pivot:{[u;k;c;r]$[c=`g_;unpivot u;prepivot[u;k;c]r]}
 unpivot:{[u](-1_u;last u)}
 
-prepivot:{[z;u;k;c;r]
+prepivot:{[u;k;c;r]
  u,:enlist k;
  k[`X]:k[`G]1;k[`G]:k[`G]except k`X;
  if[n:`~k`V;k[`V]:c];

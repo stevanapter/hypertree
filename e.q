@@ -2,8 +2,8 @@
 
 / events
 .js.row:{[d]if[h:count G;if[(L|m<h)&0<m:count n:.js.cnv[G;Q]d`row;if[count[get Z]>r:Z[`n_]?n;`P set .ht.row[not Z[`o_]r;P;G]n;:.js.set d]]]}
-.js.col:{[d]if[2<=count G;Z set();`U`K set'qq:.ht.pivot[get Z;U;k!get each k:key K;d`col]`;:.js.set d]}
-.js.cell:{[d]if[2<count G;Z set();`U`K set'.ht.pivot[get Z;U;k!get each k:key K] . d`col`row;:.js.set d]}
+.js.col:{[d]if[2<=count G;Z set();`U`K set'qq:.ht.pivot[U;k!get each k:key K;d`col]`;:.js.set d]}
+.js.cell:{[d]if[2<count G;Z set();`U`K set'.ht.pivot[U;k!get each k:key K] . d`col`row;:.js.set d]}
 .js.sorts:{[d]`S set .js.sad[Q]d[`cols]!d`sorts;$[0=count S;.js.set d;[Z set .ht.sort[get Z;G;key S]get S;.js.ret d]]}
 .js.groups:{[d]`F`G set'.js.sym d`visible`groups;`P set .ht.vpaths[P]G;Z set();.js.set d}
 .js.get:{[d]`R set`start`end!"j"$d`start`end;.js.ret d}
