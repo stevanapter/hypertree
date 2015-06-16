@@ -21,9 +21,10 @@ node:{[t;w;g;a;k]h:k,first c:g except k;![calc[t;w;h!h;a]1_c;();0b;`g_`e_`n_`l_!
 virtual:{[a;u]![u;();0b;?[0#u;();();(first 0#),/:enlist each a]]}
 calc:{[t;w;h;a;n]k:$[99h=type h;n,key h;n]_a;r:?[t;w;h;k];v:t[n][;0N];$[98h=type key r;@[0!r;n;:;v];r,n!v]}
 find:{[t;k;p]$[0=count k;();all b:$[not[type p]|30>count p;findp[t]p;(k#t)in p];();enlist b]}
-findp:{[t;p]@[count[t]#0b;raze?[t;;();`i]'[{flip(=;key x;flip enlist get x)}each p];:;1b]}
+findp:{[t;p]@[count[t]#0b;raze?[t;;();`i]each{flip(=;key x;sym each get x)}each p;:;1b]}
 used:{exec n from x where min'[v{x\'[til count x]}n?-1_'n]}
 op:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
+sym:{$[-11h=type x;enlist x;x]}
 
 / pivot events (incomplete)
 pivot:{[u;k;c;r]$[c=`g_;unpivot u;prepivot[u;k;c]r]}
@@ -32,11 +33,11 @@ unpivot:{[u](-1_u;last u)}
 prepivot:{[u;k;c;r]
  u,:enlist k;
  k[`X]:k[`G]1;k[`G]:k[`G]except k`X;
- if[n:`~k`V;k[`V]:c];
- $[m:`~r;k[`Y]:`;[k[`Y]:k[`G]0;k[`G]:1_k`G]];
- if[m&not n;k[`W]:enlist(=;k`X;c)];
- if[n&not m;k[`W]:enlist(=;k`Y;first r)];
- if[not n|m;k[`W]:((=;k`X;c);(=;k`Y;first r))];
+ if[n:null k`V;k[`V]:c];
+ $[m:null r:first r;k[`Y]:`;[k[`Y]:k[`G]0;k[`G]:1_k`G]];
+ if[m&not n;k[`W]:enlist(=;k`X;sym c)];
+ if[n&not m;k[`W]:enlist(=;k`Y;sym r)];
+ if[not n|m;k[`W]:((=;k`X;c);(=;k`Y;sym r))];
  k[`S]:()!();k[`P]:P;k[`A`I`O`Q]:(::);
  (u;k)}
 
