@@ -11,7 +11,7 @@ S:()!()
 W:()
 V:X:Y:`
 
-K:`A`S`F`G`I`O`P`Q`V`W`X`Y
+K:@[()!();`A`S`F`G`I`O`P`Q`V`W`X`Y;:;(::)]
 
 / static
 

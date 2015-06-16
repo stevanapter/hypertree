@@ -25,18 +25,23 @@ findp:{[t;p]@[count[t]#0b;raze?[t;;();`i]'[{flip(=;key x;flip enlist get x)}each
 used:{exec n from x where min'[v{x\'[til count x]}n?-1_'n]}
 op:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
 
-/ col event
-col:{[u;k;v]$[v=`g_;pivot_;pivot][u;k]v}
-pivot_:{[u;k;v]enlist[-1_u],get last u}
+/ pivot events
+pivot:{[z;u;k;c;r]$[c=`g_;unpivot u;prepivot[z;u;k;c]r]}
+unpivot:{[u](-1_u;last u)}
 
-pivot:{[u;k;c]
- r:enlist[u,enlist k],get k;
- v:v;
- x:u[`G]1;
- y:u[`G]0;
- g:U[`G]except x;
- 
- }
+prepivot:{[z;u;k;c;r]
+ u,:enlist k;
+ k[`X]:k[`G]1;k[`G]:k[`G]except k`X;
+ if[n:`~k`V;k[`V]:c];
+ $[m:`~r;k[`Y]:`;[k[`Y]:k[`G]0;k[`G]:1_k`G]];
+ if[m&not n;k[`W]:enlist(=;k`X;c)];
+ if[n&not m;k[`W]:enlist(=;k`Y;first r)];
+ if[not n|m;k[`W]:((=;k`X;c);(=;k`Y;first r))];
+ k[`S]:()!();k[`P]:P;k[`A`I`O`Q]:(::);
+ (u;k)}
+
+/ pivot (h/t: nick psaris)
+pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string asc distinct t x;x;z)]}
 
 / system constants
 I:enlist(0#`)!0#`

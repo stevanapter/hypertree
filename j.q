@@ -25,7 +25,7 @@
                    (`M 		;.js.msg[G]S))}
 
 / icons
-.js.cic:{[q]key[q]!count[q]#`d}
+.js.cic:{[q]k:key[q]except`;k!count[k]#`d}
 
 / state -> message
 .js.msg:{[g;s]
