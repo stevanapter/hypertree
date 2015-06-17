@@ -1,7 +1,6 @@
 // globals
 
 / dynamic (managed by pivot)
-
 S:()!()
 F:G:0#`
 P:.ht.P
@@ -15,7 +14,6 @@ K:@[()!();`S`F`G`P`V`W`X`Y;:;(::)]
 U:()
 
 / static
-
 A:()!()
 O.:(::)
 Q::.ht.qtype Z
