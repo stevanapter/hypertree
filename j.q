@@ -9,7 +9,7 @@
 
 / object -> js
 .js.obj:{(!). flip((`Z 		;.js.sub[get Z;J]R);
-                   (`F        ;key[Q]except G,I);
+                   (`F        ;F);
                    (`G 		;G);
                    (`H 		;exec c from meta first T where t in"bhijspmdznuvt");
                    (`I 		;I);

@@ -20,6 +20,7 @@ t:([]
  date:2000.01.01+asc n?5;
  time:09:30:00.0+n?06:30)
 
+L:0b
 T:`t
 Z:`z
 G:`trader`sector`strategy`symbol`date
