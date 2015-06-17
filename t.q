@@ -27,19 +27,17 @@ op:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
 sym:{$[-11h=type x;enlist x;x]}
 
 / pivot events (incomplete)
-pivot:{[u;k;c;r]$[c=`g_;unpivot u;prepivot[u;k;c]r]}
-unpivot:{[u](-1_u;last u)}
+pivot:{[t;f;g;v;w;x;y;cr]
+ x:g 1;g:g except x;
+ f:?[t;();();(asc;(distinct;x))];
+ c:cr 0;if[n:null v;v:c];
+ $[m:null r:first cr 1;y:`;[y:g 0;g:1_g]];
+ if[m&not n;w:enlist(=;x;c)];
+ if[n&not m;w:enlist(=;y;sym r)];
+ if[not n|m;w:((=;x;c);(=;y;sym r))];
+ (f;g;v;w;x;y;()!();P)}
 
-prepivot:{[u;k;c;r]
- u,:enlist k;
- k[`X]:k[`G]1;k[`G]:k[`G]except k`X;
- if[n:null k`V;k[`V]:c];
- $[m:null r:first r;k[`Y]:`;[k[`Y]:k[`G]0;k[`G]:1_k`G]];
- if[m&not n;k[`W]:enlist(=;k`X;sym c)];
- if[n&not m;k[`W]:enlist(=;k`Y;sym r)];
- if[not n|m;k[`W]:((=;k`X;c);(=;k`Y;sym r))];
- k[`S]:()!();k[`P]:P;
- (u;k)}
+unpivot:{[u]enlist[-1_u],get last u}
 
 / pivot (h/t: nick psaris)
 pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string asc distinct t x;x;z)]}

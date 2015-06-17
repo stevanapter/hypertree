@@ -8,7 +8,8 @@ S:()!()
 W:()
 V:X:Y:`
 
-K:@[()!();`S`F`G`P`V`W`X`Y;:;(::)]
+/ pivot
+K:`F`G`V`W`X`Y`S`P
 
 / pivot store
 U:()
