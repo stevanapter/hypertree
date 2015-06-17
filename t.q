@@ -3,14 +3,13 @@
 \d .ht
 
 / construct treetable
-cons:{[z;t;l;p;as;gf;vwxy]sort[tree[z;t;l;gf 0;rollups[t;as 0]. gf]. used each p;gf 0;key as 1]get as 1}
+cons:{[z;t;l;p;as;gf;vwxy]sort[tree[z;t;l;gf 0;rollups[t;as 0]. gf]used each p;gf 0].(key;get)@'as}
 
 / treetable calculations:  initial, expand a node, collapse a node
-tree:{[z;t;l;g;a;p;p_]$[z~();initial;count[p]>count p_;expand1;collapse1][z;t;l;g;a;p]p_}
-initial:{[z;t;l;g;a;p;p_]rollup[z;t;l;g;a]p}
-expand1:{[z;t;l;g;a;p;q]rollup[z;t;l;g;a]p except q}
-rollup:{[z;t;l;g;a;p]op g xasc$[z~();cols[m]xcols root[t;g]a;cols[m]#z],m:steps[t;l;g;a]p}
-collapse1:{[z;t;l;g;a;p;q]op delete from z where(-1_'exec n_ from z)in get each q except p}
+tree:{[z;t;l;g;a;p]$[z~();rollup;(>). count each p;expand1;collapse1][z;t;l;g;a]p}
+rollup:{[z;t;l;g;a;p]op g xasc$[z~();cols[m]xcols root[t;g]a;cols[m]#z],m:steps[t;l;g;a]p 0}
+expand1:{[z;t;l;g;a;p]rollup[z;t;l;g;a]enlist p[0]except p 1}
+collapse1:{[z;t;l;g;a;p]op delete from z where(-1_'exec n_ from z)in get each p[1]except p 0}
 
 / treetable calculation
 root:{[t;g;a]g xcols flip enlist each calc[t;();();a;g],`g_`e_`n_`l_!(`;0b;0#`;0)}
@@ -26,21 +25,30 @@ used:{exec n from x where min'[v{x\'[til count x]}n?-1_'n]}
 op:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
 sym:{$[-11h=type x;enlist x;x]}
 
+/ pivot calculation (nyi)
+ptree:{[t;l;a;g;v;w;x;y]
+ / h:{y,x except y}[g]g[0],g 1+count w 1;
+ / f:1#c:w[0]0;
+ u:?[t;w;0b;()];
+ z:cons[();u;l;(opento[u;h]h 1;P 1);a;S;(h;f);0b]W;
+ z:`n_ xcol 0!pivot[z;c]. 2#h;z[`n_]:enlist[()],flip enlist 1_z`n_;
+ z[0;1_cols z]:xkey[`g_;cons[();u;P;a;S;(1_h;f);0b]W][flip enlist 1_cols z;c];
+ z}
+
+pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string asc distinct t x;x;z)]}
+
 / pivot events (incomplete)
 pivot:{[t;f;g;v;w;x;y;cr]
  x:g 1;g:g except x;
  f:?[t;();();(asc;(distinct;x))];
  c:cr 0;if[n:null v;v:c];
  $[m:null r:first cr 1;y:`;[y:g 0;g:1_g]];
- if[m&not n;w:enlist(=;x;c)];
- if[n&not m;w:enlist(=;y;sym r)];
- if[not n|m;w:((=;x;c);(=;y;sym r))];
+ if[m&not n;w,:enlist(=;x;c)];
+ if[n&not m;w,:enlist(=;y;sym r)];
+ if[not n|m;w,:((=;x;c);(=;y;sym r))];
  (f;g;v;w;x;y;()!();P)}
 
 unpivot:{[u]enlist[-1_u],get last u}
-
-/ pivot (h/t: nick psaris)
-pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string asc distinct t x;x;z)]}
 
 / system constants
 I:enlist(0#`)!0#`
