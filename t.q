@@ -7,9 +7,9 @@ cons:{[z;t;l;p;as;gf;vwxy]sort[tree[z;t;l;gf 0;rollups[t;as 0]. gf]used each p;g
 
 / treetable calculations:  initial, expand a node, collapse a node
 tree:{[z;t;l;g;a;p]$[z~();rollup;(>). count each p;expand1;collapse1][z;t;l;g;a]p}
-rollup:{[z;t;l;g;a;p]op g xasc$[z~();cols[m]xcols root[t;g]a;cols[m]#z],m:steps[t;l;g;a]p 0}
+rollup:{[z;t;l;g;a;p]sys g xasc$[z~();cols[m]xcols root[t;g]a;cols[m]#z],m:steps[t;l;g;a]p 0}
 expand1:{[z;t;l;g;a;p]rollup[z;t;l;g;a]enlist p[0]except p 1}
-collapse1:{[z;t;l;g;a;p]op delete from z where(-1_'exec n_ from z)in get each p[1]except p 0}
+collapse1:{[z;t;l;g;a;p]sys delete from z where(-1_'exec n_ from z)in get each p[1]except p 0}
 
 / treetable calculation
 root:{[t;g;a]g xcols flip enlist each calc[t;();();a;g],`g_`e_`n_`l_!(`;0b;0#`;0)}
@@ -22,7 +22,7 @@ calc:{[t;w;h;a;n]k:$[99h=type h;n,key h;n]_a;r:?[t;w;h;k];v:t[n][;0N];$[98h=type
 find:{[t;k;p]$[0=count k;();all b:$[not[type p]|30>count p;findp[t]p;(k#t)in p];();enlist b]}
 findp:{[t;p]@[count[t]#0b;raze?[t;;();`i]each{flip(=;key x;sym each get x)}each p;:;1b]}
 used:{exec n from x where min'[v{x\'[til count x]}n?-1_'n]}
-op:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
+sys:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
 sym:{$[-11h=type x;enlist x;x]}
 
 / pivot calculation (nyi)
