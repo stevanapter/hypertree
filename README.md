@@ -143,8 +143,6 @@ Given table T (the underlying table) + Hypertree Parameters (see below) .ht.cons
 
 Column names a_ through z_ are reserved for Hypertree use.
 
-All other column names ending in _ are virtual rollups:  the leaves are nulled in the display.
-
 The Hypertree table structure is encoded in the following six columns:
 
 	q).ht.C
@@ -242,6 +240,13 @@ A: Rollups
 
 	Rollup functions map lists to atoms.  If the type of column c is t, then the
 	type of the rollup of c must be -t.
+
+	Columns defined in A which do not appear in T are "virtual":  their leaves are
+	display as nulls.  E.g., in the following example g is virtual:
+
+		t:([]f:10 20 30)
+		T:`t
+		A[`g]:(count;`f)
 
 F: Visible columns in order
 
@@ -357,7 +362,7 @@ T: Table
 
 		T:`t
 
-	static rollups, u is a dictionary of rollup tables:  
+    ***** [NYI] static rollups, u is a dictionary of rollup tables:
 
 		T:(`t;u)
 
@@ -399,8 +404,6 @@ Calculation
 -----------
 
 Hypertree calculates rollups on every Y-axis drilldown event, and on every X- or XY-pivot event, and on every update to the underlying data.
-
-Our rollup algorithm performs well in the case of medium-sized tables, and for tables with not too many rollups and/or not too many exposed subnodes.
 
 Dynamic rollups:
 
