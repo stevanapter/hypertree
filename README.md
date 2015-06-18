@@ -260,6 +260,14 @@ G: Grouping columns
 
 <img src="images/t.jpg">
 
+H: Groupable columns
+
+	H::.ht.groupable T 
+
+C: Visible columns
+
+	C::.ht.visible[Q;G]I
+
 I: Invisible columns
 
 	I::.ht.visible_[W;T;A;Q;F]G
@@ -398,7 +406,7 @@ Dynamic rollups:
 
 	T:`t
 
-Static rollups [NB: not yet implemented for Hypertree2]:
+Static rollups [***** NB: not yet implemented for Hypertree2 *****]:
 
 	Create a dictionary whose keys are a subset of the permutations of G.
 

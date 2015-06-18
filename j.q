@@ -10,16 +10,16 @@
 
 / object -> js
 .js.obj:{(!). flip((`Z        ;.js.sub[get Z;J]R);
-                   (`F        ;H);
+                   (`F        ;C);
                    (`G 		;G);
-                   (`H 		;exec c from meta first T where t in"bhijspmdznuvt");
+                   (`H 		;H);
                    (`I 		;I);
                    (`Q 		;Q);
                    (`S 		;`cols`sorts!(key S;get S));
                    (`R 		;R);
                    (`N 		;count get Z);
                    (`T 		;first T);
-                   (`O 		;.js.nnd .js.opt[W;H]O);
+                   (`O 		;.js.nnd .js.opt[W;C]O);
                    (`C        ;.js.cic[Q;G]W);
                    (`U 		;not U);
                    (`V 		;V&0=count W 0);

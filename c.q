@@ -6,6 +6,8 @@
 \l j.q
 \l l.q
 
+\e 1
+
 / connect to server
 .js.K:0Ni
 .js.K_:`::12346
