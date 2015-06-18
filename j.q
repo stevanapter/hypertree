@@ -10,7 +10,7 @@
 
 / object -> js
 .js.obj:{(!). flip((`Z        ;.js.sub[get Z;J]R);
-                   (`F        ;key[Q]except G,I);
+                   (`F        ;H);
                    (`G 		;G);
                    (`H 		;exec c from meta first T where t in"bhijspmdznuvt");
                    (`I 		;I);
@@ -19,7 +19,7 @@
                    (`R 		;R);
                    (`N 		;count get Z);
                    (`T 		;first T);
-                   (`O 		;.js.nnd .js.opt[W;key[Q]except G,I]O);
+                   (`O 		;.js.nnd .js.opt[W;H]O);
                    (`C        ;.js.cic[Q;G]W);
                    (`U 		;not U);
                    (`V 		;V&0=count W 0);

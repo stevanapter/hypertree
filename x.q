@@ -18,3 +18,4 @@ Z:`z 						/ output table
 F:0#` 						/ aggregated columns
 G:0#` 						/ grouping columns
 I::.ht.invis[W;T;A;Q;F]G 	/ invisible columns
+H::key[Q]except G,I  		/ visible columns
