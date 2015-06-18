@@ -7,7 +7,7 @@
 .js.sorts:{[d]`S set .js.sad[Q]d[`cols]!d`sorts;$[0=count S;.js.set d;[Z set .ht.sort[get Z;G;key S]get S;.js.ret d]]}
 .js.groups:{[d]`F`G set'.js.sym d`visible`groups;`P set .ht.vpaths[P]G;Z set();.js.set d}
 .js.get:{[d]`R set`start`end!"j"$d`start`end;.js.ret d}
-.js.reset:{[d](Z,`S`P)set'(();()!();.ht.P);.js.set d}
+.js.reset:{[d](Z,`S`P`W)set'(();()!();.ht.P;(();();()));.js.set d}
 .js.expand:{[d]if[count G;`P set .ht.expand[T]G;:.js.set d]}
 .js.collapse:{[d]if[count G;Z set();`P set .ht.P;:.js.set d]}
 
