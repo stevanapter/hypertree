@@ -270,7 +270,7 @@ C: Visible columns
 
 I: Invisible columns
 
-	I::.ht.visible_[W;T;A;Q;F]G
+	I::.ht.invisible[W;T;A;Q;F]G
 
 J: Infinity check?
 

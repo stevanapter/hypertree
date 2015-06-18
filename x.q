@@ -17,6 +17,6 @@ T:`t 							/ input table
 Z:`z 							/ output table
 F:0#` 							/ aggregated columns
 G:0#` 							/ grouping columns
-I::.ht.visible_[W;T;A;Q;F]G 	/ invisible columns
+I::.ht.invisible[W;T;A;Q;F]G 	/ invisible columns
 C::.ht.visible[Q;G]I 			/ visible columns
 H::.ht.groupable T 				/ groupable columns
