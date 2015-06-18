@@ -59,7 +59,7 @@ ceq:{[c;v;q]enlist(=;c;(1*"s"=lower q)enlist/upper[q]$string v)}
 P:(([n:enlist(0#`)!0#`]v:enlist 1b);([n:()]v:til 0))
 
 / keep valid paths
-vpaths:{[p;g](1!(0!p 0)where til[count g]{(count[y]#x)~y}/:g?/:key each exec n from p 0;P 1)}
+valid:{[p;g](1!(0!p 0)where til[count g]{(count[y]#x)~y}/:g?/:key each exec n from p 0;P 1)}
 
 / open/close to group (h=` -> open to leaves)
 opento:{[t;g;h]inst distinct(enlist(0#`)!0#`),raze t to/:(1+til count k)#\:k:(g?h)#g}

@@ -5,7 +5,7 @@
 .js.col:{[d]if[X;`P set .ht.P;`S set()!();(Z,`W`G)set'.ht.col[get Z;W;G;Q]d`col;:.js.set d]}
 .js.cell:{[d]if[X;if[count G;`P set .ht.P;`S set()!();(Z,`W`G)set'.ht.cell[get Z;W;G;Q]. d`col`row;:.js.set d]]}
 .js.sorts:{[d]`S set .js.sad[Q]d[`cols]!d`sorts;$[0=count S;.js.set d;[Z set .ht.sort[get Z;G;key S]get S;.js.ret d]]}
-.js.groups:{[d]`F`G set'.js.sym d`visible`groups;`P set .ht.vpaths[P]G;Z set();.js.set d}
+.js.groups:{[d]`F`G set'.js.sym d`visible`groups;`P set .ht.valid[P]G;Z set();.js.set d}
 .js.get:{[d]`R set`start`end!"j"$d`start`end;.js.ret d}
 .js.reset:{[d](Z,`S`P`W)set'(();()!();.ht.P;(();();()));.js.set d}
 .js.expand:{[d]if[count G;`P set .ht.expand[T]G;:.js.set d]}
