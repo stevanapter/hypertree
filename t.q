@@ -67,8 +67,9 @@ inst:{[m]([n:m]v:count[m]#1b)}
 to:{(enlist(0#`)!0#`),y!/:flip distinct x y}
 expand:{[t;g](opento[t;g]last g;P 1)}
 
-/ invisible
-invis:{[w;t;a;q;f;g]$[count w 0;();distinct[cols[t],key a,q]except f,g]}
+/ columns
+visible:{[q;g;i]key[q]except g,i}
+visible_:{[w;t;a;q;f;g]$[count w 0;();distinct[cols[t],key a,q]except f,g]}
 
 / rollups
 rollups:{[t;a;g;f]f#@[@[a;k;:;A[lower qtype[t]k],'k:cols[t]except key a];g;:;nul,'g]}

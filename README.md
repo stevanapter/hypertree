@@ -262,7 +262,7 @@ G: Grouping columns
 
 I: Invisible columns
 
-	I::.ht.invis[W;T;A;Q;F]G
+	I::.ht.visible_[W;T;A;Q;F]G
 
 J: Infinity check?
 
