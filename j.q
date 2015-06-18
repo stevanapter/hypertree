@@ -8,8 +8,8 @@
 .js.inf:{k:exec c!t$1%0 from meta x where t in"ijf";![x;();0b;key[k]!({@[x;where x in y,neg y;:;first 0#x]};;)'[key k;get k]]}
 
 / object -> js
-.js.obj:{(!). flip((`Z 		;.js.sub[get Z;J]R);
-                   (`F        ;F);
+.js.obj:{(!). flip((`Z        ;.js.sub[get Z;J]R);
+                   (`F        ;key[Q]except G,I);
                    (`G 		;G);
                    (`H 		;exec c from meta first T where t in"bhijspmdznuvt");
                    (`I 		;I);
@@ -19,18 +19,29 @@
                    (`N 		;count get Z);
                    (`T 		;first T);
                    (`O 		;.js.nnd O);
-                   (`C        ;.js.cic Q);
-                   (`U 		;not L);
-                   (`V 		;1b);
-                   (`M 		;.js.msg[G]S))}
+                   (`C        ;.js.cic[Q;G]W);
+                   (`U 		;not U);
+                   (`V 		;V&0=count W 0);
+                   (`M 		;.js.msg[G;S]W))}
 
 / icons
-.js.cic:{[q]k:key[q]except`;(`g_,k)!`u,count[k]#`d}
+.js.cic:{
+ k:key[x]except`;
+ $[0=count y;
+   ()!();
+   [w:0=count z 0;
+    n:count k;
+    ((1#`g_)!1#`u` w),$[w;
+                        k!n#`d;
+                        (`,k)!`,n#`d`u count[y]=2+count z 1]]]}
 
 / state -> message
-.js.msg:{[g;s]
+.js.msg:{[g;s;w]
  r:()!();
- if[count g 	;r[`Groups]:","sv string g];
- if[count s 	;r[`Sorts]:","sv string[key s]{$[x~"g_";"Hierarchy";x],"[",y,"]"}'string get s];
+ if[count g       ;r[`Groups]:","sv string g];
+ if[count s       ;r[`Sorts]:","sv string[key s]{$[x~"g_";"Hierarchy";x],"[",y,"]"}'string get s];
+ if[count w 0     ;r[`Pivot]:string w[0;0];r[`Y]:string first g;if[not count w 1;r[`X]:string g 1]];
+ if[count w 1     ;r[`Where]:","sv({y,"=",z 0}.)each string w 1;r[`X]:string g 1+g?last w[1;;1]];
  (asc key r)#r}
+
 

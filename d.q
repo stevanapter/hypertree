@@ -9,7 +9,7 @@ trader:`chico`harpo`groucho`zeppo`moe`larry`curly`shemp`abbott`costello
 sector:`energy`materials`industrials`financials`healthcare`utilities`infotech
 strategy:`statarb`pairs`mergerarb`house`chart`indexarb
 
-n:1000
+n:100000
 t:([]
  symbol:n?symbol;
  sector:n?sector;

@@ -1,29 +1,29 @@
-# Hypertree
+# Hypertree2
 
 
-[Concepts](https://github.com/stevanapter/hypertree#concepts)
+[Concepts](https://github.com/stevanapter/hypertree2#concepts)
 
-[Structure](https://github.com/stevanapter/hypertree#structure)
+[Structure](https://github.com/stevanapter/hypertree2#structure)
 
-[Events](https://github.com/stevanapter/hypertree#events)
+[Events](https://github.com/stevanapter/hypertree2#events)
 
-[Parameters](https://github.com/stevanapter/hypertree#parameters)
+[Parameters](https://github.com/stevanapter/hypertree2#parameters)
 
-[Calculation](https://github.com/stevanapter/hypertree#calculation)
+[Calculation](https://github.com/stevanapter/hypertree2#calculation)
 
-[Use](https://github.com/stevanapter/hypertree#use)
+[Use](https://github.com/stevanapter/hypertree2#use)
 
-[Scripts](https://github.com/stevanapter/hypertree#scripts)
+[Scripts](https://github.com/stevanapter/hypertree2#scripts)
 
-[Examples](https://github.com/stevanapter/hypertree#examples)
+[Examples](https://github.com/stevanapter/hypertree2#examples)
 
 
 Concepts
 --------
 
-Hypertree is a q server which adds tree- and pivot-table calculation to [Hypergrid](http://openfin.github.io/fin-hypergrid/components/fin-hypergrid/demo.html?tab=4).
+Hypertree2 is a q server which adds tree- and pivot-table calculation to [Hypergrid](http://openfin.github.io/fin-hypergrid/components/fin-hypergrid/demo.html?tab=4).
 
-An earlier version of this algorithm (bottom-up aggregation) is described [here](http://archive.vector.org.uk/art10500340).
+Hypertree2 is based on an improved version of the algorithm used in [Hypertree](https://github.com/stevanapter/hypertree), described [here](http://archive.vector.org.uk/art10500340).
 
 What follows is a brief overview:
 
@@ -243,34 +243,26 @@ A: Rollups
 	Rollup functions map lists to atoms.  If the type of column c is t, then the
 	type of the rollup of c must be -t.
 
-E: Universe of columns
-
-	E::distinct key[A],cols first T
-
 F: Visible columns in order
 
-	F::E except G,I
+	F:0#`
 
 G: Grouping columns
 
-	G:()
+	G:0#`
 
-	Any subset of H.
+	Any subset of exec c from meta first T where t in"bhijspmdznuvt".
+
+	Hypertree understands grouping by symbolic and "discrete" values (including dates and 
+	times.)
 
 	When G is empty, the underlying table together with its grand total row is displayed:
 
 <img src="images/t.jpg">
 
-H: Groupable columns
-
-	H::exec c from meta first T where t in"bhijspmdznuvt"
-
-	Hypertree understands grouping by symbolic and "discrete" values (including dates and 
-	times.)
-
 I: Invisible columns
 
-	I:()
+	I::.ht.invis[W;T;A;Q;F]G
 
 J: Infinity check?
 
@@ -341,7 +333,7 @@ R: Rows -> Hypergrid (scrolling)
 
 S: Sorts = cols!(..{`a`d`A`D}..)
 
-	S:.ht.S = ()!()
+	S:()!()
 
 	For example:  S:`foo`bar!`D`a for ascending bar within descending-absolute foo.
 
@@ -400,15 +392,13 @@ Calculation
 
 Hypertree calculates rollups on every Y-axis drilldown event, and on every X- or XY-pivot event, and on every update to the underlying data.
 
-Our rollup algorithm performs well in the case of medium-sized tables (a few million records), and for tables with not too many rollups and/or not too many exposed subnodes.
-
-For static data, and especially for very large tables which update off-line, a different approach is required.
+Our rollup algorithm performs well in the case of medium-sized tables, and for tables with not too many rollups and/or not too many exposed subnodes.
 
 Dynamic rollups:
 
 	T:`t
 
-Static rollups:
+Static rollups [NB: not yet implemented for Hypertree2]:
 
 	Create a dictionary whose keys are a subset of the permutations of G.
 
