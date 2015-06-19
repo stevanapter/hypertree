@@ -27,15 +27,7 @@
                    (`M 		;.js.msg[G;S]W))}
 
 / icons
-.js.cic:{
- k:key[x]except`;
- $[0=count y;
-   ()!();
-   [w:0=count z 0;
-    n:count k;
-    ((1#`g_)!1#`u` w),$[w;
-                        k!n#`d;
-                        (`,k)!`,n#`d`u count[y]=2+count z 1]]]}
+.js.cic:{$[0=count y;()!();[w:0=count z 0;n:count k:key[x]except `;((1#`g_)!1#`u` w),$[w;k!n#`d;(`,k)!`,n#`d`u count[y]=2+count z 1]]]}
 
 / state -> message
 .js.msg:{[g;s;w]
