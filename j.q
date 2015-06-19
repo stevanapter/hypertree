@@ -40,7 +40,7 @@
 / state -> message
 .js.msg:{[g;s;w]
  r:()!();
- r[`Table`Rows]:(string T;string count get T);
+ r[`Table`Index]:(string[T],"[",string[count get T],"]";"/"sv string get R);
  if[count g       ;r[`Groups]:","sv string g];
  if[count s       ;r[`Sorts]:","sv string[key s]{$[x~"g_";"Hierarchy";x],"[",y,"]"}'string get s];
  if[count w 0     ;r[`Pivot]:string w[0;0];r[`Y]:string first g;if[not count w 1;r[`X]:string g 1]];
