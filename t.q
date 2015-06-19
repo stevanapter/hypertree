@@ -3,8 +3,8 @@
 \d .ht
 
 / construct treetable
-cons:{[d;l;p;a;s;g;f;w]sort[mode[w;d 0;d 1;l;g;rollups[d 1;a;g]f]used each p;$[count w 0;();g]].(key;get)@\:s}
-mode:{[w;z;t;l;g;a;p]$[count w 0;pivot[t;a;g]w;tree[z;get t;l;g;a]. p]}
+cons:{[d;l;p;a;s;g;f;w]sort[mode[w;d 0;d 1;l;g;rollups[d 1;a;g]f]. used each p;$[count w 0;();g]].(key;get)@\:s}
+mode:{[w;z;t;l;g;a;p;q]$[count w 0;pivot[t;a;g]w;tree[z;get t;l;g;a;p]q]}
 
 / treetable calculations:  initial, expand a node, collapse a node
 tree:{[z;t;l;g;a;p;q]$[z~();rollup;count[p]>count q;expand1;collapse1][z;t;l;g;a;p]q}
@@ -83,6 +83,7 @@ qtype:{exec c!t from meta x where not(c=lower c)&c like"?_"}
 
 / treetable sort
 sort:{[t;g;c;o]
+ if[0=count c;:t];
  if[0=count g;:t[0],msort[1_t;c]o];
  if[`g_~first -1_c;c:`z_,1_c;t:update z_:?[l_>1;`;g_]from t];
  n:reverse exec i by L_ from s:dsort[t;g;c;o]where L_>0;
