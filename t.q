@@ -1,4 +1,4 @@
-// treetable
+// hypertree
 
 \d .ht
 
