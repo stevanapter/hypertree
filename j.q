@@ -9,18 +9,18 @@
 .js.opt:{$[0=count x 0;z;not`columns in key z;z;not x[0;0]in key z`columns;z;@[z;`columns;:;y!count[y]#z[`columns]x[0;0]]]}
 
 / object -> js
-.js.obj:{(!). flip((`Z        ;.js.sub[get Z;J]R);
-                   (`F        ;C);
+.js.obj:{(!). flip((`Z    ;.js.sub[get Z;J]R);
+                   (`F    ;C);
                    (`G 		;G);
                    (`H 		;H);
                    (`I 		;I);
                    (`Q 		;Q);
-                   (`S 		;`cols`sorts!(key S;get S));
+                   (`S 		;`cols`sorts!reverse each(key S;get S));
                    (`R 		;R);
                    (`N 		;count get Z);
                    (`T 		;first T);
                    (`O 		;.js.nnd .js.opt[W;C]O);
-                   (`C        ;.js.cic[Q;G]W);
+                   (`C    ;.js.cic[Q;G]W);
                    (`U 		;not U);
                    (`V 		;V&0=count W 0);
                    (`M 		;.js.msg[G;S]W))}

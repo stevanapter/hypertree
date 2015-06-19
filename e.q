@@ -4,7 +4,7 @@
 .js.row:{[d]if[Y;if[0=count W 0;if[h:count G;if[(L|m<h)&0<m:count n:.js.cnv[G;Q]d`row;if[count[get Z]>r:Z[`n_]?n;`P set .ht.row[not Z[`o_]r;P;G]n;:.js.set d]]]]]}
 .js.col:{[d]if[X;`P set .ht.P;`S set()!();(Z,`W`G)set'.ht.col[get Z;W;G;Q]d`col;:.js.set d]}
 .js.cell:{[d]if[X;if[count G;`P set .ht.P;`S set()!();(Z,`W`G)set'.ht.cell[get Z;W;G;Q]. d`col`row;:.js.set d]]}
-.js.sorts:{[d]`S set .js.sad[Q]d[`cols]!d`sorts;$[0=count S;.js.set d;[Z set .ht.sort[get Z;G;key S]get S;.js.ret d]]}
+.js.sorts:{[d]`S set .js.sad[Q]d[`cols]!d`sorts;$[0=count S;.js.set d;[Z set .ht.sort[get Z;$[count W 0;();G];key S]get S;.js.ret d]]}
 .js.groups:{[d]`F`G set'.js.sym d`visible`groups;`P set .ht.valid[P]G;Z set();.js.set d}
 .js.get:{[d]`R set`start`end!"j"$d`start`end;.js.ret d}
 .js.reset:{[d](Z,`S`P`W)set'(();()!();.ht.P;(();();()));.js.set d}

@@ -30,8 +30,8 @@ sym:{$[-11h=type x;enlist x;x]}
 pivot:{[t;a;g;w]
  h:{y,x except y}[g]g[0],g 1+count w 1;f:1#c:w[0]0;u:?[t;w 1;0b;()];
  z:tree[();u;0b;h;a;exec n from opento[u;h]h 1]();
- z:`n_ xcol 0!pcalc[z;c]. 2#h;z[`n_]:enlist[0#`],flip enlist 1_z`n_;
- z[0;1_cols z]:xkey[`g_;tree[();u;0b;1_h;a;exec n from P 0]()][flip enlist 1_cols z;c];
+ r:flip enlist 1_cols z:`n_ xcol 0!pcalc[z;c]. 2#h;z[`n_]:enlist[0#`],flip enlist 1_z`n_;
+ z[0;1_cols z]:xkey[`g_;tree[();u;0b;1_h;a;exec n from P 0]()][r;c];
  flip flip[z],`o_`p_`g_`e_`l_!(1b;0N;last each z`n_;1b;0)}
 
 / pivot calc
