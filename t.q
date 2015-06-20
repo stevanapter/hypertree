@@ -3,8 +3,8 @@
 \d .ht
 
 / construct treetable
-cons:{[z;t;l;p;a;g;f;w]mode[w;z;t;l;g;rollups[t;a;g]f]. used each p}
-mode:{[w;z;t;l;g;a;p;q]$[count w 0;pivot[t;a;g]w;tree[z;get t;l;g;a;p]q]}
+cons:{[z;t;l;p;a;g;f;w]mode[w;z;0!get t;l;g;rollups[t;a;g]f]. used each p}
+mode:{[w;z;t;l;g;a;p;q]$[count w 0;pivot[t;a;g]w;tree[z;t;l;g;a;p]q]}
 
 / treetable calculations:  initial, expand a node, collapse a node
 tree:{[z;t;l;g;a;p;q]$[z~();rollup;count[p]>count q;expand1;collapse1][z;t;l;g;a;p]q}
@@ -65,7 +65,7 @@ valid:{[p;g](1!(0!p 0)where til[count g]{(count[y]#x)~y}/:g?/:key each exec n fr
 opento:{[t;g;h]inst distinct(enlist(0#`)!0#`),raze t to/:(1+til count k)#\:k:(g?h)#g}
 inst:{[m]([n:m]v:count[m]#1b)}
 to:{(enlist(0#`)!0#`),y!/:flip distinct x y}
-expand:{[t;g](opento[t;g]last g;P 1)}
+expand:{[t;g](opento[0!get t;g]last g;P 1)}
 
 / columns
 visible:{[q;g;i]key[q]except g,i}
@@ -82,10 +82,9 @@ A:" bgxhijefcspmdznuvt"!(nul;any;nul;nul;sum;sum;sum;sum;sum;nul;nul;max;max;max
 qtype:{exec c!t from meta x where not(c=lower c)&c like"?_"}
 
 / treetable sort
-sort:{[t;g;s;w]tsort[t;$[count w 0;();g];key s]get s}
+sort:{[t;g;s;w]$[count s;tsort[t;$[count w 0;();g];key s]get s;(::)]}
 
 tsort:{[t;g;c;o]
- if[0=count c;:(::)];
  if[0=count g;:0,1+msort[1_t;c]o];
  if[`g_~first -1_c;c:`G_,1_c;t:update G_:?[l_>1;`;g_]from t];
  n:reverse exec i by L_ from s:dsort[t;g;c;o]where L_>0;

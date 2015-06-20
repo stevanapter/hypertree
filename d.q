@@ -10,7 +10,7 @@ sector:`energy`materials`industrials`financials`healthcare`utilities`infotech
 strategy:`statarb`pairs`mergerarb`house`chart`indexarb
 
 n:100000
-t:([]
+t:([N:til n]
  symbol:n?symbol;
  sector:n?sector;
  trader:n?trader;

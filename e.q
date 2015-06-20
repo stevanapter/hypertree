@@ -8,8 +8,8 @@
 .js.groups:{[d]`F`G set'.js.sym d`visible`groups;`P set .ht.valid[P]G;Z set();.js.set d}
 .js.get:{[d]`R set`start`end!"j"$d`start`end;.js.ret d}
 .js.reset:{[d](Z,`S`P`W`K)set'(();()!();.ht.P;(();();());::);.js.set d}
-.js.expand:{[d]if[count G;`P set .ht.expand[T]G;:.js.set d]}
-.js.collapse:{[d]if[count G;Z set();`P set .ht.P;:.js.set d]}
+.js.expand:{[d]`P set .ht.expand[T]G;.js.set d}
+.js.collapse:{[d]Z set();`P set .ht.P;:.js.set d}
 
 / event utilities
 .js.sad:{$[count k:key y;k!{$[z in`a`d;z;not x[y]in"sc";z;lower z]}[x]'[k;get y];()!()]}

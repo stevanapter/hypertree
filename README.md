@@ -358,7 +358,7 @@ S: Sorts = cols!(..{`a`d`A`D}..)
 
 T: Table
 
-	The table underlying Hypertree must be unkeyed (type 98h).
+	The table underlying Hypertree, either keyed or unkeyed.
 
 	default: 
 
