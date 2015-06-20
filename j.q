@@ -11,7 +11,6 @@
 / object -> js
 .js.obj:{(!). flip((`Z        ;.js.sub[get[Z]K;J]R);
                    (`F        ;C);
-                   (`E        ;(0<count G)&0=count W 0);
                    (`G 		;G);
                    (`H 		;H);
                    (`I 		;I);
@@ -25,6 +24,7 @@
                    (`U 		;not U);
                    (`V 		;V&0=count W 0);
                    (`W        ;count[G]>2+count W 1);
+                   (`E        ;(0<count G)&0=count W 0);
                    (`M 		;.js.msg[G;S]W))}
 
 / icons
