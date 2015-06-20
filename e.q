@@ -8,7 +8,7 @@
 .js.groups:{[d]`F`G set'.js.sym d`visible`groups;`P set .ht.valid[P]G;Z set();.js.set d}
 .js.get:{[d]`R set`start`end!"j"$d`start`end;.js.ret d}
 .js.reset:{[d](Z,`S`P`W`K)set'(();()!();.ht.P;(();();());::);.js.set d}
-.js.expand:{[d]`P set .ht.expand[T]G;.js.set d}
+.js.expand:{[d]`P set .ht.expand[0!get T]G;.js.set d}
 .js.collapse:{[d]Z set();`P set .ht.P;:.js.set d}
 
 / event utilities
@@ -16,4 +16,4 @@
 .js.cnv:{raze@[flip enlist z;i;{y$string x};upper q i:where"s"<>q:y count[z]#x]}
 .js.exe:{.js[x`fn]x}
 .js.val:{$[x in key[`.],raze{` sv'(`,x),/:1_key` sv`,x}each key`;get x;()]}
-.js.set:{Z set .ht.cons[.js.val Z;T;L;P;A;G;F]W;`Z set Z;`K set .ht.sort[get Z;G;S]W;.js.ret x}
+.js.set:{Z set .ht.cons[.js.val Z;0!get T;L;P;A;G;F]W;`Z set Z;`K set .ht.sort[get Z;G;S]W;.js.ret x}

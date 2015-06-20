@@ -3,7 +3,7 @@
 \d .ht
 
 / construct treetable
-cons:{[z;t;l;p;a;g;f;w]mode[w;z;0!get t;l;g;rollups[t;a;g]f]. used each p}
+cons:{[z;t;l;p;a;g;f;w]mode[w;z;t;l;g;rollups[t;a;g]f]. used each p}
 mode:{[w;z;t;l;g;a;p;q]$[count w 0;pivot[t;a;g]w;tree[z;t;l;g;a;p]q]}
 
 / treetable calculations:  initial, expand a node, collapse a node
@@ -65,7 +65,7 @@ valid:{[p;g](1!(0!p 0)where til[count g]{(count[y]#x)~y}/:g?/:key each exec n fr
 opento:{[t;g;h]inst distinct(enlist(0#`)!0#`),raze t to/:(1+til count k)#\:k:(g?h)#g}
 inst:{[m]([n:m]v:count[m]#1b)}
 to:{(enlist(0#`)!0#`),y!/:flip distinct x y}
-expand:{[t;g](opento[0!get t;g]last g;P 1)}
+expand:{[t;g](opento[t;g]last g;P 1)}
 
 / columns
 visible:{[q;g;i]key[q]except g,i}
