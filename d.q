@@ -25,6 +25,7 @@ T:`t
 Z:`z
 G:`trader`sector`strategy`symbol`date
 F:`N_`price`wprice`quantity`time
+H:`trader`sector`strategy`symbol`date`time
 A:()!()
 A[`N_]:(count;`price)
 A[`wprice]:(wavg;`quantity;`price)
