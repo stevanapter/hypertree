@@ -37,6 +37,6 @@
  if[count s       ;r[`Sorts]:","sv string[key s]{$[x~"g_";"Hierarchy";x],"[",y,"]"}'string get s];
  if[count w 0     ;r[`Pivot]:string w[0;0];r[`Y]:string first g;if[not count w 1;r[`X]:string g 1]];
  if[count w 1     ;r[`Where]:","sv({y,"=",z 0}.)each string w 1;r[`X]:string g 1+g?last w[1;;1]];
- (asc key r)#r}
+ r}
 
 
