@@ -285,6 +285,12 @@ J: Infinity check?
 	filtered out of the result before conversion to json by .j.j.  Better to not generate them
 	at all!
 
+K: Sort vector
+
+	Hypertree sort-state:  get[Z]K.
+
+	K:(::)
+
 L: Expand to leaves?
 
 	L:1b

@@ -9,8 +9,8 @@
 .js.opt:{$[0=count x 0;z;not`columns in key z;z;not x[0;0]in key z`columns;z;@[z;`columns;:;y!count[y]#z[`columns]x[0;0]]]}
 
 / object -> js
-.js.obj:{(!). flip((`Z    ;.js.sub[get Z;J]R);
-                   (`F    ;C);
+.js.obj:{(!). flip((`Z        ;.js.sub[get[Z]K;J]R);
+                   (`F        ;C);
                    (`G 		;G);
                    (`H 		;H);
                    (`I 		;I);
@@ -20,10 +20,10 @@
                    (`N 		;count get Z);
                    (`T 		;first T);
                    (`O 		;.js.nnd .js.opt[W;C]O);
-                   (`C    ;.js.cic[Q;G]W);
+                   (`C        ;.js.cic[Q;G]W);
                    (`U 		;not U);
                    (`V 		;V&0=count W 0);
-                   (`W    ;count[G]>2+count W 1);
+                   (`W        ;count[G]>2+count W 1);
                    (`M 		;.js.msg[G;S]W))}
 
 / icons

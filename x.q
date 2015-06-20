@@ -15,6 +15,7 @@ X:1b 							/ allow x-axis drilldown (pivot)?
 Y:1b 							/ allow y-axis drilldown (tree)?
 T:`t 							/ input table
 Z:`z 							/ output table
+K:(::) 							/ sort vector
 F:0#` 							/ aggregated columns
 G:0#` 							/ grouping columns
 I::.ht.invisible[W;T;A;Q;F]G 	/ invisible columns

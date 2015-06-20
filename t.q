@@ -3,7 +3,7 @@
 \d .ht
 
 / construct treetable
-cons:{[d;l;p;a;s;g;f;w]sort[mode[w;d 0;d 1;l;g;rollups[d 1;a;g]f]. used each p;$[count w 0;();g]].(key;get)@\:s}
+cons:{[z;t;l;p;a;g;f;w]mode[w;z;t;l;g;rollups[t;a;g]f]. used each p}
 mode:{[w;z;t;l;g;a;p;q]$[count w 0;pivot[t;a;g]w;tree[z;get t;l;g;a;p]q]}
 
 / treetable calculations:  initial, expand a node, collapse a node
@@ -82,18 +82,20 @@ A:" bgxhijefcspmdznuvt"!(nul;any;nul;nul;sum;sum;sum;sum;sum;nul;nul;max;max;max
 qtype:{exec c!t from meta x where not(c=lower c)&c like"?_"}
 
 / treetable sort
-sort:{[t;g;c;o]
- if[0=count c;:t];
- if[0=count g;:t[0],msort[1_t;c]o];
- if[`g_~first -1_c;c:`z_,1_c;t:update z_:?[l_>1;`;g_]from t];
+sort:{[t;g;s;w]tsort[t;$[count w 0;();g];key s]get s}
+
+tsort:{[t;g;c;o]
+ if[0=count c;:(::)];
+ if[0=count g;:0,1+msort[1_t;c]o];
+ if[`g_~first -1_c;c:`G_,1_c;t:update G_:?[l_>1;`;g_]from t];
  n:reverse exec i by L_ from s:dsort[t;g;c;o]where L_>0;
- delete z_ from t 0,raze$[1=count n;s[`I_]n;merge[s;g]/[();key n;get n]]}
+ 0,raze$[1=count n;s[`I_]n;merge[s;g]/[();key n;get n]]}
 
 dsort:{[t;g;c;o]
  a:!/[g,/:(`I_`L_;`i`l_)];c:c!csort[c]o;s:1=count distinct o:(<:;>:)o in`d`D;
  $[s;?[t;();0b;a;0W;(first o;esort c)];?[t;();0b;a]rsort[t;c]o]}
 
-msort:{[t;c;o]t{x y z x}/[::;(`a`d`A`D!(iasc;idesc;iasc abs@;idesc abs@))o;t c]}
+msort:{[t;c;o]{x y z x}/[::;(`a`d`A`D!(iasc;idesc;iasc abs@;idesc abs@))o;t c]}
 csort:{[c;o]@[flip(@;abs;c;c);i;:;c i:where o in`a`d]}
 rsort:{[t;c;o]{x y z x}/[::;reverse o;?[t;();();enlist,reverse get c]]}
 esort:{[c]$[1=count c;first c;(flip;(!;enlist key c;enlist,get c))]}
