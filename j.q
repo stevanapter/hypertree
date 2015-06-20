@@ -11,6 +11,7 @@
 / object -> js
 .js.obj:{(!). flip((`Z        ;.js.sub[get[Z]K;J]R);
                    (`F        ;C);
+                   (`E        ;(0<count G)&0=count W 0);
                    (`G 		;G);
                    (`H 		;H);
                    (`I 		;I);
