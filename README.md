@@ -23,7 +23,7 @@ Concepts
 
 Hypertree2 is a q server which adds tree- and pivot-table calculation to [Hypergrid](http://openfin.github.io/fin-hypergrid/components/fin-hypergrid/demo.html?tab=4).
 
-Hypertree2 is based on an improved version of the algorithm used in [Hypertree](https://github.com/stevanapter/hypertree), described [here](http://archive.vector.org.uk/art10500340).
+Hypertree2 is based on an improved version of the algorithm described [here](http://archive.vector.org.uk/art10500340).
 
 What follows is a brief overview:
 
@@ -74,7 +74,7 @@ p[i] is the parent of element i:
 	q)p 5
     4
 
-We can "climb the tree" from any leaf to the root node:
+Ascend from any leaf to the root node:
 
 	q)p 8
 	5
@@ -90,14 +90,14 @@ The root is self-parenting:
 	q)p p p p p p 0
 	0
 
-So using "converge":
+Converge from any leaf to the root:
 
 	q)p over 8
 	0
 	q)p scan 8
 	8 5 4 0
 
-To generate all paths from ultimate constituents:
+Generate all paths from ultimate constituents:
 
 	q)i:(p scan)each til count p
 	q)i
@@ -117,7 +117,7 @@ The ultimate constituents:
 	q)l
 	2 3 6 7 8
 
-Now we can populate the leaves with data-elements:
+Populate the leaves with data-elements:
 
 	q)d:@[count[p]#0;l;:;l*10]
 	q)d
