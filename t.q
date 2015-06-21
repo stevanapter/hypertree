@@ -70,7 +70,7 @@ expand:{[t;g](opento[t;g]last g;P 1)}
 / columns
 visible:{[q;g;i]key[q]except g,i}
 invisible:{[w;t;a;q;f;g]$[count w 0;();distinct[cols[t],key a,q]except f,g]}
-groupable:{[t]exec c from meta first t where t in"bhijspmdznuvt"}
+groupable:{[t](exec c from meta t where t in"bhijspmdznuvt")except keys t}
 
 / rollups
 rollups:{[t;a;g;f]f#@[@[a;k;:;A[lower qtype[t]k],'k:cols[t]except key a];g;:;nul,'g]}
