@@ -17,7 +17,7 @@
 
 / utilities
 .js.snd:{neg[.js.K](`.js.exe;x)}
-.js.obj:{{x!get each x}Z,`$'"ACFGHIJLOPQRSTUVWXYZ"}
+.js.obj:{{x!get each x}Z,`$'"ACFGHIJLOPQRSTUVWZ"}
 .js.ret:{(x;.js.obj[])}
 .js.upd:{if[not null .js.K;Z set();P[1]:.ht.P 1;.js.snd .js.set()]}
 

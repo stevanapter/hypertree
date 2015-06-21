@@ -11,8 +11,6 @@ J:0b 							/ filter infinities?
 L:1b 							/ show leaves?
 U:0b 							/ show underlying records?
 V:1b 							/ show option popup?
-X:1b 							/ allow x-axis drilldown (pivot)?
-Y:1b 							/ allow y-axis drilldown (tree)?
 T:`t 							/ input table
 Z:`z 							/ output table
 K:(::) 							/ sort vector

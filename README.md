@@ -391,14 +391,6 @@ W: Pivot state = ((z-col;Q);selects;groups)
 	W keeps track of the sequence of pivot operations, and allows the user to unwind from the 
 	current to the previous pivot-state.
 
-X: Allow X-axis drilldown (pivot)?
-
-	X:1b
-
-Y: Allow Y-axis drilldown (treetable)?
-
-	Y:1b
-
 Z: Hypertree
 
 	Z:`
