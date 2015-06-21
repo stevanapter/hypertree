@@ -10,7 +10,6 @@ R:`start`end!0 60 				/ rows
 J:0b 							/ filter infinities?
 L:1b 							/ show leaves?
 U:0b 							/ show underlying records?
-V:1b 							/ show option popup?
 T:`t 							/ input table
 Z:`z 							/ output table
 K:(::) 							/ sort vector

@@ -376,12 +376,6 @@ U: Drill to the underlying table = allow empty grouping?
 
 	U:0b
 
-V: Pop up grouping/visibility panel?
-
-	V:1b
-
-	Setting V to 0b blocks the pop-up option-window.
-
 W: Pivot state = ((z-col;Q);selects;groups)
 
 	W:.ht.W = (();();())

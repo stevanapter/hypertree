@@ -22,7 +22,7 @@
                    (`O 		;.js.nnd .js.opt[W;C]O);
                    (`C        ;.js.cic[Q;G]W);
                    (`U 		;not U);
-                   (`V 		;V&0=count W 0);
+                   (`V 		;0=count W 0);
                    (`W        ;count[G]>2+count W 1);
                    (`E        ;(0<count G)&0=count W 0);
                    (`M 		;.js.msg[G;S]W))}
