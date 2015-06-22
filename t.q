@@ -8,7 +8,7 @@ mode:{[w;z;t;l;g;a;p;q]$[count w 0;pivot[t;a;g]w;tree[z;t;l;g;a;p]q]}
 
 / treetable calculations:  initial, expand a node, collapse a node
 tree:{[z;t;l;g;a;p;q]$[z~();rollup;count[p]>count q;expand1;collapse1][z;t;l;g;a;p]q}
-rollup:{[z;t;l;g;a;p;q]sys g xasc$[z~();cols[m]xcols root[t;g]a;cols[m]#z],m:steps[t;l;g;a]p}
+rollup:{[z;t;l;g;a;p;q]r:sys g xasc$[z~();cols[m]xcols root[t;g]a;cols[m]#z],m:steps[t;l;g;a]p}
 expand1:{[z;t;l;g;a;p;q]rollup[z;t;l;g;a;p except q]()}
 collapse1:{[z;t;l;g;a;p;q]sys delete from z where(-1_'exec n_ from z)in get each q except p}
 
@@ -73,10 +73,10 @@ invisible:{[w;t;a;q;f;g]$[count w 0;();distinct[cols[t],key a,q]except f,g]}
 groupable:{[t](exec c from meta t where t in"bhijspmdznuvt")except keys t}
 
 / rollups
-rollups:{[t;a;g;f]f#@[@[a;k;:;A[lower qtype[t]k],'k:cols[t]except key a];g;:;nul,'g]}
+rollups:{[t;a;g;f](f,g)#@[@[a;k;:;A[lower qtype[t]k],'k:cols[t]except key a];g;:;nul,'g]}
 nul:{first$[1=count distinct x;x;0#x]}
 seq:{$[1=count distinct x;first x;`$string[first x],"+"]}
-A:" bgxhijefcspmdznuvt"!(nul;any;nul;nul;sum;sum;sum;sum;sum;nul;nul;max;max;max;max;sum;max;max;max)
+A:" bgxhijefcspmdznuvt"!(nul;any;nul;nul;sum;sum;sum;sum;sum;nul;seq;max;max;max;max;sum;max;max;max)
 
 / cast <- type
 qtype:{exec c!t from meta x where not(c=lower c)&c like"?_"}
