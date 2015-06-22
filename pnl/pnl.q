@@ -26,7 +26,7 @@ trade:{[st;tr;r;d;t]
  i:exec id from tr where i in n?c;
  s:tr[flip enlist i;`symbol];
  p:(exec symbol!oprice from st)s;
- p+:(m?-1 0 1)*(m?.2)*p;
+ p+:(m?-1 0 1)*(m?.001)*p;
  q:(m?-1 1)*100*1+m?10;
  r,flip cols[r]!(i;s;d;t;p;q)}
 
