@@ -18,7 +18,7 @@ steps:{[t;l;g;a;p]raze nodes[t;l;g;a]'[key q;get q:p group key each p]}
 nodes:{[t;l;g;a;k;p]key[a]xcols$[g~k;leaf;node][t;l;sel[t;k]p;g;a]k}
 leaf:{[t;l;w;g;a;k]virtual[(b except c)#a]?[t;w;0b;({x!x}(c:cols t)inter b:key a),`g_`e_`n_`l_!(`i;1b;(flip;enlist,g,`i);1+count g)]}
 node:{[t;l;w;g;a;k]h:k,first c:g except k;![calc[t;w;h!h;a]1_c;();0b;`g_`e_`n_`l_!(last h;$[l;0b;g~h];(flip;enlist,h);count h)]}
-virtual:{[a;u]![u;();0b;?[0#u;();();(first 0#),/:enlist each a]]}
+virtual:{[a;u]$[count a;![u;();0b;?[0#u;();();(first 0#),/:enlist each a]];u]}
 calc:{[t;w;h;a;n]k:$[99h=type h;n,key h;n]_a;r:?[t;w;h;k];v:t[n][;0N];$[98h=type key r;@[0!r;n;:;v];r,n!v]}
 sel:{[t;k;p]$[0=count k;();all b:$[not[type p]|30>count p;psel[t]p;(k#t)in p];();enlist b]}
 psel:{[t;p]@[count[t]#0b;raze?[t;;();`i]each{flip(=;key x;sym each get x)}each p;:;1b]}
