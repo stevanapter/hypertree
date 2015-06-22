@@ -21,12 +21,12 @@ trades:([]
  qty:`int$())
 
 trade:{[st;tr;r;d;t]
- k:count n:neg m:floor per*c:count tr;
+ n:neg m:floor per*c:count tr;
  i:exec id from tr where i in n?c;
  s:tr[flip enlist i;`symbol];
  p:(exec symbol!oprice from st)s;
- p+:(m?1 -1)*(m?.2)*p;
- q:(m?1 -1)*100*m?50;
+ p+:(m?-1 0 1)*(m?.2)*p;
+ q:(m?-1 1)*100*1+m?10;
  r,flip cols[r]!(i;s;d;t;p;q)}
 
 trades:trade[stocks;traders]/[trades;dates;times]
