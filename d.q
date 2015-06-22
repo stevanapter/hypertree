@@ -7,7 +7,7 @@ T:`pnl
 Z:`z
 
 G:`strategy`unit`trader`symbol
-F:`symbol`pnl`real`unreal`qty`vwap
+F:`pnl`real`unreal`qty`vwap
 
 L:0b
 
