@@ -9,23 +9,23 @@
 .js.opt:{$[0=count x 0;z;not`columns in key z;z;not x[0;0]in key z`columns;z;@[z;`columns;:;y!count[y]#z[`columns]x[0;0]]]}
 
 / object -> js
-.js.obj:{(!). flip((`Z        ;.js.sub[get[Z]K;J]R);
-                   (`F        ;C);
-                   (`G 		;G);
-                   (`H 		;H);
-                   (`I 		;I);
-                   (`Q 		;Q);
-                   (`S 		;`cols`sorts!reverse each(key S;get S));
-                   (`R 		;R);
-                   (`N 		;count get Z);
-                   (`T 		;first T);
-                   (`O 		;.js.nnd .js.opt[W;C]O);
-                   (`C        ;.js.cic[Q;G]W);
-                   (`U 		;not U);
-                   (`V 		;0=count W 0);
-                   (`W        ;count[G]>2+count W 1);
-                   (`E        ;(0<count G)&0=count W 0);
-                   (`M 		;.js.msg[G;S]W))}
+.js.obj:{(!). flip((`hypertree      ;.js.sub[get[Z]K;J]R);
+                   (`visible        ;C);
+                   (`groups 		;G);
+                   (`groupable      ;H);
+                   (`invisible      ;I);
+                   (`qtypes 		;Q);
+                   (`sorts 		;`cols`sorts!reverse each(key S;get S));
+                   (`rows 		;R);
+                   (`count 		;count get Z);
+                   (`table 		;first T);
+                   (`properties     ;.js.nnd .js.opt[W;C]O);
+                   (`icons          ;.js.cic[Q;G]W);
+                   (`ungrouped      ;not U);
+                   (`reorderable    ;0=count W 0);
+                   (`cell           ;count[G]>2+count W 1);
+                   (`expand         ;(0<count G)&0=count W 0);
+                   (`message        ;.js.msg[G;S]W))}
 
 / icons
 .js.cic:{$[0=count y;()!();[w:0=count z 0;n:count k:key[x]except `;((1#`g_)!1#`u` w),$[w;k!n#`d;(`,k)!`,n#`d`u count[y]=2+count z 1]]]}
