@@ -15,7 +15,7 @@
 
 [Scripts](https://github.com/stevanapter/hypertree2#scripts)
 
-[Examples](https://github.com/stevanapter/hypertree2#examples)
+[Example](https://github.com/stevanapter/hypertree2#example)
 
 
 Concepts
@@ -475,17 +475,8 @@ Scripts
 	s.q             hypertree server process
 	
 
-Examples
---------
-
-The d.q script currently contains three examples.  These should be regarded as temporary testing examples, and are sure to change as we begin to explore the real-world uses of Hypertree.
-
-Example 0 is a simple table:
+Example
+-------
 
 <img src="images/example.gif">
-
-Example 1 uses a table generated from my Itunes library.
-
-Example 2 links yahoo stock prices (h/t Simon Garland) to a table of literal stock information.
-
 
