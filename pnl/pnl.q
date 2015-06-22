@@ -10,8 +10,8 @@ groups:{z,(1#x)!enlist(neg 1+rand count[y])?y}
 traders:ungroup groups[`strategy;strategies]each traders
 traders:ungroup groups[`symbol;exec symbol from stocks]each traders
 traders:1!`id`unit`trader`strategy`symbol xcols update id:til count traders from traders
-z:2015.06.22T09:30:00.000+00:01:00.000*til 391
-dates:z.date;times:z.time
+dt:2015.06.22T09:30:00.000+00:01:00.000*til 391
+dates:dt.date;times:dt.time
 
 trades:([]
  id:`int$();
