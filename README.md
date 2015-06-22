@@ -478,5 +478,36 @@ Scripts
 Example
 -------
 
+	pnl:get`:pnl/pnl
+	
+	T:`pnl
+	Z:`z
+
+	G:`strategy`unit`trader`symbol
+	F:`pnl`real`unreal`qty`vwap
+
+	L:0b
+
+	A:()!()
+	A[`N_]:(count;`qty)
+	A[`qty]:(sum;`qty)
+	A[`pnl]:(sum;`pnl)
+	A[`real]:(sum;`real)
+	A[`unreal]:(sum;`unreal)
+	A[`oprice]:(avg;`oprice)
+	A[`cprice]:(avg;`cprice)
+	A[`vwap]:(avg;`vwap)
+
+	S:()!()
+	S[`pnl]:`D
+
+	O.columns.pnl:`USD
+	O.columns.oprice:`USD
+	O.columns.cprice:`USD
+	O.columns.vwap:`USD
+	O.columns.real:`USD
+	O.columns.unreal:`USD
+	O.columns.qty:`QTY
+
 <img src="images/example.gif">
 

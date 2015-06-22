@@ -1,4 +1,4 @@
-// default data script (-ds)
+// default data script
 
 \e 1
 
