@@ -44,13 +44,14 @@ T:`pnl
 Z:`z
 
 G:`strategy`unit`trader`symbol
-F:`pnl`real`unreal`qty`vwap
+F:`pnl`real`unreal`qty`volume`vwap
 
 L:0b
 
 A:()!()
 A[`N_]:(count;`qty)
 A[`qty]:(sum;`qty)
+A[`volume]:(sum;(abs;`qty))
 A[`pnl]:(sum;`pnl)
 A[`real]:(sum;`real)
 A[`unreal]:(sum;`unreal)
@@ -68,6 +69,7 @@ O.columns.vwap:`USD
 O.columns.real:`USD
 O.columns.unreal:`USD
 O.columns.qty:`QTY
+O.columns.volume:`QTY
 
 \t 5000
 .z.ts:{calc[stocks;traders;.z.D;.z.T];.js.upd`;}
