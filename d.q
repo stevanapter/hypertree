@@ -6,10 +6,10 @@ pnl:get`:pnl/pnl
 T:`pnl
 Z:`z
 
-G:`strategy`unit`trader
+G:`strategy`unit`trader`symbol
 F:`symbol`pnl`real`unreal`qty`vwap
 
-L:1b
+L:0b
 
 A:()!()
 A[`N_]:(count;`qty)
