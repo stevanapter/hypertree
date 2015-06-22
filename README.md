@@ -1,29 +1,29 @@
-# Hypertree2
+# Hypertree
 
 
-[Concepts](https://github.com/stevanapter/hypertree2#concepts)
+[Concepts](https://github.com/stevanapter/hypertree#concepts)
 
-[Structure](https://github.com/stevanapter/hypertree2#structure)
+[Structure](https://github.com/stevanapter/hypertree#structure)
 
-[Events](https://github.com/stevanapter/hypertree2#events)
+[Events](https://github.com/stevanapter/hypertree#events)
 
-[Parameters](https://github.com/stevanapter/hypertree2#parameters)
+[Parameters](https://github.com/stevanapter/hypertree#parameters)
 
-[Calculation](https://github.com/stevanapter/hypertree2#calculation)
+[Calculation](https://github.com/stevanapter/hypertree#calculation)
 
-[Use](https://github.com/stevanapter/hypertree2#use)
+[Use](https://github.com/stevanapter/hypertree#use)
 
-[Scripts](https://github.com/stevanapter/hypertree2#scripts)
+[Scripts](https://github.com/stevanapter/hypertree#scripts)
 
-[Example](https://github.com/stevanapter/hypertree2#example)
+[Example](https://github.com/stevanapter/hypertree#example)
 
 
 Concepts
 --------
 
-Hypertree2 is a q server which adds tree- and pivot-table calculation to [Hypergrid](http://openfin.github.io/fin-hypergrid/components/fin-hypergrid/demo.html?tab=4).
+Hypertree is a q server which adds tree- and pivot-table calculation to [Hypergrid](http://openfin.github.io/fin-hypergrid/components/fin-hypergrid/demo.html?tab=4).
 
-Hypertree2 is based on an improved version of the algorithm described [here](http://archive.vector.org.uk/art10500340).
+Hypertree is based on an improved version of the algorithm described [here](http://archive.vector.org.uk/art10500340).
 
 What follows is a brief overview:
 
@@ -479,7 +479,7 @@ Example
 -------
 
 	pnl:get`:pnl/pnl
-	
+
 	T:`pnl
 	Z:`z
 
