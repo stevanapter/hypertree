@@ -31,9 +31,10 @@ trade:{[st;tr;r;d;t]
  r,flip cols[r]!(i;s;d;t;p;q)}
 
 trades:trade[stocks;traders]/[trades;dates;times]
-t:select qty:sum qty,cprice:last price,wprice:qty wavg price by id from trades
-pnl:(0!traders lj update real:qty*wprice,unreal:qty*cprice from t)lj stocks
-pnl:update wprice:0n from pnl where 0w=abs wprice
+t:select qty:sum qty,cprice:last price,vwap:qty wavg price by id from trades
+pnl:(0!traders lj update real:qty*vwap,unreal:qty*cprice from t)lj stocks
+pnl:update pnl:real+unreal from pnl;
+pnl:update vwap:0n from pnl where 0w=abs vwap
 
 save`:pnl/pnl
 
