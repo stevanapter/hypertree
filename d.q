@@ -26,25 +26,24 @@ trade:{[st;tr;r;d;t]
  i:exec id from tr where i in n?c;
  s:tr[flip enlist i;`symbol];
  p:(exec symbol!oprice from st)s;
- p+:(m?-1 0 1)*(m?.001)*p;
+ p+:(m?-1 0 1)*(m?.01)*p;
  q:(m?-1 1)*100*1+m?10;
  r,flip cols[r]!(i;s;d;t;p;q)}
 
 calc:{[stocks;traders;date;time]
  trades::trade[stocks;traders;trades;date;time];
- t:select qty:sum qty,cprice:last price,vwap:qty wavg price by id from trades;
+ t:select trades:count id,qty:sum qty,cprice:last price,vwap:qty wavg price by id from trades;
  u:(0!traders lj update real:qty*vwap,unreal:qty*cprice from t)lj stocks;
  u:select from u where not null qty;
  u:update pnl:real+unreal from u;
  pnl::update vwap:0n from u where 0w=abs vwap;
  }
 
-pnl:0#get`:pnl/pnl
 T:`pnl
 Z:`z
 
 G:`strategy`unit`trader`symbol
-F:`pnl`real`unreal`qty`volume`vwap
+F:`pnl`real`unreal`qty`volume`trades`vwap
 
 L:0b
 
@@ -52,6 +51,7 @@ A:()!()
 A[`N_]:(count;`qty)
 A[`qty]:(sum;`qty)
 A[`volume]:(sum;(abs;`qty))
+A[`trades]:(sum;`trades)
 A[`pnl]:(sum;`pnl)
 A[`real]:(sum;`real)
 A[`unreal]:(sum;`unreal)
