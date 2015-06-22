@@ -2,7 +2,44 @@
 
 \e 1
 
-pnl:get`:pnl/pnl
+sym:50
+per:.05
+
+traders:get`:pnl/traders
+stocks:1!sym?get`:pnl/stocks
+strategies:`statarb`pairs`mergerarb`chart`other`distressed`arbitrage
+groups:{z,(1#x)!enlist(neg 1+rand count[y])?y}
+traders:ungroup groups[`strategy;strategies]each traders
+traders:ungroup groups[`symbol;exec symbol from stocks]each traders
+traders:1!`id`unit`trader`strategy`symbol xcols update id:til count traders from traders
+
+trades:([]
+ id:`int$();
+ symbol:`symbol$();
+ date:`date$();
+ time:`time$();
+ price:`float$();
+ qty:`int$())
+
+trade:{[st;tr;r;d;t]
+ n:neg m:floor per*c:count tr;
+ i:exec id from tr where i in n?c;
+ s:tr[flip enlist i;`symbol];
+ p:(exec symbol!oprice from st)s;
+ p+:(m?-1 0 1)*(m?.2)*p;
+ q:(m?-1 1)*100*1+m?10;
+ r,flip cols[r]!(i;s;d;t;p;q)}
+
+calc:{[stocks;traders;date;time]
+ trades::trade[stocks;traders;trades;date;time];
+ t:select qty:sum qty,cprice:last price,vwap:qty wavg price by id from trades;
+ u:(0!traders lj update real:qty*vwap,unreal:qty*cprice from t)lj stocks;
+ u:select from u where not null qty;
+ u:update pnl:real+unreal from u;
+ pnl::update vwap:0n from u where 0w=abs vwap;
+ }
+
+pnl:0#get`:pnl/pnl
 T:`pnl
 Z:`z
 
@@ -31,6 +68,9 @@ O.columns.vwap:`USD
 O.columns.real:`USD
 O.columns.unreal:`USD
 O.columns.qty:`QTY
+
+\t 5000
+.z.ts:{calc[stocks;traders;.z.D;.z.T];.js.upd`;}
 
 \
 
