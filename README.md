@@ -464,6 +464,7 @@ Scripts
 	d.q             data and parameter definition
 	e.q             hypergrid events
 	t.q             hypertree calculation
+	i.q 			initial state (used by reset)
 	j.q             javascript interaction utilities
 	x.q             hypertree parameters
 	a.q             auxilliary functions

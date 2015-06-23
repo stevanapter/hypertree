@@ -6,6 +6,7 @@
 \l x.q
 \l a.q
 \l d.q
+\l i.q
 \l j.q
 \l e.q
 \l l.q

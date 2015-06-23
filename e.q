@@ -7,7 +7,8 @@
 .js.sorts:{[d]`S set .js.sad[Q]d[`cols]!d`sorts;`K set .ht.sort[get Z;G;S]W;.js.ret d}
 .js.groups:{[d]`F`G set'.js.sym d`visible`groups;`P set .ht.valid[P]G;Z set();.js.set d}
 .js.get:{[d]`R set`start`end!"j"$d`start`end;.js.ret d}
-.js.reset:{[d]if[count W 2;`G set W[2]0];(Z,`S`P`W`K)set'(();()!();.ht.P;(();();());::);.js.set d}
+/ .js.reset:{[d]if[count W 2;`G set W[2]0];(Z,`S`P`W`K)set'(();()!();.ht.P;(();();());::);.js.set d}
+.js.reset:{[d](Z,`G`F`S`P`W)set'(();G_;F_;S_;P_;W_);.js.set d}
 .js.expand:{[d]`P set .ht.expand[0!get T]G;.js.set d}
 .js.collapse:{[d]Z set();`P set .ht.P;.js.set d}
 .js.swap:{[d]`G set G[1 0],2_G;`P set .ht.valid[P]G;Z set();.js.set d}
