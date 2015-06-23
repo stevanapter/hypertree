@@ -3,7 +3,7 @@
 \e 1
 
 sym:50
-per:.05
+per:.005
 
 traders:get`:pnl/traders
 stocks:1!sym?get`:pnl/stocks
@@ -19,16 +19,16 @@ trade:{[st;tr;d;t]
  s:tr[flip enlist i;`symbol];
  p:(exec symbol!oprice from st)s;
  p+:(m?-1 0 1)*(m?.001)*p;
- q:(m?-1 1)*100*1+m?10;
+ q:1.*(m?-1 1)*100*1+m?10;
  r:([]id:i;symbol:s;date:d;time:t;price:p;qty:q);
- / r,:update qty:neg qty,price*1.00005 from r;
- r}
+ o:0!select symbol:`ESI,date:first date,time:first time,price:6.17,qty:neg(sum price*qty)%6.17*0.9995 by id from r;
+ r,o}
 
 calc:{[stocks;traders;date;time]
  trades,:trade[stocks;traders;date;time];
- t:select trades:count id,qty:sum qty,cprice:last price,vwap:qty wavg price by id from trades;
+ t:select trades:count id,qty:sum qty,cprice:last price,vwap:qty wavg price by id,symbol from trades;
  u:(0!traders lj update real:qty*vwap,unreal:qty*cprice from t)lj stocks;
- u:update pnl:real+unreal from select from u where not null qty;
+ u:update"j"$qty,pnl:real+unreal from select from u where not null qty;
  pnl::update vwap:0n from u where 0w=abs vwap;
  }
 
