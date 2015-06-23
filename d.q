@@ -14,14 +14,14 @@ traders:ungroup groups[`symbol;exec symbol from stocks]each traders
 traders:1!`id`unit`trader`strategy`symbol xcols update id:til count traders from traders
 
 trade:{[st;tr;d;t]
- n:floor (neg m:floor per*c:count tr);
- i:exec id from tr where i in n?c;
+ m:floor per*c:count tr;
+ i:exec id from tr where i in neg[m]?c;
  s:tr[flip enlist i;`symbol];
  p:(exec symbol!oprice from st)s;
  p+:(m?-1 0 1)*(m?.001)*p;
  q:(m?-1 1)*100*1+m?10;
  r:([]id:i;symbol:s;date:d;time:t;price:p;qty:q);
- r,:update qty:neg qty,price*1.00005 from r;
+ / r,:update qty:neg qty,price*1.00005 from r;
  r}
 
 calc:{[stocks;traders;date;time]
