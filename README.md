@@ -25,7 +25,7 @@ Hypertree is a q server which adds tree- and pivot-table calculation to [Hypergr
 
 Hypertree is based on an improved version of the algorithm described [here](http://archive.vector.org.uk/art10500340).
 
-What follows is a brief overview:
+What follows is a brief overview.
 
 Suppose our tree has the following structure:
 
@@ -51,7 +51,7 @@ Data-elements are attached to the leaves of the tree:
 	   7 - 70
 	   8 - 80
 
-To calculate sums for the nodes of the tree we calculate iteratively, bottom-up:
+Aggregations at the nodes are calculated iteratively, bottom-up:
 
 	0 = 2 + 3 + 6 + 7 + 8
 	1 = 2 + 3
@@ -65,7 +65,7 @@ The iterative method requires that we have in hand the ultimate constituents -- 
 	4 : 5
 	5 : 6 7 8
 
-we compute the leaves of each node by first constructing the "parent vector" of our tree:
+We compute the leaves by first constructing the "parent vector" of our tree:
 
 	p:0 0 1 1 0 4 5 5 5
 
