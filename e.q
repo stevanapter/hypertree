@@ -9,7 +9,11 @@
 .js.get:{[d]`R set`start`end!"j"$d`start`end;.js.ret d}
 .js.reset:{[d]if[count W 2;`G set W[2]0];(Z,`S`P`W`K)set'(();()!();.ht.P;(();();());::);.js.set d}
 .js.expand:{[d]`P set .ht.expand[0!get T]G;.js.set d}
-.js.collapse:{[d]Z set();`P set .ht.P;:.js.set d}
+.js.collapse:{[d]Z set();`P set .ht.P;.js.set d}
+.js.swap:{[d]`G set G[1 0],2_G;`P set .ht.valid[P]G;Z set();.js.set d}
+.js.left:{[d]`G set 1 rotate G;`P set .ht.valid[P]G;Z set();.js.set d}
+.js.right:{[d]`G set -1 rotate G;`P set .ht.valid[P]G;Z set();.js.set d}
+.js.flip:{[d]}
 
 / event utilities
 .js.sad:{$[count k:key y;k!{$[z in`a`d;z;not x[y]in"sc";z;lower z]}[x]'[k;get y];()!()]}
