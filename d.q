@@ -13,25 +13,19 @@ traders:ungroup groups[`strategy;strategies]each traders
 traders:ungroup groups[`symbol;exec symbol from stocks]each traders
 traders:1!`id`unit`trader`strategy`symbol xcols update id:til count traders from traders
 
-trades:([]
- id:`int$();
- symbol:`symbol$();
- date:`date$();
- time:`time$();
- price:`float$();
- qty:`int$())
-
-trade:{[st;tr;r;d;t]
- n:neg m:floor per*c:count tr;
+trade:{[st;tr;d;t]
+ n:floor (neg m:floor per*c:count tr);
  i:exec id from tr where i in n?c;
  s:tr[flip enlist i;`symbol];
  p:(exec symbol!oprice from st)s;
- p+:(m?-1 0 1)*(m?.01)*p;
+ p+:(m?-1 0 1)*(m?.001)*p;
  q:(m?-1 1)*100*1+m?10;
- r,flip cols[r]!(i;s;d;t;p;q)}
+ a:([]id:i;symbol:s;date:d;time:t;price:p;qty:q);
+ b:update qty:neg qty,price:price*1.00005 from a;
+ a,b}
 
 calc:{[stocks;traders;date;time]
- trades::trade[stocks;traders;trades;date;time];
+ trades,:trade[stocks;traders;date;time];
  t:select trades:count id,qty:sum qty,cprice:last price,vwap:qty wavg price by id from trades;
  u:(0!traders lj update real:qty*vwap,unreal:qty*cprice from t)lj stocks;
  u:select from u where not null qty;
