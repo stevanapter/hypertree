@@ -19,9 +19,9 @@ trade:{[st;tr;d;t]
  s:tr[flip enlist i;`symbol];
  p:(exec symbol!oprice from st)s;
  p+:(m?-1 0 1)*(m?.001)*p;
- q:1.*(m?-1 1)*100*1+m?10;
+ q:(m?-1 1.)*100*1+m?10;
  r:([]id:i;symbol:s;date:d;time:t;price:p;qty:q);
- o:0!select symbol:`ESI,date:first date,time:first time,price:6.17,qty:neg(sum price*qty)%6.17*0.9995 by id from r;
+ o:0!select symbol:`HEDGE,first date,first time,price:5.0,qty:neg(sum price*qty)%5.0*0.9995 by id from r;
  r,o}
 
 calc:{[stocks;traders;date;time]
