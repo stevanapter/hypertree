@@ -89,17 +89,17 @@ sort:{[t;g;s;w]$[count s;tsort[t;$[count w 0;();g];key s]get s;(::)]}
 
 tsort:{[t;g;c;o]
  if[0=count g;:0,1+msort[1_t;c]o];
- if[`g_~first -1_c;c:`G_,1_c;t:update G_:?[l_>1;`;g_]from t];
- n:reverse exec i by L_ from s:dsort[t;g;c;o]where L_>0;
- 0,raze$[1=count n;s[`I_]n;merge[s;g]/[();key n;get n]]}
+ if[`g_~first -1_c;c:`g__,1_c;t:update g__:?[l_>1;`;g_]from t];
+ n:reverse exec i by l__ from s:dsort[t;g;c;o]where l__>0;
+ 0,raze$[1=count n;s[`i__]n;merge[s;g]/[();key n;get n]]}
 
 dsort:{[t;g;c;o]
- a:!/[g,/:(`I_`L_;`i`l_)];c:c!csort[c]o;s:1=count distinct o:(<:;>:)o in`d`D;
+ a:!/[g,/:(`i__`l__;`i`l_)];c:c!csort[c]o;s:1=count distinct o:(<:;>:)o in`d`D;
  $[s;?[t;();0b;a;0W;(first o;esort c)];?[t;();0b;a]rsort[t;c]o]}
 
 msort:{[t;c;o]{x y z x}/[::;(`a`d`A`D!(iasc;idesc;iasc abs@;idesc abs@))o;t c]}
 csort:{[c;o]@[flip(@;abs;c;c);i;:;c i:where o in`a`d]}
 rsort:{[t;c;o]{x y z x}/[::;reverse o;?[t;();();enlist,reverse get c]]}
 esort:{[c]$[1=count c;first c;(flip;(!;enlist key c;enlist,get c))]}
-level:{[s;g;n;i]c:((m:n&count g)#g),`I_;(delete I_ from t)!flip enlist(t:(c#s)i)`I_}
+level:{[s;g;n;i]c:((m:n&count g)#g),`i__;(delete i__ from t)!flip enlist(t:(c#s)i)`i__}
 merge:{[s;g;x;n;i]v:level[s;g;n;i];$[count x;@[v;(keys v)#key x;,;get x];v]}

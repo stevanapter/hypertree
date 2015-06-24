@@ -141,7 +141,7 @@ Structure
 
 Given table T (the underlying table) + Hypertree Parameters (see below) .ht.cons produces Z, the Hypertree table.
 
-Column names a_ through z_ are reserved for Hypertree use.
+Column names beginning with a lower-case letter followed by one or more _'s are reserved for Hypertree use.
 
 The Hypertree table structure is encoded in the following six columns:
 
@@ -165,8 +165,6 @@ The Hypertree table structure is encoded in the following six columns:
 	o_:  open?
 	p_:  parent vector
 	g_:  last each n_ (hierarchy column)
-
-z_ is used internally as a dummy column.
 
 
 Events
