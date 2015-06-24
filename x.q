@@ -13,7 +13,7 @@ J:0b 							/ filter infinities?
 K:(::) 							/ sort vector
 L:1b 							/ show leaves?
 M:()
-N:()
+N::count get T 					/ row count
 O.:(::) 						/ properties
 P:.ht.P 						/ path	
 Q::.ht.qtype Z 					/ types
