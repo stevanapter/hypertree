@@ -37,13 +37,16 @@ pivot:{[t;a;g;w]
 / pivot calc
 pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string asc distinct t x;x;z)]}
 
+/ swap axes
+swap:{[g;w]y:g 0;x:$[count w 1;first 1_g except w[1;;1];g 1];@[g;g?y,x;:;g g?x,y]}
+
 / row event = treetable drilldown
 row:{[b;p;g;n]`n xasc'(p[0],([n:enlist(count[n]#g)!n,()]v:enlist b);p 0)}
 
 / col event = pivot down/up
-col:{[z;w;g;q;c]zcol[z].$[null c;(w;g);(count[g]=2+count w 1)|c=`g_;gcol[w]g;wcol[w;g;q]c]}
+col:{[z;w;g;q;c]zcol[z].$[null c;(w;g);c=`g_;gcol[w]g;wcol[w;g;q]c]}
 wcol:{[w;g;q;c]$[0=count w 0;(((c;q);w 1;());g);((w 0;wsel[g;c;w 1]w[0;1];w[2],enlist g);g)]}
-gcol:{[w;g]$[count w 1;(0 -1 -1_'w;last w 2);((();();());g)]}
+gcol:{[w;g]$[count w 1;0N!(0 -1 -1_'w;last w 2);((();();());g)]}
 wsel:{[g;c;s;q]$[last[g]=k:g 1+count s;s;s,ceq[k;c]q k]}
 zcol:{[z;w;g]($[count w 1;z;()];w;g)}
 
