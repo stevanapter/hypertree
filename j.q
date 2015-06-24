@@ -24,7 +24,6 @@
                    (`ungrouped      ;not U);
                    (`reorderable    ;0=count W 0);
                    (`cell           ;count[G]>3+count W 1);
-                   (`expand         ;(0<count G)&0=count W 0);
                    (`buttons        ;.js.buttons[G]W);
                    (`message        ;.js.msg[G;S]W))}
 
