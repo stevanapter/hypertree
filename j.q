@@ -23,6 +23,7 @@
                    (`icons          ;.js.cic[Q;G]W);
                    (`ungrouped      ;not U);
                    (`reorderable    ;0=count W 0);
+                   (`swapable       ;2<=count G);
                    (`cell           ;count[G]>3+count W 1);
                    (`expand         ;(0<count G)&0=count W 0);
                    (`message        ;.js.msg[G;S]W))}
