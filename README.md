@@ -299,6 +299,10 @@ L: Expand to leaves?
 	is not desired (for example, because there are too many ultimate records, or because the
 	data at the leaves is not interesting), set L to 1b.
 
+N: Row count
+
+	N::count get T
+
 O: Object properties
 
 	O.:(::)
@@ -375,6 +379,10 @@ T: Table
 U: Drill to the underlying table = allow empty grouping?
 
 	U:0b
+
+V: Update?
+
+	V:1b
 
 W: Pivot state = ((z-col;Q);selects;groups)
 
