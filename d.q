@@ -32,6 +32,8 @@ calc:{[stocks;traders;date;time]
  pnl::update vwap:0n from u where 0w=abs vwap;
  }
 
+calc[stocks;traders;.z.D].z.T
+
 T:`pnl
 Z:`z
 
@@ -64,8 +66,8 @@ O.columns.unreal:`USD
 O.columns.qty:`QTY
 O.columns.volume:`QTY
 
+.z.ts:{calc[stocks;traders;.z.D].z.T;.js.upd`;}
 \t 5000
-.z.ts:{calc[stocks;traders;.z.D;.z.T];.js.upd`;}
 
 \
 

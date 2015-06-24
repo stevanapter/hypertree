@@ -1,20 +1,28 @@
 // globals
 
-P:.ht.P 						/ path	
-S:()!() 						/ sort
-W:(();();()) 					/ pivot state
 A:()!() 						/ aggregations
-O.:(::) 						/ properties
-Q::.ht.qtype Z 					/ types
-R:`start`end!0 60 				/ rows
-J:0b 							/ filter infinities?
-L:1b 							/ show leaves?
-U:0b 							/ show underlying records?
-T:`t 							/ input table
-Z:`z 							/ output table
-K:(::) 							/ sort vector
+B:()
+C::.ht.visible[Q;G]I 			/ visible columns
+D:()
+E:()
 F:0#` 							/ aggregated columns
 G:0#` 							/ grouping columns
-I::.ht.invisible[W;T;A;Q;F]G 	/ invisible columns
-C::.ht.visible[Q;G]I 			/ visible columns
 H::.ht.groupable T 				/ groupable columns
+I::.ht.invisible[W;T;A;Q;F]G 	/ invisible columns
+J:0b 							/ filter infinities?
+K:(::) 							/ sort vector
+L:1b 							/ show leaves?
+M:()
+N:()
+O.:(::) 						/ properties
+P:.ht.P 						/ path	
+Q::.ht.qtype Z 					/ types
+R:`start`end!0 60 				/ rows
+S:()!() 						/ sort
+T:`t 							/ input table
+U:0b 							/ show underlying records?
+V:1b 							/ update?
+W:(();();()) 					/ pivot state
+X:()
+Y:()
+Z:`z 							/ output table
