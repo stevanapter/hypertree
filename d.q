@@ -2,38 +2,6 @@
 
 \e 1
 
-/ alternate example
-
-symbol:`msft`amat`csco`intc`yhoo`aapl
-trader:`chico`harpo`groucho`zeppo`moe`larry`curly`shemp`abbott`costello
-sector:`energy`materials`industrials`financials`healthcare`utilities`infotech
-strategy:`statarb`pairs`mergerarb`house`chart`indexarb
-
-n:100000
-t:([N:til n]
- symbol:n?symbol;
- sector:n?sector;
- trader:n?trader;
- strategy:n?strategy;
- price:{0.01*"i"$100*x}20+n?400.;
- quantity:-1 1[n?2]*n?100;
- date:2000.01.01+asc n?5;
- time:09:30:00.0+n?06:30)
-
-L:1b
-T:`t
-Z:`z
-G:`trader`sector`strategy`symbol`date`time
-F:`N_`price`wprice`quantity
-A:()!()
-A[`N_]:(count;`price)
-A[`wprice]:(wavg;`quantity;`price)
-
-O.columns.price:`USD
-O.columns.pnl:`USD
-
-\
-
 sym:50
 per:.005
 
