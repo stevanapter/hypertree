@@ -31,7 +31,7 @@ drill:{[b;p;g;n]`n xasc'(p[0],([n:enlist(count[n]#g)!n,()]v:enlist b);p 0)}
 
 / pivot table calculation
 pivot:{[t;a;g;w]
- h:{y,x except y}[g]g[0],g 1+count w 1;f:1#c:w[0]0;u:?[t;w 1;0b;()];
+ h:{y,x except y}[g]g[0],g 1+count w 1;c:w[0]0;u:?[t;w 1;0b;()];
  z:tree[();u;0b;h;a;exec n from opento[u;h]h 1]();
  r:flip enlist 1_cols z:`n_ xcol 0!pcalc[z;c]. 2#h;z[`n_]:enlist[0#`],flip enlist 1_z`n_;
  z[0;1_cols z]:xkey[`g_;tree[();u;0b;1_h;a;exec n from P 0]()][r;c];
