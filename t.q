@@ -29,17 +29,6 @@ sym:{$[-11h=type x;enlist x;x]}
 / treetable row event = drilldown
 drill:{[b;p;g;n]`n xasc'(p[0],([n:enlist(count[n]#g)!n,()]v:enlist b);p 0)}
 
-/ pivot table calculation
-pivot:{[t;a;g;w]
- h:{y,x except y}[g]g[0],g 1+count w 1;c:w[0]0;u:?[t;w 1;0b;()];
- z:tree[();u;0b;h;a;exec n from opento[u;h]h 1]();
- r:flip enlist 1_cols z:`n_ xcol 0!pcalc[z;c]. 2#h;z[`n_]:enlist[0#`],flip enlist 1_z`n_;
- z[0;1_cols z]:xkey[`g_;tree[();u;0b;1_h;a;exec n from P 0]()][r;c];
- flip flip[z],`o_`p_`g_`e_`l_!(1b;0N;last each z`n_;1b;0)}
-
-/ pivot table (h/t: nick psaris, Q-TIPS)
-pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string asc distinct t x;x;z)]}
-
 / pivot row event = select + Y
 row:{[z;x;w;g;q;c;r](z;@[w;1 2;,;(ceq[c;r]w[0;1]c;enlist g)];k,g except k:g 1+g?x)}
 
@@ -52,6 +41,17 @@ zcol:{[z;w;g]($[count w 1;z;()];w;g)}
 
 / pivot constraint: column = value
 ceq:{[c;v;q]enlist(=;c;(1*"s"=lower q)enlist/upper[q]$string v)}
+
+/ pivot table calculation
+pivot:{[t;a;g;w]
+ h:{y,x except y}[g]g[0],g 1+count w 1;c:w[0]0;u:?[t;w 1;0b;()];
+ z:tree[();u;0b;h;a;exec n from opento[u;h]h 1]();
+ r:flip enlist 1_cols z:`n_ xcol 0!pcalc[z;c]. 2#h;z[`n_]:enlist[0#`],flip enlist 1_z`n_;
+ z[0;1_cols z]:xkey[`g_;tree[();u;0b;1_h;a;exec n from P 0]()][r;c];
+ flip flip[z],`o_`p_`g_`e_`l_!(1b;0N;last each z`n_;1b;0)}
+
+/ pivot table (h/t: nick psaris, Q-TIPS)
+pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string asc distinct t x;x;z)]}
 
 / path constant
 P:(([n:enlist(0#`)!0#`]v:enlist 1b);([n:()]v:til 0))
