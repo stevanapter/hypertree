@@ -21,17 +21,16 @@
                    (`table 		;first T);
                    (`properties     ;.js.nnd .js.opt[W;C]O);
                    (`icons          ;.js.cic[Q;G]W);
-                   (`ungrouped      ;.js.var T);
+                   (`ungrouped      ;V);
                    (`reorderable    ;0=count W 0);
                    (`cell           ;count[G]>3+count W 1);
-                   (`buttons        ;.js.buttons[G]W);
+                   (`buttons        ;.js.buttons[G;U]W);
                    (`message        ;.js.msg[G;X;Y;S]W))}
 
 / buttons
-.js.buttons:{[g;w]
+.js.buttons:{[g;u;w]
  e:(0<count g)&0=count w 0;s:2<=count g;
- v:$[0=system"t";0b;V];
- (!). flip((`reset;1b);(`expand;e);(`collapse;e);(`swap;s);(`up;s);(`down;s);(`pause;v))}
+ (!). flip((`reset;1b);(`expand;e);(`collapse;e);(`swap;s);(`up;s);(`down;s);(`pause;u))}
 
 / icons
 .js.cic:{$[0=count y;()!();[w:0=count z 0;n:count k:key[x]except `;((1#`g_)!1#`u` w),$[w;k!n#`d;(`,k)!`,n#`d` count[y]=2+count z 1]]]}

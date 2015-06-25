@@ -21,7 +21,7 @@ R:`start`end!0 60 								/ rows
 S:()!() 										/ sort
 T:`t 											/ input table
 U:1b 											/ update?
-V:()
+V::.js.var T 									/ does T exist
 W:(();();()) 									/ pivot state
 Y::G 0 											/ Y axis
 X::$[count W 1;first 1_G except W[1;;1];G 1]	/ X axis
