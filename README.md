@@ -245,8 +245,6 @@ Parameters
 
 Hypertree behavior is controlled by a set of programmer-defined global variables.
 
-Variables defined as dependencies can be overriden by the programmer.
-
 A: Rollups
 
 	Rollup expressions are q parse-trees:
