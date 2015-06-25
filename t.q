@@ -26,6 +26,9 @@ used:{exec n from x where min'[v{x\'[til count x]}n?-1_'n]}
 sys:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
 sym:{$[-11h=type x;enlist x;x]}
 
+/ treetable row event = drilldown
+drill:{[b;p;g;n]`n xasc'(p[0],([n:enlist(count[n]#g)!n,()]v:enlist b);p 0)}
+
 / pivot table calculation
 pivot:{[t;a;g;w]
  h:{y,x except y}[g]g[0],g 1+count w 1;f:1#c:w[0]0;u:?[t;w 1;0b;()];
@@ -34,19 +37,20 @@ pivot:{[t;a;g;w]
  z[0;1_cols z]:xkey[`g_;tree[();u;0b;1_h;a;exec n from P 0]()][r;c];
  flip flip[z],`o_`p_`g_`e_`l_!(1b;0N;last each z`n_;1b;0)}
 
+/ pivot table (h/t: nick psaris, Q-TIPS)
 pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string asc distinct t x;x;z)]}
 
-/ row event = treetable drilldown
-row:{[b;p;g;n]`n xasc'(p[0],([n:enlist(count[n]#g)!n,()]v:enlist b);p 0)}
+/ pivot row event = select + Y
+row:{[z;x;w;g;q;c;r](z;@[w;1 2;,;(ceq[c;r]w[0;1]c;enlist g)];k,g except k:g 1+g?x)}
 
-/ col event = pivot down/up
+/ pivot col event = Y
 col:{[z;w;g;q;c]zcol[z].$[null c;(w;g);c=`g_;gcol[w]g;wcol[w;g;q]c]}
 wcol:{[w;g;q;c]$[0=count w 0;(((c;q);w 1;());g);((w 0;wsel[g;c;w 1]w[0;1];w[2],enlist g);g)]}
 gcol:{[w;g]$[count w 1;0N!(0 -1 -1_'w;last w 2);((();();());g)]}
 wsel:{[g;c;s;q]$[last[g]=k:g 1+count s;s;s,ceq[k;c]q k]}
 zcol:{[z;w;g]($[count w 1;z;()];w;g)}
 
-/ cell event = pivot + select
+/ pivot cell event = select + X Y
 cell:{[z;w;g;q;c;r]a:col[z;w;g;q]c;$[g~h:cellof[g]. a 1;(z;w;g);cellxy[a 0;g;h;r]. a 1]}
 cellxy:{[z;g;h;r;v;w;i]w,:ceq[g 0;r 0]v[1]g 0;i,:enlist g;(z;(v;w;i);h)}
 cellof:{[g;v;w;i]$[0=count v;g;0=count w;g[1 0],2_g;null k:g 2+g?last[w]1;g;k,g except k]}

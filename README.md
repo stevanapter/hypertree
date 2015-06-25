@@ -172,12 +172,25 @@ Events
 
 Hypertree understands a limited number of user-initiated events:
 
-	row:		click on an element in the Hierarchy column to expand from or contract to 
-				that row.
+	row:		in treetable mode:
+
+					click on an element in the Hierarchy column to expand from or contract to 
+					that row.
+
+				in pivot mode:
+
+					click on an element in the Hierarchy column to select that row-value and 
+					explode on the next group.
 
 <img src="images/row.jpg">
 
-	col:		click on a column to pivot the table.
+	col:		in treetable mode:
+
+					click on a column to pivot the table on the column-value.
+
+				in pivot mode:
+
+					click on a column to select that column-value and explode on the next group.
 
 <img src="images/col.jpg">
 
