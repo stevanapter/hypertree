@@ -170,7 +170,7 @@ The Hypertree table structure is encoded in the following six columns:
 Events
 ------
 
-Hypertree understands a limited number of user-initiated events:
+Hypertree understands the following Hypergrid click-events:
 
 	row:		in treetable mode:
 
@@ -194,13 +194,11 @@ Hypertree understands a limited number of user-initiated events:
 
 <img src="images/col.jpg">
 
-	cell:		click on a cell to restrict the table to the row-value and pivot the resulting
-				table on the column-value.
+	cell:		double-click on a cell to restrict the table to the row-value and pivot the 
+				resulting table on the column-value.
 
 	sorts:		multi-sort the table ascending, descending, ascending-absolute-value, 
 				descending-absolute-value.
-
-	get:		send a subtable of the current state of the table to Hypergrid.
 
 	groups:		press the alt/option key to summon a window which allows drag-and-drop 
 				regrouping of the table, and to select which columns of the table are visible.
@@ -220,7 +218,11 @@ Hypertree understands a limited number of user-initiated events:
 
 	up:			rotate group-vector:  G = x y .. z -> z x y ..
 
-	down:		rotate group-vector:  G = x y .. z -> y .. z x			
+	down:		rotate group-vector:  G = x y .. z -> y .. z x
+
+On scrolling, Hypergrid requests a subtable	of Z:
+
+	get:		send a subtable of the current state of Z to Hypergrid.
 
 Hypertree also supports update.  For example, if the underlying table is t:
 
