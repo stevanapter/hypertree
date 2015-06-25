@@ -383,13 +383,9 @@ T: Table
 
 		T:(`t;u)
 
-U: Drill to the underlying table = allow empty grouping?
+U: Update?
 
-	U:0b
-
-V: Update?
-
-	V:1b
+	U:1b
 
 W: Pivot state = ((z-col;Q);selects;groups)
 

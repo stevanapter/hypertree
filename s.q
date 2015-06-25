@@ -20,7 +20,7 @@
 .js.snd:{neg[.js.K](`.js.exe;x)}
 .js.obj:{{x!get each x}Z,`$'"ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
 .js.ret:{(x;.js.obj[])}
-.js.upd:{if[V;if[not null .js.K;Z set();P[1]:.ht.P 1;.js.snd .js.set()]]}
+.js.upd:{if[U;if[not null .js.K;Z set();P[1]:.ht.P 1;.js.snd .js.set()]]}
 
 / define Z
 .js.set();

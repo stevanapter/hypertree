@@ -21,7 +21,7 @@
                    (`table 		;first T);
                    (`properties     ;.js.nnd .js.opt[W;C]O);
                    (`icons          ;.js.cic[Q;G]W);
-                   (`ungrouped      ;not U);
+                   (`ungrouped      ;.js.var T);
                    (`reorderable    ;0=count W 0);
                    (`cell           ;count[G]>3+count W 1);
                    (`buttons        ;.js.buttons[G]W);
