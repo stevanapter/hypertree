@@ -13,7 +13,7 @@
 .js.swap:{[d]$[0=count W 0;[`G set G[1 0],2_G;`P set .ht.valid[P]G;Z set()];`G set .ht.swap[G]W];.js.set d}
 .js.up:{[d]`G set 1 rotate G;`P set .ht.valid[P]G;Z set();.js.set d}
 .js.down:{[d]`G set -1 rotate G;`P set .ht.valid[P]G;Z set();.js.set d}
-.js.pause:{[d]if[0<system"t";`V set not V];.js.ret d}
+.js.pause:{[d]`V set not V;.js.ret d}
 
 / event utilities
 .js.sad:{$[count k:key y;k!{$[z in`a`d;z;not x[y]in"sc";z;lower z]}[x]'[k;get y];()!()]}
