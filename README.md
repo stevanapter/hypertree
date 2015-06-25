@@ -395,10 +395,18 @@ W: Pivot state = ((z-col;Q);selects;groups)
 
 	W:.ht.W = (();();())
 
-	Pivot and Y-Axis drill-down operations are mutually exclusive.
+	Pivot and Y Axis drill-down operations are mutually exclusive.
 
 	W keeps track of the sequence of pivot operations, and allows the user to unwind from the 
 	current to the previous pivot-state.
+
+X: X axis
+
+	X::G 0
+
+Y: Y axis
+
+	X::$[count W 1;first 1_G except W[1;;1];G 1]
 
 Z: Hypertree
 

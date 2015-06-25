@@ -34,11 +34,7 @@ pivot:{[t;a;g;w]
  z[0;1_cols z]:xkey[`g_;tree[();u;0b;1_h;a;exec n from P 0]()][r;c];
  flip flip[z],`o_`p_`g_`e_`l_!(1b;0N;last each z`n_;1b;0)}
 
-/ pivot calc
 pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string asc distinct t x;x;z)]}
-
-/ swap axes
-swap:{[g;w]y:g 0;x:$[count w 1;first 1_g except w[1;;1];g 1];@[g;g?y,x;:;g g?x,y]}
 
 / row event = treetable drilldown
 row:{[b;p;g;n]`n xasc'(p[0],([n:enlist(count[n]#g)!n,()]v:enlist b);p 0)}
