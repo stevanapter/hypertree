@@ -2,14 +2,14 @@
 
 / events
 .js.row:{[d]if[0=count W 0;if[h:count G;if[(L|m<h)&0<m:count n:.js.cnv[G;Q]d`row;if[count[get Z]>r:Z[`n_]?n;`P set .ht.row[not Z[`o_]r;P;G]n;:.js.set d]]]]}
-.js.col:{[d]`P set .ht.P;`S set()!();(Z,`W`G)set'.ht.col[get Z;W;G;Q]d`col;.js.set d}
-.js.cell:{[d]`P set .ht.P;`S set()!();(Z,`W`G)set'.ht.cell[get Z;W;G;Q]. d`col`row;.js.set d}
+.js.col:{[d]`P`S set'(.ht.P;()!());(Z,`W`G)set'.ht.col[get Z;W;G;Q]d`col;.js.set d}
+.js.cell:{[d]`P`S set'(.ht.P;()!());(Z,`W`G)set'.ht.cell[get Z;W;G;Q]. d`col`row;.js.set d}
 .js.sorts:{[d]`S set .js.sad[Q]d[`cols]!d`sorts;`K set .ht.sort[get Z;G;S]W;.js.ret d}
 .js.groups:{[d]`F`G set'.js.sym d`visible`groups;`P set .ht.valid[P]G;Z set();.js.set d}
 .js.get:{[d]`R set`start`end!"j"$d`start`end;.js.ret d}
 .js.reset:{[d](Z,`G`F`S`P`W`V)set'(();G_;F_;S_;P_;W_;V_);.js.set d}
 .js.expand:{[d]`P set .ht.expand[0!get T]G;.js.set d}
-.js.collapse:{[d]Z set();`P set .ht.P;.js.set d}
+.js.collapse:{[d](Z,`P)set'(();.ht.P);.js.set d}
 .js.swap:{[d]$[0=count W 0;[`G set G[1 0],2_G;`P set .ht.valid[P]G;Z set()];`G set .ht.swap[G]W];.js.set d}
 .js.up:{[d]`G set 1 rotate G;`P set .ht.valid[P]G;Z set();.js.set d}
 .js.down:{[d]`G set -1 rotate G;`P set .ht.valid[P]G;Z set();.js.set d}
