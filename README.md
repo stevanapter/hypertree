@@ -249,20 +249,20 @@ A: Rollups
 
 	Rollup expressions are q parse-trees:
 
-	A:()!()
-	A[`f]:(avg;`f)
+		A:()!()
+		A[`f]:(avg;`f)
 	
 	Hypertree will use sensible defaults (e.g. sum for numeric.)
 
 	Multiple rollups can be defined for a single column:
 
-	A[`f`g`h]:((sum;`a);(avg;`a);(max;`a))
+		A[`f`g`h]:((sum;`a);(avg;`a);(max;`a))
 
 	Rollup functions map lists to atoms.  If the type of column c is t, then the
 	type of the rollup of c must be -t.
 
 	Columns defined in A which do not appear in T are "virtual":  their leaves are
-	display as nulls.  E.g., in the following example g is virtual:
+	displayed as nulls.  E.g., in the following example g is virtual:
 
 		t:([]f:10 20 30)
 		T:`t
@@ -272,11 +272,13 @@ F: Visible columns in order
 
 	F:0#`
 
-G: Grouping columns
+G: Grouping columns in order
 
 	G:0#`
 
 	Any subset of exec c from meta first T where t in"bhijspmdznuvt".
+
+	Keys of the underlying table are not groupable.
 
 	Hypertree understands grouping by symbolic and "discrete" values (including dates and 
 	times.)
@@ -317,7 +319,7 @@ L: Expand to leaves?
 
 	By default, Hypertree expands to display the leaves of the treetable.  If this behavior
 	is not desired (for example, because there are too many ultimate records, or because the
-	data at the leaves is not interesting), set L to 1b.
+	data at the leaves is not interesting), set L to 0b.
 
 N: Row count
 
@@ -343,8 +345,8 @@ P: Instruction state = (current;prior)
 
 	The state of the Hypertree is represented as a pair of keytables.  P 0 represents the 
 	current state, and P 1 represents the previous state.  n (the key) is a list of paths to
-	nodes which have been opened, and v is a boolean vector saying whether the corresponding 
-	node is open or closed.
+	nodes which have at any time been opened, and v is a boolean vector saying whether the 
+	corresponding node is now open or closed.
 
 	For example:
 
@@ -378,6 +380,11 @@ S: Sorts = cols!(..{`a`d`A`D}..)
 
 	S:()!()
 
+	a = ascending
+	d = descending
+	A = ascending absolute
+	D = descending absolute
+
 	For example:  S:`foo`bar!`D`a for ascending bar within descending-absolute foo.
 
 T: Table
@@ -400,6 +407,8 @@ U: Update?
 
 	U:1b
 
+	U can be toggled by means of the Pause button.
+
 W: Pivot state = ((z-col;Q);selects;groups)
 
 	W:.ht.W = (();();())
@@ -411,11 +420,11 @@ W: Pivot state = ((z-col;Q);selects;groups)
 
 X: X axis
 
-	X::G 0
+	X::$[count W 1;first 1_G except W[1;;1];G 1]
 
 Y: Y axis
 
-	X::$[count W 1;first 1_G except W[1;;1];G 1]
+	Y::G 0
 
 Z: Hypertree
 
