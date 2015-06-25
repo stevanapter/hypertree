@@ -50,11 +50,6 @@ gcol:{[w;g]$[count w 1;0N!(0 -1 -1_'w;last w 2);((();();());g)]}
 wsel:{[g;c;s;q]$[last[g]=k:g 1+count s;s;s,ceq[k;c]q k]}
 zcol:{[z;w;g]($[count w 1;z;()];w;g)}
 
-/ pivot cell event = select + X Y
-cell:{[z;w;g;q;c;r]a:col[z;w;g;q]c;$[g~h:cellof[g]. a 1;(z;w;g);cellxy[a 0;g;h;r]. a 1]}
-cellxy:{[z;g;h;r;v;w;i]w,:ceq[g 0;r 0]v[1]g 0;i,:enlist g;(z;(v;w;i);h)}
-cellof:{[g;v;w;i]$[0=count v;g;0=count w;g[1 0],2_g;null k:g 2+g?last[w]1;g;k,g except k]}
-
 / pivot constraint: column = value
 ceq:{[c;v;q]enlist(=;c;(1*"s"=lower q)enlist/upper[q]$string v)}
 
