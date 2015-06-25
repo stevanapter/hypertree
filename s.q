@@ -6,8 +6,8 @@
 \l x.q
 \l a.q
 \l d.q
-\l i.q
 \l e.q
+\l i.q
 \l l.q
 
 / connect to client
