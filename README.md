@@ -227,6 +227,8 @@ Hypertree understands the following Hypergrid click-events:
 
 	down:		rotate group-vector:  G = x y .. z -> y .. z x
 
+Columns may be rearranged through drag-and-drop.
+
 On scrolling, Hypergrid requests a subtable	of Z:
 
 	get:		send a subtable of the current state of Z to Hypergrid.
