@@ -16,8 +16,8 @@
 .js.reset:{[d](Z,`G`F`S`P`W`U)set'(();G_;F_;S_;P_;W_;U_);.js.set d}
 .js.expand:{[d]`P set .ht.expand[0!get T]G;.js.set d}
 .js.collapse:{[d](Z,`P)set'(();.ht.P);.js.set d}
-.js.forth:.js.pivot_ 1
 .js.back:.js.pivot_ -1
+.js.forth:.js.pivot_ 1
 .js.swap:{[d]$[0=count W 0;[`G set G[1 0],2_G;`P set .ht.valid[P]G;Z set()];@[`G;G?Y,X;:;G G?X,Y]];.js.set d}
 .js.up:{[d]`G set 1 rotate G;`P set .ht.valid[P]G;Z set();.js.set d}
 .js.down:{[d]`G set -1 rotate G;`P set .ht.valid[P]G;Z set();.js.set d}
