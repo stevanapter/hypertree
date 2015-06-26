@@ -161,6 +161,7 @@ The Hypertree table structure is encoded in the six columns n_, e_, l_, o_, p_, 
 
 	n_:  path to record
 	e_:  leaf?
+	l_:  level (0 = root, i>0 = child of i-1)
 	o_:  open?
 	p_:  parent vector
 	g_:  last each n_ (hierarchy column)
