@@ -254,6 +254,8 @@ Parameters
 
 Hypertree behavior is controlled by a set of programmer-defined global variables.
 
+Dependencies (*var::def) are internal functions and should not be redefined.  Other variables may be initialized on startup as part of d.q.
+
 A: Rollups
 
 	Rollup expressions are q parse-trees:
@@ -277,6 +279,16 @@ A: Rollups
 		T:`t
 		A[`g]:(count;`f)
 
+B: Not used
+
+*C: Visible columns
+
+	C::.ht.visible[Q;G]I
+
+D: Not used
+
+E: Not used
+
 F: Visible columns in order
 
 	F:0#`
@@ -296,15 +308,11 @@ G: Grouping columns in order
 
 <img src="images/t.jpg">
 
-H: Groupable columns
+*H: Groupable columns
 
 	H::.ht.groupable T 
 
-C: Visible columns
-
-	C::.ht.visible[Q;G]I
-
-I: Invisible columns
+*I: Invisible columns
 
 	I::.ht.invisible[W;T;A;Q;F]G
 
@@ -330,7 +338,9 @@ L: Expand to leaves?
 	is not desired (for example, because there are too many ultimate records, or because the
 	data at the leaves is not interesting), set L to 0b.
 
-N: Row count
+M: Not used
+
+*N: Row count
 
 	N::count get T
 
@@ -375,7 +385,7 @@ P: Instruction state = (current;prior)
 	`trader`sector!`costello`energy               | 1
 	`trader`sector`strategy!`costello`energy`house| 1
 
-Q: q-types
+*Q: q-types
 
 	Q::.ht.qtype get Z
 
@@ -400,7 +410,7 @@ T: Table
 
 	The table underlying Hypertree, either keyed or unkeyed.
 
-		T:`t
+	T:`t
 
 U: Update?
 
@@ -417,11 +427,11 @@ W: Pivot state = ((z-col;Q);selects;groups)
 	W keeps track of the sequence of pivot operations, and allows the user to unwind from the 
 	current to the previous pivot-state.
 
-X: X axis
+*X: X axis
 
 	X::$[count W 1;first 1_G except W[1;;1];G 1]
 
-Y: Y axis
+*Y: Y axis
 
 	Y::G 0
 
