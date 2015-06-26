@@ -38,7 +38,7 @@
 / state -> message
 .js.msg:{[g;x;y;s;w]
  r:`Table`Rows`Index!(string T;string N;"/"sv string get R);
- if[count g                   ;r[`Groups]:","sv string$[count w 2;last w 2;g]];
+ if[(0=count w 0)&count g     ;r[`Groups]:","sv string g];
  if[count s                   ;r[`Sorts]:","sv string[key s]{$[x~"g_";"Hierarchy";x],"[",y,"]"}'string get s];
  if[count w 0                 ;r[`Pivot]:string w[0;0];r[`Y]:y;if[not count w 1;r[`X]:x]];
  if[count w 1                 ;r[`X]:x;r[`Where]:","sv({y,"=",z 0}.)each string w 1];
