@@ -12,7 +12,8 @@
 .js.cell:{[d].js.col_ d;.js.row`col _ d}
 .js.sorts:{[d]`S set .js.sad[Q]d[`cols]!d`sorts;`K set .ht.sort[get Z;G;S]W;.js.ret d}
 .js.groups:{[d]`F`G set'.js.sym d`visible`groups;`P set .ht.valid[P]G;Z set();.js.set d}
-.js.get:{[d]`R set`start`end!"j"$d`start`end;.js.ret d}
+
+/ buttons
 .js.reset:{[d](Z,`G`F`S`P`W`U)set'(();G_;F_;S_;P_;W_;U_);.js.set d}
 .js.expand:{[d]`P set .ht.expand[0!get T]G;.js.set d}
 .js.collapse:{[d](Z,`P)set'(();.ht.P);.js.set d}
@@ -22,6 +23,9 @@
 .js.up:{[d]`G set 1 rotate G;`P set .ht.valid[P]G;Z set();.js.set d}
 .js.down:{[d]`G set -1 rotate G;`P set .ht.valid[P]G;Z set();.js.set d}
 .js.pause:{[d]`U set not U;.js.ret d}
+
+/ scrolling
+.js.get:{[d]`R set`start`end!"j"$d`start`end;.js.ret d}
 
 / event utilities
 .js.sad:{$[count k:key y;k!{$[z in`a`d;z;not x[y]in"sc";z;lower z]}[x]'[k;get y];()!()]}
