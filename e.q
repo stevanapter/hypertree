@@ -6,7 +6,6 @@
 .js.drill_:{[d]if[(L|m<h)&(h:count G)&0<m:count n:.js.cnv[G;Q]d`row;if[count[get Z]>r:Z[`n_]?n;`P set .ht.drill[not Z[`o_]r;P;G]n;:d]]}
 .js.pivot_:{[x;d]`P`S set'(.ht.P;()!());(Z,`W`G)set'.ht.pivot[get Z;W;G;Q;F]x;.js.set d}
 
-
 / events
 .js.row:{[d].js.set$[0=count W 0;.js.drill_ d;X<>last G;.js.row_ d]}
 .js.col:{[d].js.set .js.col_ d}
