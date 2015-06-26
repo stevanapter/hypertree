@@ -17,6 +17,8 @@
 
 [Example](https://github.com/stevanapter/hypertree#example)
 
+[Enhancements](https://github.com/stevanapter/hypertree#enhancements)
+
 
 Concepts
 --------
@@ -143,12 +145,9 @@ Given table T (the underlying table) + Hypertree Parameters (see below) .ht.cons
 
 Column names beginning with a lower-case letter followed by one or more _'s are reserved for Hypertree use.
 
-The Hypertree table structure is encoded in the following six columns:
+The Hypertree table structure is encoded in the six columns n_, e_, l_, o_, p_, and g_:
 
-	q).ht.C
-	`n_`e_`l_`o_`p_`g_
-
-	q)?[Z;();0b;.ht.C!.ht.C]
+	q)?[Z;();0b;c!c:`n_`e_`l_`o_`p_`g_]
 	n_                          e_ l_ o_ p_ g_         
 	---------------------------------------------------
 	()                          0  0  1  0             
@@ -211,11 +210,14 @@ Hypertree understands the following Hypergrid click-events:
 
 	collapse:	collapse the tree to the level of the first group.
 
-	swap:		treetable display: swap the first two groups;
-				pivot-table display: transpose the X and Y axes.
+	swap:		in treetable mode: 
 
-				G = x y .. z -> y x .. z
+					swap top 2 groups:  G = x y .. z -> y x .. z
+				
+				in pivot mode:
 
+					transpose X and Y:  X Y -> Y X
+				
 	up:			rotate group-vector:  G = x y .. z -> z x y ..
 
 	down:		rotate group-vector:  G = x y .. z -> y .. z x
@@ -276,7 +278,7 @@ G: Grouping columns in order
 
 	G:0#`
 
-	Any subset of exec c from meta first T where t in"bhijspmdznuvt".
+	Any subset of exec c from meta T where t in"bhijspmdznuvt".
 
 	Keys of the underlying table are not groupable.
 
@@ -391,17 +393,7 @@ T: Table
 
 	The table underlying Hypertree, either keyed or unkeyed.
 
-	default: 
-
-		T:`
-
-	dynamic rollup calculation: 
-
 		T:`t
-
-    ***** [NYI] static rollups, u is a dictionary of rollup tables:
-
-		T:(`t;u)
 
 U: Update?
 
@@ -428,42 +420,15 @@ Y: Y axis
 
 Z: Hypertree
 
-	Z:`
+	Z:`z
 
-	Z is symmetrical with T:  a pointer to the hypertree result-table.
+	Z is symmetrical with T:  a pointer to the Hypertree result-table.
 
 
 Calculation
 -----------
 
 Hypertree calculates rollups on every Y-axis drilldown event, and on every X- or XY-pivot event, and on every update to the underlying data.
-
-Dynamic rollups:
-
-	T:`t
-
-Static rollups [***** NB: not yet implemented for Hypertree2 *****]:
-
-	Create a dictionary whose keys are a subset of the permutations of G.
-
-	q).af.set`:t
-	q).af.get`:t
-	sector   strategy trader  | :../t/sector.strategy.trader
-	sector   trader   strategy| :../t/sector.trader.strategy
-	strategy sector   trader  | :../t/strategy.sector.trader
-	strategy trader   sector  | :../t/strategy.trader.sector
-	trader   sector   strategy| :../t/trader.sector.strategy
-	trader   strategy sector  | :../t/trader.strategy.sector
-
-	Then in d.q:
-
-	T:(`t;.af.get`:t)   (OR:  u:.af.get`:t;T:`t`u)
-
-	u is a dictionary whose keys are drawn from the permutations g of G and whose values 
-	are symbols of, or the actual complete rollup trees for t and each g.
-
-	if U is set to 1b, then H should be set to G, to prevent the definition of hierarchies
-	which are not keys of d.
 
 
 Use
@@ -522,3 +487,26 @@ Example
 
 <img src="images/example.gif">
 
+
+Enhancements
+------------
+
+Static rollups:
+
+	Create a dictionary whose keys are a subset of the permutations of G.
+
+	q).af.set`:t
+	q).af.get`:t
+	sector   strategy trader  | :../t/sector.strategy.trader
+	sector   trader   strategy| :../t/sector.trader.strategy
+	strategy sector   trader  | :../t/strategy.sector.trader
+	strategy trader   sector  | :../t/strategy.trader.sector
+	trader   sector   strategy| :../t/trader.sector.strategy
+	trader   strategy sector  | :../t/trader.strategy.sector
+
+	Then in d.q:
+
+	T:(`t;.af.get`:t)   (OR:  u:.af.get`:t;T:`t`u)
+
+	u is a dictionary whose keys are drawn from the permutations g of G and whose values 
+	are symbols of, or the actual complete rollup trees for t and each g.
