@@ -54,7 +54,7 @@ matrix:{[t;a;g;w]
 pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string asc distinct t x;x;z)]}
 
 / "z-axis" = pivot columns
-pivot:{[z;w;g;q;b;d]$[0=count w 0;col[z;w;g;q]b 0;zcol[z;.[w;0 0;:;first(d+b?w[0;0])rotate b]]g]}
+pivot:{[z;w;g;q;f;d]$[0=count w 0;col[z;w;g;q]f 0;zcol[z;.[w;0 0;:;first(d+f?w[0;0])rotate f]]g]}
 
 / path constant
 P:(([n:enlist(0#`)!0#`]v:enlist 1b);([n:()]v:til 0))

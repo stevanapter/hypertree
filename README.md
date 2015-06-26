@@ -210,6 +210,10 @@ Hypertree understands the following Hypergrid click-events:
 
 	collapse:	collapse the tree to the level of the first group.
 
+	left:		left-rotate the column list F and pick the first column.
+
+	right:		right-rotate the column list F and pick the first column.
+
 	swap:		in treetable mode: 
 
 					swap top 2 groups:  G = x y .. z -> y x .. z
