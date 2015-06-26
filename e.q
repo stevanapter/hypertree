@@ -4,6 +4,8 @@
 .js.row_:{[d]`P`S set'(.ht.P;()!());(Z,`W`G)set'.ht.row[get Z;X;W;G;Q].(Y;first d`row);d}
 .js.col_:{[d]`P`S set'(.ht.P;()!());(Z,`W`G)set'.ht.col[get Z;W;G;Q]d`col;d}
 .js.drill_:{[d]if[(L|m<h)&(h:count G)&0<m:count n:.js.cnv[G;Q]d`row;if[count[get Z]>r:Z[`n_]?n;`P set .ht.drill[not Z[`o_]r;P;G]n;:d]]}
+.js.pivot_:{[x;d]`P`S set'(.ht.P;()!());(Z,`W`G)set'.ht.pivot[get Z;W;G;Q;B]x;.js.set d}
+
 
 / events
 .js.row:{[d].js.set$[0=count W 0;.js.drill_ d;X<>last G;.js.row_ d]}
@@ -15,6 +17,8 @@
 .js.reset:{[d](Z,`G`F`S`P`W`U)set'(();G_;F_;S_;P_;W_;U_);.js.set d}
 .js.expand:{[d]`P set .ht.expand[0!get T]G;.js.set d}
 .js.collapse:{[d](Z,`P)set'(();.ht.P);.js.set d}
+.js.left:.js.pivot_ 1
+.js.right:.js.pivot_ -1
 .js.swap:{[d]$[0=count W 0;[`G set G[1 0],2_G;`P set .ht.valid[P]G;Z set()];@[`G;G?Y,X;:;G G?X,Y]];.js.set d}
 .js.up:{[d]`G set 1 rotate G;`P set .ht.valid[P]G;Z set();.js.set d}
 .js.down:{[d]`G set -1 rotate G;`P set .ht.valid[P]G;Z set();.js.set d}

@@ -4,7 +4,7 @@
 
 / construct treetable
 cons:{[z;t;l;p;a;g;f;w]mode[w;z;t;l;g;rollups[t;a;g]f]. used each p}
-mode:{[w;z;t;l;g;a;p;q]$[count w 0;pivot[t;a;g]w;tree[z;t;l;g;a;p]q]}
+mode:{[w;z;t;l;g;a;p;q]$[count w 0;matrix[t;a;g]w;tree[z;t;l;g;a;p]q]}
 
 / treetable calculations:  initial, expand a node, collapse a node
 tree:{[z;t;l;g;a;p;q]$[z~();rollup;count[p]>count q;expand1;collapse1][z;t;l;g;a;p]q}
@@ -43,7 +43,7 @@ zcol:{[z;w;g]($[count w 1;z;()];w;g)}
 ceq:{[c;v;q]enlist(=;c;(1*"s"=lower q)enlist/upper[q]$string v)}
 
 / pivot table calculation
-pivot:{[t;a;g;w]
+matrix:{[t;a;g;w]
  h:{y,x except y}[g]g[0],g 1+count w 1;c:w[0]0;u:?[t;w 1;0b;()];
  z:tree[();u;0b;h;a;exec n from opento[u;h]h 1]();
  r:flip enlist 1_cols z:`n_ xcol 0!pcalc[z;c]. 2#h;z[`n_]:enlist[0#`],flip enlist 1_z`n_;
@@ -52,6 +52,9 @@ pivot:{[t;a;g;w]
 
 / pivot table (h/t: nick psaris, Q-TIPS)
 pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string asc distinct t x;x;z)]}
+
+/ "z-axis" = pivot columns
+pivot:{[z;w;g;q;b;d]$[0=count w 0;col[z;w;g;q]b 0;zcol[z;.[w;0 0;:;first(d+b?w[0;0])rotate b]]g]}
 
 / path constant
 P:(([n:enlist(0#`)!0#`]v:enlist 1b);([n:()]v:til 0))

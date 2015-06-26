@@ -1,7 +1,7 @@
 // globals
 
 A:()!() 										/ aggregations
-B:()
+B::F											/ pivot rotation columns
 C::.ht.visible[Q;G]I 							/ visible columns
 D:()
 E:()
