@@ -22,7 +22,7 @@ S:()!() 										/ sort
 T:`t 											/ input table
 U:1b 											/ update?
 V::.js.var T 									/ does T exist
-W:(();();()) 									/ pivot state
+W:(();();();()) 								/ pivot state
 Y::G 0 											/ Y axis
 X::$[count W 1;first 1_G except W[1;;1];G 1]	/ X axis
 Z:`z 											/ output table

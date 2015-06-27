@@ -422,14 +422,16 @@ U: Update?
 
 	V::.js.var T 
 
-W: Pivot state = ((z-col;Q);selects;groups)
+W: Pivot state = ((z-col;Q);selects;groups;sorts)
 
-	W:.ht.W = (();();())
+	W:.ht.W = (();();();())
 
 	Pivot and Y Axis drill-down operations are mutually exclusive.
 
 	W keeps track of the sequence of pivot operations, and allows the user to unwind from the 
-	current to the previous pivot-state.
+	current to the previous pivot-state.  
+
+	NEW: Sorts are now preserved.
 
 *X: X axis
 

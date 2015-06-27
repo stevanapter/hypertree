@@ -30,12 +30,12 @@ sym:{$[-11h=type x;enlist x;x]}
 drill:{[b;p;g;n]`n xasc'(p[0],([n:enlist(count[n]#g)!n,()]v:enlist b);p 0)}
 
 / pivot row event = select + Y
-row:{[z;x;w;g;q;s;c;r](z;@[w;1 2;,;(ceq[c;r]w[0;1]c;enlist g)];k,g except k:g 1+g?x;()!())}
+row:{[z;x;w;g;q;s;c;r](z;@[w;1 2 3;,;(ceq[c;r]w[0;1]c;enlist g;2 enlist/()!())];k,g except k:g 1+g?x;()!())}
 
 / pivot col event = Y
 col:{[z;w;g;q;s;c]zcol[z].$[null c;(w;g;s);c=`g_;gcol[w]g;wcol[w;g;q;s]c]}
-wcol:{[w;g;q;s;c]$[0=count w 0;(((c;q;s);w 1;());g;()!());((w 0;wsel[g;c;w 1]w[0;1];w[2],enlist g);g;()!())]}
-gcol:{[w;g]$[count w 1;(0 -1 -1_'w;last w 2;()!());((();();());g;w[0;2])]}
+wcol:{[w;g;q;s;c]$[0=count w 0;(((c;q;s);w 1;();());g;()!());((w 0;wsel[g;c;w 1]w[0;1];w[2],enlist g;w[3],2 enlist/s);g;()!())]}
+gcol:{[w;g]$[count w 1;(0 -1 -1 -1_'w;last w 2;first last w 3);((();();();());g;w[0;2])]}
 wsel:{[g;c;s;q]$[last[g]=k:g 1+count s;s;s,ceq[k;c]q k]}
 zcol:{[z;w;g;s]($[count w 1;z;()];w;g;s)}
 
