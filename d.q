@@ -89,22 +89,26 @@ t:([N:til n]
  date:2000.01.01+asc n?5;
  time:09:30:00.0+n?06:30)
 
+t:update pnl:quantity*price-prev price by symbol from t
+
 L:1b
 T:`t
 Z:`z
 G:`trader`sector`strategy`symbol`date`time
-F:`N_`price`wprice`quantity
+F:`N_`pnl`price`wprice`quantity
 A:()!()
 A[`N_]:(count;`price)
 A[`wprice]:(wavg;`quantity;`price)
 
 O.columns.price:`USD
+O.columns.wprice:`USD
 O.columns.pnl:`USD
+O.columns.quantity:`QTY
 
 / update
 .z.ts:{
- t[::;`quantity]+:-1 1[n?2]*n?100;t[::;`price]+:-.5+n?1.;
- t[::;`strategy]:n?strategy;
- t::update pnl:quantity*price-prev price by symbol from t;
+ t[::;`quantity]+:-1 1[n?2]*n?100;t[::;`price]+:-.5+n?1.;		/ inputs to pnl
+ t[::;`strategy]:n?strategy;									/ group col
+ t::update pnl:quantity*price-prev price by symbol from t;		/ recalc pnl
  .js.upd`;
  }
