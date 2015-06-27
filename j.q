@@ -3,17 +3,17 @@
 .js.nnd:{$[99=type x;.z.s each(key[x]except`)#x;x]}
 .js.sub:{i:(::;.js.inf)y;flip each(i 1#x;.js.idx[i 1_x]. z`start`end)}
 .js.idx:{$[0 0W~y,z;x;y>=count x;0#x;((1+z-y)&count r)#r:y _ x]}
-.js.ret:{x,.js.obj[]}
+.js.ret:{if[99h=type x;:x,.js.obj[]]}
 .js.sym:{$[()~x;0#`;(t:abs type x)in 0 99h;.z.s each x;10=t;`$x;x]}
 .js.inf:{k:exec c!t$1%0 from meta x where t in"ijf";![x;();0b;key[k]!({@[x;where x in y,neg y;:;first 0#x]};;)'[key k;get k]]}
 .js.opt:{$[0=count x 0;z;not`columns in key z;z;not x[0;0]in key z`columns;z;@[z;`columns;:;y!count[y]#z[`columns]x[0;0]]]}
 
 / object -> js
 .js.obj:{(!). flip((`hypertree      ;.js.sub[get[Z]K;J]R);
-                   (`visible        ;$[count W 0;C except`;C]);
-                   (`groups 		;$[count W 0;0#`;G]);
+                   (`visible        ;C);
+                   (`groups 		;G);
                    (`groupable      ;H);
-                   (`invisible      ;$[count W 0;0#`;I]);
+                   (`invisible      ;I);
                    (`qtypes 		;Q);
                    (`sorts 		;`cols`sorts!reverse each(key S;get S));
                    (`rows 		;R);
@@ -22,7 +22,7 @@
                    (`properties     ;.js.nnd .js.opt[W;C]O);
                    (`icons          ;.js.cic[Q;G]W);
                    (`ungrouped      ;V);
-                   (`reorderable    ;1b|0=count W 0);
+                   (`reorderable    ;0=count W 0);
                    (`cell           ;count[G]>3+count W 1);
                    (`buttons        ;.js.buttons[G;U]W);
                    (`message        ;.js.msg[G;X;Y;S]W))}

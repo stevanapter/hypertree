@@ -8,8 +8,8 @@
 .js.groups:{[d]`F`G set'.js.sym d`visible`groups;`P set .ht.valid[P]G;Z set();.js.set d}
 
 / event functions
-.js.row_:{[d]`P`S set'(.ht.P;()!());(Z,`W`G)set'.ht.row[get Z;X;W;G;Q].(Y;first d`row);d}
-.js.col_:{[d]`P`S set'(.ht.P;()!());(Z,`W`G)set'.ht.col[get Z;W;G;Q]d`col;d}
+.js.row_:{[d]`P set .ht.P;(Z,`W`G`S)set'.ht.row[get Z;X;W;G;Q;S].(Y;first d`row);d}
+.js.col_:{[d]`P set .ht.P;(Z,`W`G`S)set'.ht.col[get Z;W;G;Q;S]d`col;d}
 .js.drill_:{[d]if[(L|m<h)&(h:count G)&0<m:count n:.js.cnv[G;Q]d`row;if[count[get Z]>r:Z[`n_]?n;`P set .ht.drill[not Z[`o_]r;P;G]n;:d]]}
 .js.pivot_:{[x;d]`P`S set'(.ht.P;()!());(Z,`W`G)set'.ht.pivot[get Z;W;G;Q;F]x;.js.set d}
 
