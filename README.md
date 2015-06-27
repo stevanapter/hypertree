@@ -418,6 +418,10 @@ U: Update?
 
 	U can be toggled by means of the Pause button.
 
+*V: Does T exist?  (0b = client, 1b = server or standalone)
+
+	V::.js.var T 
+
 W: Pivot state = ((z-col;Q);selects;groups)
 
 	W:.ht.W = (();();())
