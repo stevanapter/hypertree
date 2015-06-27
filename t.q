@@ -35,7 +35,7 @@ row:{[z;x;w;g;q;c;r](z;@[w;1 2;,;(ceq[c;r]w[0;1]c;enlist g)];k,g except k:g 1+g?
 / pivot col event = Y
 col:{[z;w;g;q;c]zcol[z].$[null c;(w;g);c=`g_;gcol[w]g;wcol[w;g;q]c]}
 wcol:{[w;g;q;c]$[0=count w 0;(((c;q);w 1;());g);((w 0;wsel[g;c;w 1]w[0;1];w[2],enlist g);g)]}
-gcol:{[w;g]$[count w 1;0N!(0 -1 -1_'w;last w 2);((();();());g)]}
+gcol:{[w;g]$[count w 1;(0 -1 -1_'w;last w 2);((();();());g)]}
 wsel:{[g;c;s;q]$[last[g]=k:g 1+count s;s;s,ceq[k;c]q k]}
 zcol:{[z;w;g]($[count w 1;z;()];w;g)}
 

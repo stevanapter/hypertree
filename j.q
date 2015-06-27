@@ -10,10 +10,10 @@
 
 / object -> js
 .js.obj:{(!). flip((`hypertree      ;.js.sub[get[Z]K;J]R);
-                   (`visible        ;C);
-                   (`groups 		;G);
+                   (`visible        ;$[count W 0;C except`;C]);
+                   (`groups 		;$[count W 0;0#`;G]);
                    (`groupable      ;H);
-                   (`invisible      ;I);
+                   (`invisible      ;$[count W 0;0#`;I]);
                    (`qtypes 		;Q);
                    (`sorts 		;`cols`sorts!reverse each(key S;get S));
                    (`rows 		;R);
@@ -22,7 +22,7 @@
                    (`properties     ;.js.nnd .js.opt[W;C]O);
                    (`icons          ;.js.cic[Q;G]W);
                    (`ungrouped      ;V);
-                   (`reorderable    ;0=count W 0);
+                   (`reorderable    ;1b|0=count W 0);
                    (`cell           ;count[G]>3+count W 1);
                    (`buttons        ;.js.buttons[G;U]W);
                    (`message        ;.js.msg[G;X;Y;S]W))}
