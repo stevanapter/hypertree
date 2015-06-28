@@ -39,6 +39,9 @@ gcol:{[w;g]$[count w 1;(0 -1 -1 -1_'w;last w 2;first last w 3);((();();();());g;
 wsel:{[g;c;s;q]$[last[g]=k:g 1+count s;s;s,ceq[k;c]q k]}
 zcol:{[z;w;g;s]($[count w 1;z;()];w;g;s)}
 
+/ "z-axis" = pivot columns
+pivot:{[z;w;g;q;s;f;d]$[0=count w 0;col[z;w;g;q;s]f 0;zcol[z;.[w;0 0;:;first(d+f?w[0;0])rotate f];g]s]}
+
 / pivot constraint: column = value
 ceq:{[c;v;q]enlist(=;c;(1*"s"=lower q)enlist/upper[q]$string v)}
 
@@ -52,9 +55,6 @@ matrix:{[t;a;g;w]
 
 / pivot table (h/t: nick psaris, Q-TIPS)
 pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string asc distinct t x;x;z)]}
-
-/ "z-axis" = pivot columns
-pivot:{[z;w;g;q;f;d]$[0=count w 0;col[z;w;g;q]f 0;zcol[z;.[w;0 0;:;first(d+f?w[0;0])rotate f]]g]}
 
 / path constant
 P:(([n:enlist(0#`)!0#`]v:enlist 1b);([n:()]v:til 0))
