@@ -173,18 +173,18 @@ Hypertree understands the following Hypergrid click-events:
 	row:		in treetable mode, click on an element in the Hierarchy column to expand
 				from or contract to that row.
 
-<img src="images/rowtree.gif">
-
 				in pivot mode, click on an element in the Hierarchy column to select that row-value and explode on the next group.
+
+<img src="images/rowtree.gif">
 
 <img src="images/rowpivot.gif">
 
 	col:		in treetable mode, click on a column to pivot the table on the column-value.
 
-<img src="images/coltree.gif">
-
 				in pivot mode, click on a column to select that column-value and explode on 
 				the next group.
+
+<img src="images/coltree.gif">
 
 <img src="images/colpivot.gif">
 
@@ -201,7 +201,11 @@ Hypertree understands the following Hypergrid click-events:
 	groups:		press the alt/option key to summon a window which allows drag-and-drop 
 				regrouping of the table, and to select which columns of the table are visible.
 
+				columns may also be re-arranged directly with drag-and-drop.
+
 <img src="images/option.gif">
+
+<img src="images/coldragdrop.gif">
 
 	reset:		clear sorts, expansions, pivots, &c.
 
@@ -221,10 +225,10 @@ Hypertree understands the following Hypergrid click-events:
 
 	swap:		in treetable mode:  G = x y .. z -> y x .. z
 
-<img src="images/swaptree.gif">
-			
 				in pivot mode:  X Y -> Y X
 
+<img src="images/swaptree.gif">
+			
 <img src="images/swappivot.gif">
 			
 	up:			rotate group-vector:  G = x y .. z -> z x y ..
@@ -238,10 +242,6 @@ Hypertree understands the following Hypergrid click-events:
 	play:		turn updates on.
 
 <img src="images/playpause.gif">
-
-Columns may be rearranged through drag-and-drop:
-
-<img src="images/coldragdrop.gif">
 
 On scrolling, Hypergrid requests a subtable	of Z:
 
