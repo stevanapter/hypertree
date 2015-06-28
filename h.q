@@ -22,4 +22,4 @@ $[.z.K<3.3;
 .z.ws:{t:.z.z;.js.snd .js.exe .js.sym a:.j.k x;.js.log[t]a}
 
 / update
-.js.upd:{if[U;if[not null .js.J;t:.z.z;Z set();P[1]:.ht.P 1;.js.snd .js.set();.js.log[t]`upd]]}
+.js.upd:{if[U;if[not null .js.J;t:.z.z;Z set();P[1]:.ht.P 1;.js.snd .js.set()!();.js.log[t]`upd]]}

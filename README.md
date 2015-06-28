@@ -177,57 +177,89 @@ Hypertree understands the following Hypergrid click-events:
 					click on an element in the Hierarchy column to expand from or contract to 
 					that row.
 
+<img src="images/rowtree.gif">
+
 				in pivot mode:
 
 					click on an element in the Hierarchy column to select that row-value and 
 					explode on the next group.
 
-<img src="images/row.jpg">
+<img src="images/rowpivot.gif">
 
 	col:		in treetable mode:
 
 					click on a column to pivot the table on the column-value.
 
+<img src="images/coltree.gif">
+
 				in pivot mode:
 
 					click on a column to select that column-value and explode on the next group.
 
-<img src="images/col.jpg">
+<img src="images/colpivot.gif">
 
 	cell:		double-click on a cell to restrict the table to the row-value and pivot the 
 				resulting table on the column-value.
 
+<img src="images/cell.gif">
+
 	sorts:		multi-sort the table ascending, descending, ascending-absolute-value, 
 				descending-absolute-value.
+
+<img src="images/sorts.gif">
 
 	groups:		press the alt/option key to summon a window which allows drag-and-drop 
 				regrouping of the table, and to select which columns of the table are visible.
 
-<img src="images/option.jpg">
+<img src="images/option.gif">
 
 	reset:		clear sorts, expansions, pivots, &c.
 
+<img src="images/reset.gif">
+
 	expand:		expand the tree to the level of the last group.
+
+<img src="images/expand.gif">
 
 	collapse:	collapse the tree to the level of the first group.
 
+<img src="collapse/row.gif">
+
 	back:		right-rotate the column list F and pick the first column.
+
+<img src="images/back.gif">
 
 	forth:		left-rotate the column list F and pick the first column.
 
-	swap:		in treetable mode: 
+<img src="forth/row.gif">
 
-					swap top 2 groups:  G = x y .. z -> y x .. z
-				
-				in pivot mode:
+	swap:		in treetable mode:  G = x y .. z -> y x .. z
 
-					transpose X and Y:  X Y -> Y X
-				
+<img src="images/swaptree.gif">
+			
+				in pivot mode:  X Y -> Y X
+
+<img src="images/swappivot.gif">
+			
 	up:			rotate group-vector:  G = x y .. z -> z x y ..
+
+<img src="images/up.gif">
 
 	down:		rotate group-vector:  G = x y .. z -> y .. z x
 
-Columns may be rearranged through drag-and-drop.
+<img src="images/down.gif">
+
+	pause:		turn updates off.
+
+<img src="images/pause.gif">
+
+	play:		turn updates on.
+
+<img src="images/play.gif">
+
+Columns may be rearranged through drag-and-drop:
+
+<img src="images/coldragdrop.gif">
 
 On scrolling, Hypergrid requests a subtable	of Z:
 
@@ -238,9 +270,7 @@ Hypertree also supports update.  For example, if the underlying table is t:
 	\t 1000
 	.z.ts:{update ... from `t ...;.js.upd`}
 
-This causes Hypertree to recalculate and redisplay:
-
-<img src="images/recalculate.gif">
+This causes Hypertree to recalculate and redisplay.
 
 Note that Hypertree will recalculate the hierarchy based on both aggregating and grouping
 columns.
@@ -306,7 +336,7 @@ G: Grouping columns in order
 
 	When G is empty, the underlying table together with its grand total row is displayed:
 
-<img src="images/t.jpg">
+<img src="images/t.gif">
 
 *H: Groupable columns
 
@@ -507,8 +537,6 @@ Scripts
 
 Example
 -------
-
-<img src="images/example.gif">
 
 
 Enhancements
