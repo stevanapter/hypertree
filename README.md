@@ -172,29 +172,21 @@ Events
 
 Hypertree understands the following Hypergrid click-events:
 
-	row:		in treetable mode:
-
-					click on an element in the Hierarchy column to expand from or contract to 
-					that row.
+	row:		in treetable mode, click on an element in the Hierarchy column to expand
+				from or contract to that row.
 
 <img src="images/rowtree.gif">
 
-				in pivot mode:
-
-					click on an element in the Hierarchy column to select that row-value and 
-					explode on the next group.
+				in pivot mode, click on an element in the Hierarchy column to select that row-value and explode on the next group.
 
 <img src="images/rowpivot.gif">
 
-	col:		in treetable mode:
-
-					click on a column to pivot the table on the column-value.
+	col:		in treetable mode, click on a column to pivot the table on the column-value.
 
 <img src="images/coltree.gif">
 
-				in pivot mode:
-
-					click on a column to select that column-value and explode on the next group.
+				in pivot mode, click on a column to select that column-value and explode on 
+				the next group.
 
 <img src="images/colpivot.gif">
 
