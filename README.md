@@ -219,19 +219,15 @@ Hypertree understands the following Hypergrid click-events:
 
 	expand:		expand the tree to the level of the last group.
 
-<img src="images/expand.gif">
-
 	collapse:	collapse the tree to the level of the first group.
 
-<img src="collapse/row.gif">
+<img src="images/expandcollapse.gif">
 
 	back:		right-rotate the column list F and pick the first column.
 
-<img src="images/back.gif">
-
 	forth:		left-rotate the column list F and pick the first column.
 
-<img src="forth/row.gif">
+<img src="images/backforth.gif">
 
 	swap:		in treetable mode:  G = x y .. z -> y x .. z
 
@@ -243,19 +239,15 @@ Hypertree understands the following Hypergrid click-events:
 			
 	up:			rotate group-vector:  G = x y .. z -> z x y ..
 
-<img src="images/up.gif">
-
 	down:		rotate group-vector:  G = x y .. z -> y .. z x
 
-<img src="images/down.gif">
+<img src="images/updown.gif">
 
 	pause:		turn updates off.
 
-<img src="images/pause.gif">
-
 	play:		turn updates on.
 
-<img src="images/play.gif">
+<img src="images/playpause.gif">
 
 Columns may be rearranged through drag-and-drop:
 
