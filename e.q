@@ -1,7 +1,7 @@
 // js events
 
 / events
-.js.row:{[d].js.set$[0=count W 0;.js.drill_ d;X<>last G;.js.row_ d]}
+.js.row:{[d].js.set$[0=count W 0;.js.drill_ d;X<>last G;.js.row_ d;d]}
 .js.col:{[d].js.set .js.col_ d}
 .js.cell:{[d].js.col_ d;.js.row`col _ d}
 .js.sorts:{[d]`S set .js.sad[Q]d[`cols]!d`sorts;`K set .ht.sort[get Z;G;S]W;.js.ret d}

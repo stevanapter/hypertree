@@ -23,7 +23,7 @@
                    (`icons          ;.js.cic[Q;G]W);
                    (`ungrouped      ;V);
                    (`reorderable    ;0=count W 0);
-                   (`cell           ;count[G]>3+count W 1);
+                   (`cell           ;count[G]>2+count W 1);
                    (`buttons        ;.js.buttons[G;U]W);
                    (`message        ;.js.msg[G;X;Y;S]W))}
 
