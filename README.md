@@ -15,8 +15,6 @@
 
 [Scripts](https://github.com/stevanapter/hypertree#scripts)
 
-[Example](https://github.com/stevanapter/hypertree#example)
-
 [Enhancements](https://github.com/stevanapter/hypertree#enhancements)
 
 
@@ -518,10 +516,6 @@ Scripts
 	c.q             hypertree client process
 	s.q             hypertree server process
 	
-
-Example
--------
-
 
 Enhancements
 ------------
