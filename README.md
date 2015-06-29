@@ -380,7 +380,7 @@ J: Ordering (top or bottom n)
 
 	(This parameter is commented out in the example d.q).
 
-	<img src="images/ordering.gif">
+<img src="images/ordering.gif">
 
 K: Sort vector
 
