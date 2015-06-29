@@ -344,13 +344,7 @@ G: Grouping columns in order
 
 	I::.ht.invisible[W;T;A;Q;F]G
 
-J: Infinity check?
-
-	J:0b
-
-	json chokes on q infinities.  At some not-insignificant computational cost, these can be 
-	filtered out of the result before conversion to json by .j.j.  Better to not generate them
-	at all!
+J: Not used.
 
 K: Sort vector
 
@@ -525,6 +519,7 @@ After starting either the single process or the two-process version of Hypergrid
 Scripts
 -------
 
+	q.q 			enhance json to filter infinities
 	d.q             data and parameter definition
 	e.q             hypergrid events
 	t.q             hypertree calculation

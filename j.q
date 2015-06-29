@@ -1,7 +1,7 @@
 // js utilities
 
 .js.nnd:{$[99=type x;.z.s each(key[x]except`)#x;x]}
-.js.sub:{i:(::;.js.inf)y;flip each(i 1#x;.js.idx[i 1_x]. z`start`end)}
+.js.sub:{flip each(1#x;.js.idx[1_x]. y`start`end)}
 .js.idx:{$[0 0W~y,z;x;y>=count x;0#x;((1+z-y)&count r)#r:y _ x]}
 .js.ret:{if[99h=type x;:x,.js.obj[]]}
 .js.sym:{$[()~x;0#`;(t:abs type x)in 0 99h;.z.s each x;10=t;`$x;x]}
@@ -9,7 +9,7 @@
 .js.opt:{$[0=count x 0;z;not`columns in key z;z;not x[0;0]in key z`columns;z;@[z;`columns;:;y!count[y]#z[`columns]x[0;0]]]}
 
 / object -> js
-.js.obj:{(!). flip((`hypertree      ;.js.sub[get[Z]K;J]R);
+.js.obj:{(!). flip((`hypertree      ;.js.sub[get[Z]K]R);
                    (`visible        ;C);
                    (`groups 		;G);
                    (`groupable      ;H);

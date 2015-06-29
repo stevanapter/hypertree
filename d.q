@@ -28,8 +28,7 @@ calc:{[stocks;traders;date;time]
  trades,:trade[stocks;traders;date;time];
  t:select trades:count id,qty:sum qty,cprice:last price,vwap:qty wavg price by id,symbol from trades;
  u:(0!traders lj update real:qty*vwap,unreal:qty*cprice from t)lj stocks;
- u:update"j"$qty,pnl:real+unreal from select from u where not null qty;
- pnl::update vwap:0n from u where 0w=abs vwap;
+ pnl::update"j"$qty,pnl:real+unreal from select from u where not null qty;
  }
 
 calc[stocks;traders;.z.D].z.T
