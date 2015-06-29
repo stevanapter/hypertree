@@ -135,11 +135,19 @@ and use the path-list to sum up from the leaves:
 	q)s
 	260 50 20 30 210 210 60 70 80
 
-Hypertree also supports pivot-table views.  For this, we rely on a version of the function presented by Nick Psaris in his book Q-TIPS.  Our version of Nick's function:
+Hypertree provides support for user-defined aggregation functions, or "rollups".  A rollup is a function which maps lists to atoms.
+
+A companion utility, [Hypercalc](https://github.com/stevanapter/hypercalc), provides a mechanism whereby the application can define calculated columns, or "willbes".  A willbe is a function which maps lists of count n to lists of count n.
+
+Together, Hypertree and Hypercalc can be used to define automatically recalculating hierarchical treetable and pivot-tables.
+
+Hypertree pivot-tables are two-dimensional slices of a three-dimensional cube.  
+
+For this, we rely on a version of the function presented by Nick Psaris in his book Q-TIPS.  Our version of Nick's function:
 
 	pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string asc distinct t x;x;z)]}  
 
-The basic idea of a three-dimensional hierarchically nested pivot table -- a "pivot cube" -- was first developed in the k2 algorithm [here](http://www.nsl.com/papers/drilldown.htm).
+The basic idea of a three-dimensional hierarchically nested pivot table -- a "pivot-cube" -- was first developed in the k2 algorithm [here](http://www.nsl.com/papers/drilldown.htm).
 
 Conceptually, a pivot table is built from the unique values of two axes X and Y, where the cell z at the intersection of X and Y is an aggregation of a further column Z, a member of F.
 
