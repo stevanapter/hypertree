@@ -450,12 +450,19 @@ W: Pivot state = ((z-col;Q);selects;groups;sorts)
 
 	W:.ht.W = (();();();())
 
+	W[0] = (pivot column;value of Q for T)
+	W[1] = (..;(=;column;value);..)					list of constraint expressions
+	W[2] = (..;previous value of G;..)				list of group vectors
+	W[3] = (..;previous value of S;..)				list of sort dictionaries
+
 	Pivot and Y Axis drill-down operations are mutually exclusive.
 
 	W keeps track of the sequence of pivot operations, and allows the user to unwind from the 
 	current to the previous pivot-state.  
 
 	NEW: Sorts are now preserved.
+
+	Note that the application (d.q) can define an initial state for W.
 
 *X: X axis
 
