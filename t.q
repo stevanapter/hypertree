@@ -3,8 +3,8 @@
 \d .ht
 
 / construct treetable
-cons:{[z;t;l;p;a;g;f;w]mode[w;z;t;l;g;rollups[t;a;g]f]. used each p}
-mode:{[w;z;t;l;g;a;p;q]$[count w 0;matrix[t;a;g]w;tree[z;t;l;g;a;p]q]}
+cons:{[r;j;l;p;a;g;f;w]mode[w;r 0;orders[r 1;a]j;l;g;a:rollups[r 1;a;g]f]. used each p}
+mode:{[w;z;t;l;g;a;p;q]$[count w 0;matrix[t;g;a]w;tree[z;t;l;g;a;p]q]}
 
 / treetable calculations:  initial, expand a node, collapse a node
 tree:{[z;t;l;g;a;p;q]$[z~();rollup;count[p]>count q;expand1;collapse1][z;t;l;g;a;p]q}
@@ -46,7 +46,7 @@ pivot:{[z;w;g;q;s;f;d]$[0=count w 0;col[z;w;g;q;s]f 0;zcol[z;.[w;0 0;:;first(d+f
 ceq:{[c;v;q]enlist(=;c;(1*"s"=lower q)enlist/upper[q]$string v)}
 
 / pivot table calculation
-matrix:{[t;a;g;w]
+matrix:{[t;g;a;w]
  h:{y,x except y}[g]g[0],g 1+count w 1;c:w[0]0;u:?[t;w 1;0b;()];
  z:tree[();u;0b;h;a;exec n from opento[u;h]h 1]();
  r:flip enlist 1_cols z:`n_ xcol 0!pcalc[z;c]. 2#h;z[`n_]:enlist[0#`],flip enlist 1_z`n_;
@@ -81,6 +81,22 @@ dru:" bgxhijefcspmdznuvt"!(nul;any;nul;nul;sum;sum;sum;sum;sum;nul;seq;max;max;m
 
 / cast <- type
 qtype:{exec c!t from meta x where not(c=lower c)&c like"?_"}
+
+/ order within nodes
+orders:{[t;a;j]
+ if[0=count j;:t];
+ S:{t:0!z;keys[z]xkey t x t y};A:S[iasc abs@];D:S[idesc abs@];
+ j:update d:(xasc;xdesc;A;D)`a`d`A`D?d from j;
+ r:keys[t]xkey order[0!t;a;0!j;()];
+ r}
+
+order:{[t;a;j;w]
+ if[0=count j;:?[t;w;0b;()]];
+ v:first j;j:1_j;
+ c:v`c;s:v`s;n:v`n;d:v`d;
+ r:?[t;w;enlist[c]!enlist c;enlist[s]!enlist a s];
+ k:{x,enlist(=;y;enlist z)}[w;c]each(n&count r)#?[d[s]r;();();c];
+ raze .z.s[t;a;j]each k}
 
 / treetable sort
 sort:{[t;g;s;w]$[count s;tsort[t;$[count w 0;();g];key s]get s;(::)]}

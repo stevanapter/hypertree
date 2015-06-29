@@ -369,7 +369,18 @@ G: Grouping columns in order
 
 	I::.ht.invisible[W;T;A;Q;F]G
 
-J: Not used.
+J: Ordering (top or bottom n)
+
+	J:([c:0#`]s:0#`;n:0#0;d:0#`)
+
+	For example, to see just the seven units with the highest pnl, and within each of
+	those, the five five traders with the highest pnl:
+
+	J:([c:`unit`trader]s:`pnl`pnl;n:5 7;d:`a`a)
+
+	(This parameter is commented out in the example d.q).
+
+	<img src="images/ordering.gif">
 
 K: Sort vector
 
