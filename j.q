@@ -29,8 +29,8 @@
 
 / buttons
 .js.buttons:{[g;u;w]
- e:(0<count g)&0=count w 0;s:2<=count g;
- (!). flip((`Reset;1b);(`Expand;e);(`Collapse;e);(`Back;s);(`Forth;s);(`Swap;s);(`Up;s);(`Down;s)),$[null u;();enlist(`Play`Pause u;1b)]}
+ e:(0<count g)&0=count w 0;s:2<=count g;p:$[null u;();enlist(`Play`Pause u;1b)];
+ (!). flip((`Reset;1b);(`Expand;e);(`Collapse;e);(`Back;s);(`Forth;s);(`Swap;s);(`Up;s);(`Down;s)),p}
 
 / icons
 .js.cic:{$[0=count y;()!();[w:0=count z 0;n:count k:key[x]except `;((1#`g_)!1#`u` w),$[w;k!n#`d;(`,k)!`,n#`d` count[y]=2+count z 1]]]}
