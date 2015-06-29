@@ -193,8 +193,8 @@ Click Events
 	row:		in treetable mode, click on an element in the Hierarchy column to expand
 				from or contract to that row.
 
-				in pivot mode, click on an element in the Hierarchy column to select that row-
-				value and explode on the next group.
+				in pivot mode, click on an element in the Hierarchy column to select that
+				row-value and explode on the next group.
 
 <img src="images/rowtree.gif">
 
