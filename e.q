@@ -8,15 +8,15 @@
 .js.groups:{[d]`F`G set'.js.sym d`visible`groups;`P set .ht.valid[P]G;Z set();.js.set d}
 
 / event functions
-.js.row_:{[d]`P set .ht.P;(Z,`W`G`S)set'.ht.row[get Z;X;W;G;Q;S].(Y;first d`row);d}
-.js.col_:{[d]`P set .ht.P;(Z,`W`G`S)set'.ht.col[get Z;W;G;Q;S]d`col;d}
+.js.row_:{[d]`P set .ht.paths;(Z,`W`G`S)set'.ht.row[get Z;X;W;G;Q;S].(Y;first d`row);d}
+.js.col_:{[d]`P set .ht.paths;(Z,`W`G`S)set'.ht.col[get Z;W;G;Q;S]d`col;d}
 .js.drill_:{[d]if[(L|m<h)&(h:count G)&0<m:count n:.js.cnv[G;Q]d`row;if[count[get Z]>r:Z[`n_]?n;`P set .ht.drill[not Z[`o_]r;P;G]n;:d]]}
-.js.pivot_:{[x;d]`P set .ht.P;(Z,`W`G`S)set'.ht.pivot[get Z;W;G;Q;S;F]x;.js.set d}
+.js.pivot_:{[x;d]`P set .ht.paths;(Z,`W`G`S)set'.ht.pivot[get Z;W;G;Q;S;F]x;.js.set d}
 
 / buttons
 .js.Reset:{[d](Z,`G`F`S`P`W`U)set'(();G_;F_;S_;P_;W_;U_);.js.set d}
 .js.Expand:{[d]`P set .ht.expand[0!get T]G;.js.set d}
-.js.Collapse:{[d](Z,`P)set'(();.ht.P);.js.set d}
+.js.Collapse:{[d](Z,`P)set'(();.ht.paths);.js.set d}
 .js.Back:.js.pivot_ -1
 .js.Forth:.js.pivot_ 1
 .js.Swap:{[d]$[0=count W 0;[`G set G[1 0],2_G;`P set .ht.valid[P]G;Z set()];@[`G;G?Y,X;:;G G?X,Y]];.js.set d}

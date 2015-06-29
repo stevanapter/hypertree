@@ -15,7 +15,7 @@ L:1b 											/ show leaves?
 M:()
 N::count get T 									/ row count
 O.:(::) 										/ properties
-P:.ht.P 										/ path	
+P:.ht.paths 									/ paths
 Q::.ht.qtype Z 									/ types
 R:`start`end!0 60 								/ rows
 S:()!() 										/ sort

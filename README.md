@@ -382,7 +382,7 @@ O: Object properties
 
 P: Instruction state = (current;prior)
 
-	P:.ht.P
+	P:.ht.paths
 
 	The state of the Hypertree is represented as a pair of keytables.  P 0 represents the 
 	current state, and P 1 represents the previous state.  n (the key) is a list of paths to

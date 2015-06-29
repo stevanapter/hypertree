@@ -50,23 +50,23 @@ matrix:{[t;a;g;w]
  h:{y,x except y}[g]g[0],g 1+count w 1;c:w[0]0;u:?[t;w 1;0b;()];
  z:tree[();u;0b;h;a;exec n from opento[u;h]h 1]();
  r:flip enlist 1_cols z:`n_ xcol 0!pcalc[z;c]. 2#h;z[`n_]:enlist[0#`],flip enlist 1_z`n_;
- z[0;1_cols z]:xkey[`g_;tree[();u;0b;1_h;a;exec n from P 0]()][r;c];
+ z[0;1_cols z]:xkey[`g_;tree[();u;0b;1_h;a;exec n from paths 0]()][r;c];
  flip flip[z],`o_`p_`g_`e_`l_!(1b;0N;last each z`n_;1b;0)}
 
 / pivot table (h/t: nick psaris, Q-TIPS)
 pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string asc distinct t x;x;z)]}
 
 / path constant
-P:(([n:enlist(0#`)!0#`]v:enlist 1b);([n:()]v:til 0))
+paths:(([n:enlist(0#`)!0#`]v:enlist 1b);([n:()]v:til 0))
 
 / keep valid paths
-valid:{[p;g](1!(0!p 0)where til[count g]{(count[y]#x)~y}/:g?/:key each exec n from p 0;P 1)}
+valid:{[p;g](1!(0!p 0)where til[count g]{(count[y]#x)~y}/:g?/:key each exec n from p 0;paths 1)}
 
 / open/close to group (h=` -> open to leaves)
 opento:{[t;g;h]inst distinct(enlist(0#`)!0#`),raze t to/:(1+til count k)#\:k:(g?h)#g}
 inst:{[m]([n:m]v:count[m]#1b)}
 to:{(enlist(0#`)!0#`),y!/:flip distinct x y}
-expand:{[t;g](opento[t;g]last g;P 1)}
+expand:{[t;g](opento[t;g]last g;paths 1)}
 
 / columns
 visible:{[q;g;i]key[q]except g,i}
@@ -74,10 +74,10 @@ invisible:{[w;t;a;q;f;g]$[count w 0;();distinct[cols[t],key a,q]except f,g]}
 groupable:{[t](exec c from meta t where t in"bhijspmdznuvt")except keys t}
 
 / rollups
-rollups:{[t;a;g;f](f,g)#@[@[a;k;:;A[lower qtype[t]k],'k:cols[t]except key a];g;:;nul,'g]}
+rollups:{[t;a;g;f](f,g)#@[@[a;k;:;dru[lower qtype[t]k],'k:cols[t]except key a];g;:;nul,'g]}
 nul:{first$[1=count distinct x;x;0#x]}
 seq:{$[1=count distinct x;first x;`$string[first x],"+"]}
-A:" bgxhijefcspmdznuvt"!(nul;any;nul;nul;sum;sum;sum;sum;sum;nul;seq;max;max;max;max;sum;max;max;max)
+dru:" bgxhijefcspmdznuvt"!(nul;any;nul;nul;sum;sum;sum;sum;sum;nul;seq;max;max;max;max;sum;max;max;max)
 
 / cast <- type
 qtype:{exec c!t from meta x where not(c=lower c)&c like"?_"}

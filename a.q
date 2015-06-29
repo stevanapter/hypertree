@@ -1,7 +1,7 @@
 // auxilliary functions
 
 .af.tree:{[g]
- `P set(.ht.opento[T;g]last g;.ht.P 1);
+ `P set(.ht.opento[T;g]last g;.ht.paths 1);
  ![.ht.cons[();T;P;A;S;(g;F);1b]W;();0b;.ht.C]}
 
 .af.trees:{
