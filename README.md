@@ -135,7 +135,9 @@ and use the path-list to sum up from the leaves:
 	q)s
 	260 50 20 30 210 210 60 70 80
 
-Hypertree also supports pivot-table views.  For this, we rely on a version of the function presented by Nick Psaris in his book Q-TIPS.  
+Hypertree also supports pivot-table views.  For this, we rely on a version of the function presented by Nick Psaris in his book Q-TIPS.  Our version of Nick's function:
+
+	pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string asc distinct t x;x;z)]}  
 
 The basic idea of a three-dimensional hierarchically nested pivot table -- a "pivot cube" -- was first developed in the k2 algorithm [here](http://www.nsl.com/papers/drilldown.htm).
 
