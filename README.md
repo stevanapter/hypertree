@@ -161,7 +161,7 @@ In a future version of Hypertree we will support condensing planes of the pivot 
 Structure
 ---------
 
-Given table T (the underlying table) + Hypertree Parameters (see below) .ht.cons produces Z, the Hypertree table.
+Given the underlying table T + Hypertree parameters .ht.cons returns Z, the Hypertree table.
 
 Column names beginning with a lower-case letter followed by one or more _'s are reserved for Hypertree use.
 
@@ -193,7 +193,8 @@ Click Events
 	row:		in treetable mode, click on an element in the Hierarchy column to expand
 				from or contract to that row.
 
-				in pivot mode, click on an element in the Hierarchy column to select that row-value and explode on the next group.
+				in pivot mode, click on an element in the Hierarchy column to select that row-
+				value and explode on the next group.
 
 <img src="images/rowtree.gif">
 
