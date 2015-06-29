@@ -141,15 +141,15 @@ Hypertree also supports pivot-table views.  For this, we rely on a version of th
 
 The basic idea of a three-dimensional hierarchically nested pivot table -- a "pivot cube" -- was first developed in the k2 algorithm [here](http://www.nsl.com/papers/drilldown.htm).
 
-Conceptually, a pivot table is built from the unique values of two axes X and Y, where the cell z at the intersection of x and y is an aggregation of a further column Z.
+Conceptually, a pivot table is built from the unique values of two axes X and Y, where the cell z at the intersection of X and Y is an aggregation of a further column Z, a member of F.
 
-In Hypertree pivot mode, we can visualize the aggregatable columns F to lie on the z axis, with the display showing a one slice at a time.  The Back and Forth buttons allow us to move back and forth on this axis, showing aggregations of the different columns in F.
+In Hypertree pivot mode, we can visualize the aggregatable columns F to lie on the z axis, with the display showing one slice at a time.  The Back and Forth buttons allow us to move back and forth on this axis, showing aggregations of the different columns in F.
 
-In pivot mode, clicking on the down-triangle icon of the header of column A at value V will cause Hypertree to restrict the underlying table T to records where A = V, and then explode the x axis of the pivot to column B in G = .. A B .. .
+In pivot mode, clicking on the down-triangle icon of the header of column A at value V will cause Hypertree to restrict the underlying table T to records where A = V, and then explode the X axis of the pivot to column B in G = .. A B .. .
 
-Similarly, clicking on value V of column A in the Hierarchy column while in pivot mode will cause Hypertree to restrict the underlying table T to records where A = V, and then explode the y axis of the pivot to column B in G = .. A B .. .
+Similarly, clicking on value V of column A in the Hierarchy column while in pivot mode will cause Hypertree to restrict the underlying table T to records where A = V, and then explode the Y axis of the pivot to column B in G = .. A B .. .
 
-Double-clicking on a cell x-y while in pivot mode is equivalent to performing a column pivot followed by a row pivot.
+Double-clicking on a cell XY while in pivot mode is equivalent to performing a column pivot followed by a row pivot.
 
 Finally, clicking on the up-triangle of the header of the Hierarchy column causes the last pivot action to be undone.
 
