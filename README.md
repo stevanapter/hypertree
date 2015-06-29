@@ -139,7 +139,7 @@ Hypertree provides support for user-defined aggregation functions, or "rollups".
 
 A companion utility, [Hypercalc](https://github.com/stevanapter/hypercalc), provides a mechanism whereby the application can define calculated columns, or "willbes".  A willbe is a function which maps lists of count n to lists of count n.
 
-Together, Hypertree and Hypercalc can be used to define automatically recalculating hierarchical treetable and pivot-tables.
+Together, Hypertree and Hypercalc can be used to define automatically recalculating hierarchical treetables and pivot-tables.
 
 Hypertree pivot-tables are two-dimensional slices of a three-dimensional cube.  
 
