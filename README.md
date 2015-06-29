@@ -426,13 +426,13 @@ T: Table
 
 U: Update?
 
-	U:1b
+	U:0N
 
-	U can be toggled by means of the Pause button.
+	If U is null, do not show Pause or Play buttons.
 
-*V: Does T exist?  (0b = client, 1b = server or standalone)
+	If U is boolean, then Play (1b) or Pause (0b) updates.
 
-	V::.js.var T 
+V: Not Used.
 
 W: Pivot state = ((z-col;Q);selects;groups;sorts)
 

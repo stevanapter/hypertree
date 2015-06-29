@@ -66,6 +66,7 @@ O.columns.unreal:`USD
 O.columns.qty:`QTY
 O.columns.volume:`QTY
 
+U:1b
 .z.ts:{calc[stocks;traders;.z.D].z.T;.js.upd`;}
 \t 5000
 
