@@ -303,6 +303,10 @@ A: Rollups
 		T:`t
 		A[`g]:(count;`f)
 
+	'parse' can used to define complex rollup expressions:
+
+		A[`k]:parse"sum[l]+sum m"
+
 B: Not used
 
 *C: Visible columns
