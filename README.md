@@ -135,11 +135,25 @@ and use the path-list to sum up from the leaves:
 	q)s
 	260 50 20 30 210 210 60 70 80
 
-Hypertree also supports one- and two-dimensional pivot-table views.
+Hypertree also supports pivot-table views.  For this, we rely on a version of the function presented by Nick Psaris in his book Q-TIPS.  
 
-For this, we rely on a simplified version of an algorithm devised by Nick Psaris in his book Q-TIPS.
+The basic idea of a three-dimensional hierarchically nested pivot table -- a "pivot cube" -- was first developed in the k2 algorithm [here](http://www.nsl.com/papers/drilldown.htm).
 
-Hypertree thus provides drill-down interaction on both X and Y axes.
+Conceptually, a pivot table is built from the unique values of two axes X and Y, where the cell z at the intersection of x and y is an aggregation of a further column Z.
+
+In Hypertree pivot mode, we can visualize the aggregatable columns F to lie on the z axis, with the display showing a one slice at a time.  The Back and Forth buttons allow us to move back and forth on this axis, showing aggregations of the different columns in F.
+
+In pivot mode, clicking on the down-triangle icon of the header of column A at value V will cause Hypertree to restrict the underlying table T to records where A = V, and then explode the x axis of the pivot to column B in G = .. A B .. .
+
+Similarly, clicking on value V of column A in the Hierarchy column while in pivot mode will cause Hypertree to restrict the underlying table T to records where A = V, and then explode the y axis of the pivot to column B in G = .. A B .. .
+
+Double-clicking on a cell x-y while in pivot mode is equivalent to performing a column pivot followed by a row pivot.
+
+Finally, clicking on the up-triangle of the header of the Hierarchy column causes the last pivot action to be undone.
+
+Hypertree thus provides drill-down interaction on both X, Y, and Z axes of a three-dimensional hierarchical pivot table.
+
+In a future version of Hypertree we will support condensing planes of the pivot cube into "super-cells" containing multiple z values.
 
 
 Structure
@@ -225,15 +239,15 @@ Button Events
 
 <img src="images/expandcollapse.gif">
 
-	Back:		right-rotate the column list F and pick the first column.
+	Back:		Pick the previous column on the z-axis to pivot on.
 
-	Forth:		left-rotate the column list F and pick the first column.
+	Forth:		Pick the next column on the z-axis to pivot on.
 
 <img src="images/backforth.gif">
 
-	Swap:		in treetable mode:  G = x y .. z -> y x .. z
+	Swap:		in treetable mode, swap G 0 and G 1:  G = x y .. z -> y x .. z
 
-				in pivot mode:  X Y -> Y X
+				in pivot mode, swap X and Y:  X Y -> Y X
 
 <img src="images/swaptree.gif">
 			
