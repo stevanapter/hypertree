@@ -553,7 +553,7 @@ For this reason, the Hypertree parameters are defined in the root context as glo
 Enhancements
 ------------
 
-Static rollups:
+Static rollups (NOT YET IMPLEMENTED):
 
 	Create a dictionary whose keys are a subset of the permutations of G.
 
