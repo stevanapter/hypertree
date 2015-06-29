@@ -7,9 +7,9 @@
 
 [Click Events](https://github.com/stevanapter/hypertree#click-events)
 
-[Button Events](https://github.com/stevanapter/hypertree#button_events)
+[Button Events](https://github.com/stevanapter/hypertree#button-events)
 
-[Scrolling and Update](https://github.com/stevanapter/hypertree#scrolling_and_update)
+[Scrolling and Update](https://github.com/stevanapter/hypertree#scrolling-and-update)
 
 [Parameters](https://github.com/stevanapter/hypertree#parameters)
 
