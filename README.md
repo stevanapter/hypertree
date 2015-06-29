@@ -5,7 +5,11 @@
 
 [Structure](https://github.com/stevanapter/hypertree#structure)
 
-[Events](https://github.com/stevanapter/hypertree#events)
+[Click Events](https://github.com/stevanapter/hypertree#click_events)
+
+[Button Events](https://github.com/stevanapter/hypertree#button_events)
+
+[Scrolling and Update](https://github.com/stevanapter/hypertree#scrolling_and_update)
 
 [Parameters](https://github.com/stevanapter/hypertree#parameters)
 
@@ -165,10 +169,8 @@ The Hypertree table structure is encoded in the six columns n_, e_, l_, o_, p_, 
 	g_:  last each n_ (hierarchy column)
 
 
-Events
-------
-
-Hypertree understands the following Hypergrid click-events:
+Click Events
+------------
 
 	row:		in treetable mode, click on an element in the Hierarchy column to expand
 				from or contract to that row.
@@ -205,25 +207,29 @@ Hypertree understands the following Hypergrid click-events:
 
 <img src="images/option.gif">
 
+
+Button Events
+-------------
+
 <img src="images/coldragdrop.gif">
 
-	reset:		clear sorts, expansions, pivots, &c.
+	Reset:		clear sorts, expansions, pivots, &c.
 
 <img src="images/reset.gif">
 
-	expand:		expand the tree to the level of the last group.
+	Expand:		expand the tree to the level of the last group.
 
-	collapse:	collapse the tree to the level of the first group.
+	Collapse:	collapse the tree to the level of the first group.
 
 <img src="images/expandcollapse.gif">
 
-	back:		right-rotate the column list F and pick the first column.
+	Back:		right-rotate the column list F and pick the first column.
 
-	forth:		left-rotate the column list F and pick the first column.
+	Forth:		left-rotate the column list F and pick the first column.
 
 <img src="images/backforth.gif">
 
-	swap:		in treetable mode:  G = x y .. z -> y x .. z
+	Swap:		in treetable mode:  G = x y .. z -> y x .. z
 
 				in pivot mode:  X Y -> Y X
 
@@ -231,17 +237,21 @@ Hypertree understands the following Hypergrid click-events:
 			
 <img src="images/swappivot.gif">
 			
-	up:			rotate group-vector:  G = x y .. z -> z x y ..
+	Up:			rotate group-vector:  G = x y .. z -> z x y ..
 
-	down:		rotate group-vector:  G = x y .. z -> y .. z x
+	Down:		rotate group-vector:  G = x y .. z -> y .. z x
 
 <img src="images/updown.gif">
 
-	pause:		turn updates off.
+	Pause:		turn updates off.
 
-	play:		turn updates on.
+	Play:		turn updates on.
 
 <img src="images/playpause.gif">
+
+
+Scrolling and Update
+--------------------
 
 On scrolling, Hypergrid requests a subtable	of Z:
 
