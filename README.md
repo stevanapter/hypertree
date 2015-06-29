@@ -5,7 +5,7 @@
 
 [Structure](https://github.com/stevanapter/hypertree#structure)
 
-[Click Events](https://github.com/stevanapter/hypertree#click_events)
+[Click Events](https://github.com/stevanapter/hypertree#click-events)
 
 [Button Events](https://github.com/stevanapter/hypertree#button_events)
 
