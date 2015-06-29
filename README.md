@@ -19,6 +19,8 @@
 
 [Scripts](https://github.com/stevanapter/hypertree#scripts)
 
+[Style](https://github.com/stevanapter/hypertree#style)
+
 [Enhancements](https://github.com/stevanapter/hypertree#enhancements)
 
 
@@ -525,6 +527,16 @@ Scripts
 
 	c.q             hypertree client process
 	s.q             hypertree server process
+
+
+Style
+-----
+
+The coding style of Hypertree assumes that both client and server processes are detached from the application which uses them.  That is, h.q, c.q, and s.q are directly loaded using q h.q, q c.q, or q s.q, and loaded into the application with \l.  
+
+The d.q script is the API for hypertree, through which the application environment is presented to Hypertree by means of some combination of \l, file-reads, and interprocess communication.
+
+For this reason, the Hypertree parameters are defined in the root context as global variables A .. Z, and a subset of A_ .. Z_.
 	
 
 Enhancements
