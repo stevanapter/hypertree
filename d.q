@@ -114,3 +114,8 @@ O.columns.quantity:`QTY
  t::update pnl:quantity*price-prev price by symbol from t;		/ recalc pnl
  .hg.upd`;
  }
+
+
+
+
+

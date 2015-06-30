@@ -576,12 +576,13 @@ Scripts and Contexts
 	.hg 			hypergrid context
 	.ht 			hypertree context
 	.hc 			hypercalc context
+	. 				hypertree parameters A .. Z, A_ .. Z_
 
 
 Style
 -----
 
-The coding style of Hypertree assumes that both client and server processes are detached from the application which uses them.  That is, h.q, c.q, and s.q are directly loaded using q h.q, q c.q, or q s.q, and loaded into the application with \l.  
+The coding style of Hypertree assumes that both client and server processes are detached from the application which uses them.  That is, h.q, c.q, and s.q are only executed via q h.q, q c.q, or q s.q, as opposed to being directly loaded into the application with \l.  
 
 The d.q script is the API for hypertree, through which the application environment is presented to Hypertree by means of some combination of \l, file-reads, and interprocess communication.
 
