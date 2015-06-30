@@ -3,7 +3,7 @@
 \d .ht
 
 / construct treetable
-cons:{[r;j;l;p;a;g;f;w]mode[w;r 0;orders[r 1;a]j;l;g;a:rollups[r 1;a;g]f]. used each p}
+cons:{[z;t;j;l;p;a;g;w]mode[w;z;orders[t;a]j;l;g;a]. used each p}
 mode:{[w;z;t;l;g;a;p;q]$[count w 0;matrix[t;g;a]w;tree[z;t;l;g;a;p]q]}
 
 / treetable calculations:  initial, expand a node, collapse a node

@@ -34,4 +34,4 @@
 .js.exe:{.js[x`fn]x}
 .js.var:{x in key[`.],raze{` sv'(`,x),/:1_key` sv`,x}each key`}
 .js.val:{$[.js.var x;get x;()]}
-.js.set:{Z set .ht.cons[(.js.val Z;0!get T);J;L;P;A;G;F]W;`Z set Z;`K set .ht.sort[get Z;G;S]W;.js.ret x}
+.js.set:{Z set .ht.cons[.js.val Z;0!get T;J;L;P;.ht.rollups[T;A;G]F;G]W;`Z set Z;`K set .ht.sort[get Z;G;S]W;.js.ret x}
