@@ -15,7 +15,7 @@
 
 / buttons
 .hg.Reset:{[d](Z,`G`F`S`P`W`U)set'(();G_;F_;S_;P_;W_;U_);.hg.set d}
-.hg.Expand:{[d]`P set .ht.expand[0!get T]G;.hg.set d}
+.hg.Expand:{[d](Z,`P)set'(();.ht.expand[0!get T]G);.hg.set d}
 .hg.Collapse:{[d](Z,`P)set'(();.ht.paths);.hg.set d}
 .hg.Back:.hg.pivot_ -1
 .hg.Forth:.hg.pivot_ 1
