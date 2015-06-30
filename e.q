@@ -1,4 +1,4 @@
-// js events
+// hypergrid events
 
 / events
 .hg.row:{[d].hg.set$[0=count W 0;.hg.drill_ d;X<>last G;.hg.row_ d;d]}

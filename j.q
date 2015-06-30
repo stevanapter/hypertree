@@ -1,4 +1,4 @@
-// js utilities
+// hypergrid utilities
 
 .hg.nnd:{$[99=type x;.z.s each(key[x]except`)#x;x]}
 .hg.sub:{flip each(1#x;.hg.idx[1_x]. y`start`end)}
@@ -8,7 +8,7 @@
 .hg.inf:{k:exec c!t$1%0 from meta x where t in"ijf";![x;();0b;key[k]!({@[x;where x in y,neg y;:;first 0#x]};;)'[key k;get k]]}
 .hg.opt:{$[0=count x 0;z;not`columns in key z;z;not x[0;0]in key z`columns;z;@[z;`columns;:;y!count[y]#z[`columns]x[0;0]]]}
 
-/ object -> js
+/ object -> hypergrid
 .hg.obj:{(!). flip((`hypertree      ;.hg.sub[get[Z]K]R);
                    (`visible        ;C);
                    (`groups 		;G);
