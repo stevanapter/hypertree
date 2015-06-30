@@ -20,7 +20,7 @@
 .hg.snd:{neg[.hg.K](`.hg.exe;x)}
 .hg.obj:{{x!get each x}Z,`$'"ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
 .hg.ret:{(x;.hg.obj[])}
-.hg.upd:{if[U;if[not null .hg.K;Z set();P[1]:.ht.paths 1;.hg.snd .hg.set()!()]]}
+.hg.upd:{if[U;if[not null .hg.K;Z set();P[1]:.ht.paths 1;`T set T;.hg.snd .hg.set()!()]]}
 
 / define Z
 .hg.set();

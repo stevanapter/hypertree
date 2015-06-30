@@ -22,4 +22,4 @@ $[.z.K<3.3;
 .z.ws:{t:.z.z;.hg.snd .hg.exe .hg.sym a:.j.k x;.hg.log[t]a}
 
 / update
-.hg.upd:{if[U;if[not null .hg.J;t:.z.z;Z set();P[1]:.ht.paths 1;.hg.snd .hg.set()!();.hg.log[t]`upd]]}
+.hg.upd:{if[U;if[not null .hg.J;t:.z.z;Z set();P[1]:.ht.paths 1;`T set T;.hg.snd .hg.set()!();.hg.log[t]`upd]]}
