@@ -376,7 +376,10 @@ J: Ordering (top or bottom n)
 	For example, to see just the seven units with the highest pnl, and within each of
 	those, the top five traders with the highest pnl:
 
-	J:([c:`unit`trader]s:`pnl`pnl;n:5 7;d:`a`a)
+		J:([c:`unit`trader]s:`pnl`pnl;n:5 7;d:`a`a)
+
+	The selection is performed on T *before* Z is calculated, so the totals in Z do not
+	reflect absolute totals in T.
 
 	(This parameter is commented out in the example d.q).
 
