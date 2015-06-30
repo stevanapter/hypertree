@@ -497,8 +497,6 @@ W: Pivot state = ((z-col;Q);selects;groups;sorts)
 	W keeps track of the sequence of pivot operations, and allows the user to unwind from the 
 	current to the previous pivot-state.  
 
-	NEW: Sorts are now preserved.
-
 	Note that the application (d.q) can define an initial state for W.
 
 *X: X axis
