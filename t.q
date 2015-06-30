@@ -35,7 +35,7 @@ row:{[z;x;w;g;q;s;c;r](z;@[w;1 2 3;,;(ceq[c;r]w[0;1]c;enlist g;2 enlist/()!())];
 / pivot col event = Y
 col:{[z;w;g;q;s;c]zcol[z].$[null c;(w;g;s);c=`g_;gcol[w]g;wcol[w;g;q;s]c]}
 wcol:{[w;g;q;s;c]$[0=count w 0;(((c;q;s);w 1;();());g;()!());((w 0;wsel[g;c;w 1]w[0;1];w[2],enlist g;w[3],2 enlist/s);g;()!())]}
-gcol:{[w;g]$[count w 1;(0 -1 -1 -1_'w;last w 2;first last w 3);((();();();());g;w[0;2])]}
+gcol:{[w;g]$[count w 1;(0 -1 -1 -1_'w;last w 2;first last w 3);(state;g;w[0;2])]}
 wsel:{[g;c;s;q]$[last[g]=k:g 1+count s;s;s,ceq[k;c]q k]}
 zcol:{[z;w;g;s]($[count w 1;z;()];w;g;s)}
 
@@ -58,6 +58,9 @@ pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string asc distinct t x;x;z)
 
 / path constant
 paths:(([n:enlist(0#`)!0#`]v:enlist 1b);([n:()]v:til 0))
+
+/ pivot-state constant
+state:(();();();())
 
 / keep valid paths
 valid:{[p;g](1!(0!p 0)where til[count g]{(count[y]#x)~y}/:g?/:key each exec n from p 0;paths 1)}

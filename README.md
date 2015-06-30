@@ -483,9 +483,9 @@ U: Update?
 
 V: Not Used.
 
-W: Pivot state = ((z-col;Q);selects;groups;sorts)
+W: Pivot state
 
-	W:.ht.W = (();();();())
+	W:.ht.state = (();();();())
 
 	W[0] = (pivot column;value of Q for T)
 	W[1] = (..;(=;column;value);..)					list of constraint expressions
