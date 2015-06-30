@@ -9,26 +9,26 @@
 \e 1
 
 / connect to server
-.js.K:0Ni
-.js.K_:`::12346
-.z.ts:{if[null .js.K;.js.K:@[hopen;.js.K_;.js.K]]}
-.z.pc:{.js.K::0Ni}
+.hg.K:0Ni
+.hg.K_:`::12346
+.z.ts:{if[null .hg.K;.hg.K:@[hopen;.hg.K_;.hg.K]]}
+.z.pc:{.hg.K::0Ni}
 
 / websocket communications
-.js.J:0Ni
+.hg.J:0Ni
 $[.z.K<3.3;
-  [.z.pc:{[w]$[w=.js.J;.js.J:0Ni;w=.js.K;.js.K:0Ni]};
-   .z.po:{.js.J:.z.w;neg[.js.K](1#`fn)!1#`set}];
-  [.z.pc:{[w]if[w=.js.K;.js.K:0Ni]};
-   .z.wc:{[w]if[w=.js.J;.js.J:0Ni]};
-   .z.wo:{.js.J:.z.w;neg[.js.K](1#`fn)!1#`set}]];
+  [.z.pc:{[w]$[w=.hg.J;.hg.J:0Ni;w=.hg.K;.hg.K:0Ni]};
+   .z.po:{.hg.J:.z.w;neg[.hg.K](1#`fn)!1#`set}];
+  [.z.pc:{[w]if[w=.hg.K;.hg.K:0Ni]};
+   .z.wc:{[w]if[w=.hg.J;.hg.J:0Ni]};
+   .z.wo:{.hg.J:.z.w;neg[.hg.K](1#`fn)!1#`set}]];
 
-.z.ws:{t:.z.z;.js.rcv .js.sym a:.j.k x;.js.log[t]a}
+.z.ws:{t:.z.z;.hg.rcv .hg.sym a:.j.k x;.hg.log[t]a}
 
 / client utilities
-.js.get:{`R set`start`end!"j"$x`start`end;.js.ret x}
-.js.ini:{key[x]set'get x;.js.jsn .js.obj`}
-.js.exe:{r::R;key[x 1]set'get x 1;R::r;.js.jsn .js.ret x 0}
-.js.rcv:{$[`get=x`fn;.js.jsn .js.get@;.js.ksn]x}
-.js.jsn:{if[not(::)~x;if[not null .js.J;neg[.js.J].j.j x]]}
-.js.ksn:{if[not null .js.K;neg[.js.K]x]}
+.hg.get:{`R set`start`end!"j"$x`start`end;.hg.ret x}
+.hg.ini:{key[x]set'get x;.hg.hgn .hg.obj`}
+.hg.exe:{r::R;key[x 1]set'get x 1;R::r;.hg.hgn .hg.ret x 0}
+.hg.rcv:{$[`get=x`fn;.hg.hgn .hg.get@;.hg.ksn]x}
+.hg.hgn:{if[not(::)~x;if[not null .hg.J;neg[.hg.J].j.j x]]}
+.hg.ksn:{if[not null .hg.K;neg[.hg.K]x]}

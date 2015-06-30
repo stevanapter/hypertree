@@ -17,7 +17,7 @@
 
 [Use](https://github.com/stevanapter/hypertree#use)
 
-[Scripts](https://github.com/stevanapter/hypertree#scripts)
+[Scripts and Contexts](https://github.com/stevanapter/hypertree#scripts-and-contexts)
 
 [Style](https://github.com/stevanapter/hypertree#style)
 
@@ -287,7 +287,7 @@ On scrolling, Hypergrid requests a subtable	of Z:
 Hypertree also supports update.  For example, if the underlying table is t:
 
 	\t 1000
-	.z.ts:{update ... from `t ...;.js.upd`}
+	.z.ts:{update ... from `t ...;.hg.upd`}
 
 This causes Hypertree to recalculate and redisplay.
 
@@ -555,8 +555,8 @@ Two-process:
 After starting either the single process or the two-process version of Hypergrid, start [Hypergrid](http://openfin.github.io/fin-hypergrid/components/fin-hypergrid/demo.html?tab=4).
 
 
-Scripts
--------
+Scripts and Contexts
+--------------------
 
 	q.q 			enhance json to filter infinities
 	d.q             data and parameter definition
@@ -572,6 +572,10 @@ Scripts
 
 	c.q             hypertree client process
 	s.q             hypertree server process
+
+	.hg 			hypergrid context
+	.ht 			hypertree context
+	.hc 			hypercalc context
 
 
 Style

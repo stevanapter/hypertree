@@ -1,37 +1,37 @@
 // js events
 
 / events
-.js.row:{[d].js.set$[0=count W 0;.js.drill_ d;X<>last G;.js.row_ d;d]}
-.js.col:{[d].js.set .js.col_ d}
-.js.cell:{[d].js.col_ d;.js.row`col _ d}
-.js.sorts:{[d]`S set .js.sad[Q]d[`cols]!d`sorts;`K set .ht.sort[get Z;G;S]W;.js.ret d}
-.js.groups:{[d]`F`G set'.js.sym d`visible`groups;`P set .ht.valid[P]G;Z set();.js.set d}
+.hg.row:{[d].hg.set$[0=count W 0;.hg.drill_ d;X<>last G;.hg.row_ d;d]}
+.hg.col:{[d].hg.set .hg.col_ d}
+.hg.cell:{[d].hg.col_ d;.hg.row`col _ d}
+.hg.sorts:{[d]`S set .hg.sad[Q]d[`cols]!d`sorts;`K set .ht.sort[get Z;G;S]W;.hg.ret d}
+.hg.groups:{[d]`F`G set'.hg.sym d`visible`groups;`P set .ht.valid[P]G;Z set();.hg.set d}
 
 / event functions
-.js.row_:{[d]`P set .ht.paths;(Z,`W`G`S)set'.ht.row[get Z;X;W;G;Q;S].(Y;first d`row);d}
-.js.col_:{[d]`P set .ht.paths;(Z,`W`G`S)set'.ht.col[get Z;W;G;Q;S]d`col;d}
-.js.drill_:{[d]if[(L|m<h)&(h:count G)&0<m:count n:.js.cnv[G;Q]d`row;if[count[get Z]>r:Z[`n_]?n;`P set .ht.drill[not Z[`o_]r;P;G]n;:d]]}
-.js.pivot_:{[x;d]`P set .ht.paths;(Z,`W`G`S)set'.ht.pivot[get Z;W;G;Q;S;F]x;.js.set d}
+.hg.row_:{[d]`P set .ht.paths;(Z,`W`G`S)set'.ht.row[get Z;X;W;G;Q;S].(Y;first d`row);d}
+.hg.col_:{[d]`P set .ht.paths;(Z,`W`G`S)set'.ht.col[get Z;W;G;Q;S]d`col;d}
+.hg.drill_:{[d]if[(L|m<h)&(h:count G)&0<m:count n:.hg.cnv[G;Q]d`row;if[count[get Z]>r:Z[`n_]?n;`P set .ht.drill[not Z[`o_]r;P;G]n;:d]]}
+.hg.pivot_:{[x;d]`P set .ht.paths;(Z,`W`G`S)set'.ht.pivot[get Z;W;G;Q;S;F]x;.hg.set d}
 
 / buttons
-.js.Reset:{[d](Z,`G`F`S`P`W`U)set'(();G_;F_;S_;P_;W_;U_);.js.set d}
-.js.Expand:{[d]`P set .ht.expand[0!get T]G;.js.set d}
-.js.Collapse:{[d](Z,`P)set'(();.ht.paths);.js.set d}
-.js.Back:.js.pivot_ -1
-.js.Forth:.js.pivot_ 1
-.js.Swap:{[d]$[0=count W 0;[`G set G[1 0],2_G;`P set .ht.valid[P]G;Z set()];@[`G;G?Y,X;:;G G?X,Y]];.js.set d}
-.js.Up:{[d]`G set 1 rotate G;`P set .ht.valid[P]G;Z set();.js.set d}
-.js.Down:{[d]`G set -1 rotate G;`P set .ht.valid[P]G;Z set();.js.set d}
-.js.Pause:{[d]`U set 0b;.js.ret d}
-.js.Play:{[d]`U set 1b;.js.ret d}
+.hg.Reset:{[d](Z,`G`F`S`P`W`U)set'(();G_;F_;S_;P_;W_;U_);.hg.set d}
+.hg.Expand:{[d]`P set .ht.expand[0!get T]G;.hg.set d}
+.hg.Collapse:{[d](Z,`P)set'(();.ht.paths);.hg.set d}
+.hg.Back:.hg.pivot_ -1
+.hg.Forth:.hg.pivot_ 1
+.hg.Swap:{[d]$[0=count W 0;[`G set G[1 0],2_G;`P set .ht.valid[P]G;Z set()];@[`G;G?Y,X;:;G G?X,Y]];.hg.set d}
+.hg.Up:{[d]`G set 1 rotate G;`P set .ht.valid[P]G;Z set();.hg.set d}
+.hg.Down:{[d]`G set -1 rotate G;`P set .ht.valid[P]G;Z set();.hg.set d}
+.hg.Pause:{[d]`U set 0b;.hg.ret d}
+.hg.Play:{[d]`U set 1b;.hg.ret d}
 
 / scrolling
-.js.get:{[d]`R set`start`end!"j"$d`start`end;.js.ret d}
+.hg.get:{[d]`R set`start`end!"j"$d`start`end;.hg.ret d}
 
 / event utilities
-.js.sad:{$[count k:key y;k!{$[z in`a`d;z;not x[y]in"sc";z;lower z]}[x]'[k;get y];()!()]}
-.js.cnv:{raze@[flip enlist z;i;{y$string x};upper q i:where"s"<>q:y count[z]#x]}
-.js.exe:{.js[x`fn]x}
-.js.var:{x in key[`.],raze{` sv'(`,x),/:1_key` sv`,x}each key`}
-.js.val:{$[.js.var x;get x;()]}
-.js.set:{Z set .ht.cons[.js.val Z;0!get T;J;L;P;.ht.rollups[T;A;G]F;G]W;`Z set Z;`K set .ht.sort[get Z;G;S]W;.js.ret x}
+.hg.sad:{$[count k:key y;k!{$[z in`a`d;z;not x[y]in"sc";z;lower z]}[x]'[k;get y];()!()]}
+.hg.cnv:{raze@[flip enlist z;i;{y$string x};upper q i:where"s"<>q:y count[z]#x]}
+.hg.exe:{.hg[x`fn]x}
+.hg.var:{x in key[`.],raze{` sv'(`,x),/:1_key` sv`,x}each key`}
+.hg.val:{$[.hg.var x;get x;()]}
+.hg.set:{Z set .ht.cons[.hg.val Z;0!get T;J;L;P;.ht.rollups[T;A;G]F;G]W;`Z set Z;`K set .ht.sort[get Z;G;S]W;.hg.ret x}

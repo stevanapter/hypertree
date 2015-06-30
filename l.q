@@ -1,5 +1,5 @@
 // logging
 
-.js.log:{0N!(.js.elt x;y);}
-.js.snd:{if[not(::)~x;neg[.js.J].j.j x]}
-.js.elt:{`time$"z"$.z.z-x}
+.hg.log:{0N!(.hg.elt x;y);}
+.hg.snd:{if[not(::)~x;neg[.hg.J].j.j x]}
+.hg.elt:{`time$"z"$.z.z-x}

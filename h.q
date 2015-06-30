@@ -12,14 +12,14 @@
 \l l.q
 
 / websocket communications
-.js.J:0Ni
+.hg.J:0Ni
 $[.z.K<3.3;
-  [.z.pc:{[w]if[w=.js.J;.js.J:0Ni]};
-   .z.po:{.js.J:.z.w;.js.set()}];
-  [.z.wc:{[w]if[w=.js.J;.js.J:0Ni]};
-   .z.wo:{.js.J:.z.w;.js.set()}]];
+  [.z.pc:{[w]if[w=.hg.J;.hg.J:0Ni]};
+   .z.po:{.hg.J:.z.w;.hg.set()}];
+  [.z.wc:{[w]if[w=.hg.J;.hg.J:0Ni]};
+   .z.wo:{.hg.J:.z.w;.hg.set()}]];
 
-.z.ws:{t:.z.z;.js.snd .js.exe .js.sym a:.j.k x;.js.log[t]a}
+.z.ws:{t:.z.z;.hg.snd .hg.exe .hg.sym a:.j.k x;.hg.log[t]a}
 
 / update
-.js.upd:{if[U;if[not null .js.J;t:.z.z;Z set();P[1]:.ht.paths 1;.js.snd .js.set()!();.js.log[t]`upd]]}
+.hg.upd:{if[U;if[not null .hg.J;t:.z.z;Z set();P[1]:.ht.paths 1;.hg.snd .hg.set()!();.hg.log[t]`upd]]}

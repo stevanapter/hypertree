@@ -11,16 +11,16 @@
 \l l.q
 
 / connect to client
-.js.K:0Ni
-.z.po:{[w].js.K:w;neg[.js.K](`.js.ini;.js.obj`);}
-.z.pc:{[w].js.K:0Ni}
-.z.ps:{t:.z.z;.js.snd .js.exe x;.js.log[t]x}
+.hg.K:0Ni
+.z.po:{[w].hg.K:w;neg[.hg.K](`.hg.ini;.hg.obj`);}
+.z.pc:{[w].hg.K:0Ni}
+.z.ps:{t:.z.z;.hg.snd .hg.exe x;.hg.log[t]x}
 
 / utilities
-.js.snd:{neg[.js.K](`.js.exe;x)}
-.js.obj:{{x!get each x}Z,`$'"ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
-.js.ret:{(x;.js.obj[])}
-.js.upd:{if[U;if[not null .js.K;Z set();P[1]:.ht.paths 1;.js.snd .js.set()!()]]}
+.hg.snd:{neg[.hg.K](`.hg.exe;x)}
+.hg.obj:{{x!get each x}Z,`$'"ABCDEFGHIJKLMNOPQRSTUVWXYZ"}
+.hg.ret:{(x;.hg.obj[])}
+.hg.upd:{if[U;if[not null .hg.K;Z set();P[1]:.ht.paths 1;.hg.snd .hg.set()!()]]}
 
 / define Z
-.js.set();
+.hg.set();

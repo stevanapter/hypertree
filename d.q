@@ -68,7 +68,7 @@ O.columns.qty:`QTY
 O.columns.volume:`QTY
 
 U:1b
-.z.ts:{calc[stocks;traders;.z.D].z.T;.js.upd`;}
+.z.ts:{calc[stocks;traders;.z.D].z.T;.hg.upd`;}
 \t 5000
 
 \
@@ -112,5 +112,5 @@ O.columns.quantity:`QTY
  t[::;`quantity]+:-1 1[n?2]*n?100;t[::;`price]+:-.5+n?1.;		/ inputs to pnl
  t[::;`strategy]:n?strategy;									/ group col
  t::update pnl:quantity*price-prev price by symbol from t;		/ recalc pnl
- .js.upd`;
+ .hg.upd`;
  }
