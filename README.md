@@ -43,6 +43,8 @@ The first block consists of the trading simulation itself, in which the necessar
 
 The second block contains the Hypertree configuration variables, which map T to different properties and behaviors of the Hypertree engine.  You can control the naming of the Hypertree table -- the treetable or pivot-cube -- by symbolic association.  In this example, the Hypertree table is 'z', and we point Hypertree at it using the Z configuration variable:  Z:`z.
 
+Using indirection in this way allows the application to perform both pre- and post-processing on variables whose names it controls.
+
 For the most part, Hypertree provides reasonable defaults for the configuration variables, but there are two which you must supply:  the initial list of grouping columns G, and the initial list of aggregation columns F.
 
 50 stock symbols:
