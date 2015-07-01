@@ -22,7 +22,8 @@ virtual:{[a;u]$[count a;![u;();0b;?[0#u;();();(first 0#),/:enlist each a]];u]}
 calc:{[t;w;h;a;n]k:$[99h=type h;n,key h;n]_a;r:?[t;w;h;k];v:t[n][;0N];$[98h=type key r;@[0!r;n;:;v];r,n!v]}
 sel:{[t;k;p]$[0=count k;();all b:$[not[type p]|30>count p;psel[t]p;(k#t)in p];();enlist b]}
 psel:{[t;p]@[count[t]#0b;raze?[t;;();`i]each{flip(=;key x;sym each get x)}each p;:;1b]}
-used:{exec n from(update m:string n from x)where min'[v{x\'[til count x]}m?-1_'m]}
+used:{exec n from x where min each v{(x scan)each til count x}n?({$[count x;x;()]}each -1_)each n}
+
 sys:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
 sym:{$[-11h=type x;enlist x;x]}
 
