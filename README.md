@@ -27,11 +27,9 @@
 
 
 Getting Started
-===============
+---------------
 
 Hypertree is a q server which adds tree- and pivot-table calculation to [Hypergrid](http://openfin.github.io/fin-hypergrid/components/fin-hypergrid/demo.html?tab=4).
-
-Hypertree uses an improved version of the algorithm described [here](http://archive.vector.org.uk/art10500340).
 
 What follows is designed to teach you how to connect your data to Hypertree.
 
@@ -39,7 +37,13 @@ Hypertree uses either a one- or two-server configuration.  The two-server model 
 
 The interface between Hypertree and your application is a single script, d.q.  Hypertree comes equipped with a pre-defined d.q containing two examples.  We'll focus on the first example, a pnl calcuator built on a trading simulation.
 
-The first block of code consists of the trading simulation.  The second block contains the Hypertree configuration parameters, which map your data to different properties and behaviors of the Hypertree engine.
+The example script contains two blocks of code.  
+
+The first block consists of the trading simulation, in which the necessary tables and functions are defined.  One of those tables will serve as the underlying data of the Hypertree machine.  In our example, the underlying table is called 'pnl', and we point Hypertree at it using the T configuration variable:  T:`pnl.
+
+The second block contains the Hypertree configuration variables, which map T to different properties and behaviors of the Hypertree engine.  You can control the naming of the Hypertree table -- the treetable or pivot-cube -- by symbolic association.  In this example, the Hypertree table is 'z', and we point Hypertree at it using the Z configuration variable:  Z:`z.
+
+For the most part, Hypertree provides reasonable defaults for the configuration variables, but there are two which you must supply:  the initial list of grouping columns G, and the initial list of aggregation columns F.
 
 50 stock symbols:
 
@@ -157,6 +161,8 @@ Updates are on; trade and recalculate pnl every 5 seconds:
 
 Concepts
 --------
+
+Hypertree uses an improved version of the algorithm described [here](http://archive.vector.org.uk/art10500340).
 
 Suppose our tree has the following structure:
 
