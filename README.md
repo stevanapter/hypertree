@@ -1,6 +1,8 @@
 # Hypertree
 
 
+[Getting Started](https://github.com/stevanapter/hypertree#getting-started)
+
 [Concepts](https://github.com/stevanapter/hypertree#concepts)
 
 [Structure](https://github.com/stevanapter/hypertree#structure)
@@ -24,14 +26,178 @@
 [Enhancements](https://github.com/stevanapter/hypertree#enhancements)
 
 
-Concepts
---------
+Getting Started
+---------------
 
 Hypertree is a q server which adds tree- and pivot-table calculation to [Hypergrid](http://openfin.github.io/fin-hypergrid/components/fin-hypergrid/demo.html?tab=4).
 
-Hypertree is based on an improved version of the algorithm described [here](http://archive.vector.org.uk/art10500340).
+Hypertree uses an improved version of the algorithm described [here](http://archive.vector.org.uk/art10500340).
 
-What follows is a brief overview.
+What follows is designed to teach you in the simplest way I know how to connect your data to Hypertree.
+
+Hypertree consists of either one or two q servers.  The two-server configuration dedicates one server (s) to the data and the other (c) to the Hypergrid client.
+
+We'll concentrate on the simpler of the two configurations, in which the single server (h) processes the data as well as the event- and display-processing of the Hypergrid client.
+
+The interface between Hypertree and your application is a single script, d.q.
+
+Hypertree comes with a pre-defined d.q containing two examples.  We'll focus on the first example, a pnl calcuator built on a trading simulation.
+
+The first block of code consists of the trading simulation:
+
+50 stock symbols:
+
+	sym:50
+
+At each simulation step, .5 percent of the traders will trade:
+
+	per:.005
+
+The raw trader table = 
+
+trader          unit                
+------------------------------------..
+Don Aase        California Angels   
+Glenn Abbott    Seattle Mariners    
+Glenn Adams     Minnesota Twins     
+Luis Aguayo     Philadelphia Quakers
+Willie Aikens   Kansas City Royals  
+:
+	
+	traders:get`:pnl/traders
+
+The raw stocks table = 
+
+symbol| name                             oprice sector            industry   ..
+------| ---------------------------------------------------------------------..
+MWG   | Morgan Stanley                   25.72  Finance           Finance: Co..
+MANU  | Manchester United Ltd.           15.77  Consumer Services Services-Mi..
+SXE   | Southcross Energy Partners, L.P. 15.39  Public Utilities  Natural Gas..
+:
+
+	stocks:1!sym?get`:pnl/stocks
+
+strategies = 
+
+	strategies:`statarb`pairs`mergerarb`chart`other`distressed`arbitrage
+
+Generate the traders table = 
+
+id| unit              trader       strategy  symbol
+--| -----------------------------------------------
+0 | California Angels Don Aase     arbitrage OGS   
+1 | California Angels Don Aase     arbitrage POL   
+2 | California Angels Don Aase     arbitrage NL  
+:  
+
+	groups:{z,(1#x)!enlist(neg 1+rand count[y])?y}
+	traders:ungroup groups[`strategy;strategies]each traders
+	traders:ungroup groups[`symbol;exec symbol from stocks]each traders
+	traders:1!`id`unit`trader`strategy`symbol xcols update id:til count traders from traders
+
+Trade at each time-step:
+
+	trade:{[st;tr;d;t]
+	 m:floor per*c:count tr;
+	 i:exec id from tr where i in neg[m]?c;
+	 s:tr[flip enlist i;`symbol];
+	 p:(exec symbol!oprice from st)s;
+	 p+:(m?-1 0 1)*(m?.001)*p;
+	 q:(m?-1 1.)*100*1+m?10;
+	 r:([]id:i;symbol:s;date:d;time:t;price:p;qty:q);
+	 o:0!select symbol:`HEDGE,first date,first time,price:5.0,qty:neg(sum price*qty)%5.0*0.9995 by id from r;
+	 r,o}
+
+Calculate pnl:
+
+	calc:{[stocks;traders;date;time]
+	 trades,:trade[stocks;traders;date;time];
+	 t:select trades:count id,qty:sum qty,cprice:last price,vwap:qty wavg price by id,symbol from trades;
+	 u:(0!traders lj update real:qty*vwap,unreal:qty*cprice from t)lj stocks;
+	 pnl::update vwap:0n from(update"j"$qty,pnl:real+unreal from select from u where not null qty)where vwap=0w;
+	 }
+
+	calc[stocks;traders;.z.D].z.T
+
+A pnl table record:
+
+id      | 1
+unit    | `California Angels
+trader  | `Don Aase
+strategy| `arbitrage
+symbol  | `POL
+trades  | 2
+qty     | -100
+cprice  | 38.07067
+vwap    | 38.02206
+real    | -3802.206
+unreal  | -3807.067
+name    | `PolyOne Corporation
+oprice  | 38.09
+sector  | `Basic Industries
+industry| `Major Chemicals
+pnl     | -7609.274
+
+Input and ouput tables:
+
+	T:`pnl
+	Z:`z
+
+Initial treetable grouping columns:
+
+	G:`strategy`unit`trader`symbol
+
+Initial aggregated columns:
+
+	F:`pnl`real`unreal`qty`volume`trades`vwap
+
+Show top 7 trader-earners within top 5 unit-earners:
+
+	J:([c:`unit`trader]s:`pnl`pnl;n:5 7;d:`a`a)
+
+Do not show leaves of the pnl table:
+
+	L:0b
+
+Rollup calculations:
+
+	A:()!()
+	A[`N_]:(count;`qty)
+	A[`qty]:(sum;`qty)
+	A[`volume]:(sum;(abs;`qty))
+	A[`trades]:(sum;`trades)
+	A[`pnl]:(sum;`pnl)
+	A[`real]:(sum;`real)
+	A[`unreal]:(sum;`unreal)
+	A[`oprice]:(avg;`oprice)
+	A[`cprice]:(avg;`cprice)
+	A[`vwap]:(avg;`vwap)
+
+Default sorts = absolute-descending on the pnl column:
+
+	S:()!()
+	S[`pnl]:`D
+
+Display properties:
+
+	O.columns.pnl:`USD
+	O.columns.oprice:`USD
+	O.columns.cprice:`USD
+	O.columns.vwap:`USD
+	O.columns.real:`USD
+	O.columns.unreal:`USD
+	O.columns.qty:`QTY
+	O.columns.volume:`QTY
+
+Updates are on; trade and recalculate pnl every 5 seconds:
+
+	U:1b
+	.z.ts:{calc[stocks;traders;.z.D].z.T;.hg.upd`;}
+	\t 5000
+
+
+Concepts
+--------
 
 Suppose our tree has the following structure:
 
