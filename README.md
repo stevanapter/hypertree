@@ -468,8 +468,8 @@ S: Sorts = cols!(..{`a`d`A`D}..)
 
 	a = ascending
 	d = descending
-	A = ascending absolute
-	D = descending absolute
+	A = ascending absolute (non-symbolics/characters)
+	D = descending absolute (non-symbolics/characters)
 
 	For example:  S:`foo`bar!`D`a for ascending bar within descending-absolute foo.
 
