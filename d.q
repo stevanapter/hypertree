@@ -21,8 +21,8 @@ trade:{[st;tr;d;t]
  p+:(m?-1 0 1)*(m?.001)*p;
  q:(m?-1 1.)*100*1+m?10;
  r:([]id:i;symbol:s;date:d;time:t;price:p;qty:q);
- o:0!select symbol:`HEDGE,first date,first time,price:5.0,qty:neg(sum price*qty)%5.0*0.9995 by id from r;
- r,o}
+ o:select symbol:`HEDGE,first date,first time,price:5.0,qty:neg(sum price*qty)%5.0*0.9995 by id from r;
+ r,0!o}
 
 calc:{[stocks;traders;date;time]
  trades,:trade[stocks;traders;date;time];

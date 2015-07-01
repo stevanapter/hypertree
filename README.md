@@ -27,7 +27,7 @@
 
 
 Getting Started
----------------
+===============
 
 Hypertree is a q server which adds tree- and pivot-table calculation to [Hypergrid](http://openfin.github.io/fin-hypergrid/components/fin-hypergrid/demo.html?tab=4).
 
@@ -78,9 +78,9 @@ Trade at each time-step:
 	 p+:(m?-1 0 1)*(m?.001)*p;
 	 q:(m?-1 1.)*100*1+m?10;
 	 r:([]id:i;symbol:s;date:d;time:t;price:p;qty:q);
-	 o:0!select symbol:`HEDGE,first date,first time,price:5.0,qty:neg(sum price*qty)%5.0*0.9995 
+	 o:select symbol:`HEDGE,first date,first time,price:5.0,qty:neg(sum price*qty)%5.0*0.9995 
 	  by id from r;
-	 r,o}
+	 r,0!o}
 
 Calculate pnl:
 
