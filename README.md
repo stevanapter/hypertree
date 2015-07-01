@@ -78,16 +78,19 @@ Trade at each time-step:
 	 p+:(m?-1 0 1)*(m?.001)*p;
 	 q:(m?-1 1.)*100*1+m?10;
 	 r:([]id:i;symbol:s;date:d;time:t;price:p;qty:q);
-	 o:0!select symbol:`HEDGE,first date,first time,price:5.0,qty:neg(sum price*qty)%5.0*0.9995 by id from r;
+	 o:0!select symbol:`HEDGE,first date,first time,price:5.0,qty:neg(sum price*qty)%5.0*0.9995 
+	  by id from r;
 	 r,o}
 
 Calculate pnl:
 
 	calc:{[stocks;traders;date;time]
 	 trades,:trade[stocks;traders;date;time];
-	 t:select trades:count id,qty:sum qty,cprice:last price,vwap:qty wavg price by id,symbol from trades;
+	 t:select trades:count id,qty:sum qty,cprice:last price,vwap:qty wavg price 
+	  by id,symbol from trades;
 	 u:(0!traders lj update real:qty*vwap,unreal:qty*cprice from t)lj stocks;
-	 pnl::update vwap:0n from(update"j"$qty,pnl:real+unreal from select from u where not null qty)where vwap=0w;
+	 pnl::update vwap:0n from(update"j"$qty,pnl:real+unreal from 
+	  select from u where not null qty)where vwap=0w;
 	 }
 
 Calculate the initial pnl:
