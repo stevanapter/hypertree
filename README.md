@@ -67,6 +67,7 @@ The raw stocks table =
 
 symbol| name                             oprice sector            industry   ..
 ------| ---------------------------------------------------------------------..
+
 MWG   | Morgan Stanley                   25.72  Finance           Finance: Co..
 MANU  | Manchester United Ltd.           15.77  Consumer Services Services-Mi..
 SXE   | Southcross Energy Partners, L.P. 15.39  Public Utilities  Natural Gas..
@@ -82,6 +83,7 @@ Generate the traders table =
 
 id| unit              trader       strategy  symbol
 --| -----------------------------------------------
+
 0 | California Angels Don Aase     arbitrage OGS   
 1 | California Angels Don Aase     arbitrage POL   
 2 | California Angels Don Aase     arbitrage NL  
