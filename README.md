@@ -35,15 +35,11 @@ Hypertree uses an improved version of the algorithm described [here](http://arch
 
 What follows is designed to teach you how to connect your data to Hypertree.
 
-Hypertree uses either a one- or two-server configuration.  The two-server model dedicates one server (s) to the data and the other (c) to the Hypergrid client.
+Hypertree uses either a one- or two-server configuration.  The two-server model dedicates one server (s) to the data and the other (c) to the Hypergrid client.  We'll concentrate on the simpler of the two configurations, in which the single server (h) manages the data as well as the event- and display-processing of the Hypergrid client.
 
-We'll concentrate on the simpler of the two configurations, in which the single server (h) manages the data as well as the event- and display-processing of the Hypergrid client.
+The interface between Hypertree and your application is a single script, d.q.  Hypertree comes equipped with a pre-defined d.q containing two examples.  We'll focus on the first example, a pnl calcuator built on a trading simulation.
 
-The interface between Hypertree and your application is a single script, d.q.
-
-Hypertree comes with a pre-defined d.q containing two examples.  We'll focus on the first example, a pnl calcuator built on a trading simulation.
-
-The first block of code consists of the trading simulation:
+The first block of code consists of the trading simulation.  The second block contains the Hypertree configuration parameters, which map your data to different properties and behaviors of the Hypertree engine.
 
 50 stock symbols:
 
