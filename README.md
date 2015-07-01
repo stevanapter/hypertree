@@ -33,13 +33,13 @@ Hypertree is a q server which adds tree- and pivot-table calculation to [Hypergr
 
 What follows is designed to teach you how to connect your data to Hypertree.
 
-Hypertree uses either a one- or two-server configuration.  The two-server model dedicates one server (s) to the data and the other (c) to the Hypergrid client.  We'll concentrate on the simpler of the two configurations, in which the single server (h) manages the data as well as the event- and display-processing of the Hypergrid client.
+Hypertree uses either a one- or two-server configuration.  The two-server model dedicates one server (s) to the data and the other (c) to the Hypergrid client.  We'll concentrate on the simpler of the two configurations, in which a single server (h) manages the data as well as the event- and display-processing of the Hypergrid client.
 
 The interface between Hypertree and your application is a single script, d.q.  Hypertree comes equipped with a pre-defined d.q containing two examples.  We'll focus on the first example, a pnl calcuator built on a trading simulation.
 
 The example script contains two blocks of code.  
 
-The first block consists of the trading simulation, in which the necessary tables and functions are defined.  One of those tables will serve as the underlying data of the Hypertree machine.  In our example, the underlying table is called 'pnl', and we point Hypertree at it using the T configuration variable:  T:`pnl.
+The first block consists of the trading simulation itself, in which the necessary tables and functions are defined.  One of those tables will serve as the underlying data of the Hypertree engine.  In our example, the underlying table is called 'pnl', and we point Hypertree at it using the T configuration variable:  T:`pnl.
 
 The second block contains the Hypertree configuration variables, which map T to different properties and behaviors of the Hypertree engine.  You can control the naming of the Hypertree table -- the treetable or pivot-cube -- by symbolic association.  In this example, the Hypertree table is 'z', and we point Hypertree at it using the Z configuration variable:  Z:`z.
 
@@ -61,11 +61,11 @@ The raw stocks table:
 
 	stocks:1!sym?get`:pnl/stocks
 
-strategies:
+Strategies:
 
 	strategies:`statarb`pairs`mergerarb`chart`other`distressed`arbitrage
 
-Generate the traders table: 
+We want to create virtual buckets consisting of unit-trader-strategy-symbol:
 
 	groups:{z,(1#x)!enlist(neg 1+rand count[y])?y}
 	traders:ungroup groups[`strategy;strategies]each traders
