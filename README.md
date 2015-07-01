@@ -106,7 +106,7 @@ Input and ouput tables:
 	T:`pnl
 	Z:`z
 
-Initial treetable grouping columns:
+Initial grouping columns:
 
 	G:`strategy`unit`trader`symbol
 
