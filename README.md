@@ -51,15 +51,14 @@ At each simulation step, .5 percent of the traders will trade:
 
 The raw trader table = 
 
-trader          unit                
-------------------------------------..
-
-Don Aase        California Angels   
-Glenn Abbott    Seattle Mariners    
-Glenn Adams     Minnesota Twins     
-Luis Aguayo     Philadelphia Quakers
-Willie Aikens   Kansas City Royals  
-:
+ trader          unit                
+ ------------------------------------..
+ Don Aase        California Angels   
+ Glenn Abbott    Seattle Mariners    
+ Glenn Adams     Minnesota Twins     
+ Luis Aguayo     Philadelphia Quakers
+ Willie Aikens   Kansas City Royals  
+ :
 	
 	traders:get`:pnl/traders
 
