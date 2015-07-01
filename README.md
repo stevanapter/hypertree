@@ -222,13 +222,19 @@ Click Events
 
 <img src="images/cell.gif">
 
-	sorts:		multi-sort the table ascending, descending, ascending-absolute-value, 
-				descending-absolute-value.
+	sorts:		table multi-sort.
+
+				symbol and character columns have case-insensitive ascending (a) and
+				descending (d).
+
+				columns of other types have ascending (a), descending (d), ascending-
+				absolute (A), and descending-absolute (D).
 
 <img src="images/sorts.gif">
 
-	groups:		press the alt/option key to summon a window which allows drag-and-drop 
-				regrouping of the table, and to select which columns of the table are visible.
+	groups:		press the alt/option key to summon the column-arrangement window which 
+				allows drag-and-drop regrouping of the table, and selection of visible/
+				invisible columns.
 
 				columns may also be re-arranged directly with drag-and-drop.
 
