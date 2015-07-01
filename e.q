@@ -10,8 +10,8 @@
 / event functions
 .hg.row_:{[d]`P set .ht.paths;(Z,`W`G`S)set'.ht.row[get Z;X;W;G;Q;S].(Y;first d`row);d}
 .hg.col_:{[d]`P set .ht.paths;(Z,`W`G`S)set'.ht.col[get Z;W;G;Q;S]d`col;d}
-.hg.drill_:{[d]if[(L|m<h)&(h:count G)&0<m:count n:.hg.cnv[G;Q]d`row;if[count[get Z]>r:Z[`n_]?n;`P set .ht.drill[not Z[`o_]r;P;G]n;:d]]}
 .hg.pivot_:{[x;d]`P set .ht.paths;(Z,`W`G`S)set'.ht.pivot[get Z;W;G;Q;S;F]x;.hg.set d}
+.hg.drill_:{[d]if[(L|m<h)&(h:count G)&0<m:count n:.hg.cnv[G;Q]d`row;if[count[get Z]>r:Z[`n_]?n;`P set .ht.drill[not Z[`o_]r;P;G]n;:d]]}
 
 / buttons
 .hg.Reset:{[d](Z,`G`F`S`P`W`U)set'(();G_;F_;S_;P_;W_;U_);.hg.set d}

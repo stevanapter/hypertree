@@ -13,7 +13,7 @@ expand1:{[z;t;l;g;a;p;q]rollup[z;t;l;g;a;p except q]()}
 collapse1:{[z;t;l;g;a;p;q]sys delete from z where(-1_'exec n_ from z)in get each q except p}
 
 / treetable calculation
-root:{[t;g;a]g xcols flip enlist each calc[t;();();a;g],`g_`e_`n_`l_!(`;0b;0#`;0)}
+root:{[t;g;a]g xcols flip enlist each calc[t;();();a;g],`g_`e_`n_`l_!(n;0b;0#n:t[-1;g 0];0)}
 steps:{[t;l;g;a;p]raze nodes[t;l;g;a]'[key q;get q:p group key each p]}
 nodes:{[t;l;g;a;k;p]key[a]xcols$[g~k;leaf;node][t;l;sel[t;k]p;g;a]k}
 leaf:{[t;l;w;g;a;k]virtual[(b except c)#a]?[t;w;0b;({x!x}(c:cols t)inter b:key a),`g_`e_`n_`l_!(`i;1b;(flip;enlist,g,`i);1+count g)]}
@@ -22,7 +22,7 @@ virtual:{[a;u]$[count a;![u;();0b;?[0#u;();();(first 0#),/:enlist each a]];u]}
 calc:{[t;w;h;a;n]k:$[99h=type h;n,key h;n]_a;r:?[t;w;h;k];v:t[n][;0N];$[98h=type key r;@[0!r;n;:;v];r,n!v]}
 sel:{[t;k;p]$[0=count k;();all b:$[not[type p]|30>count p;psel[t]p;(k#t)in p];();enlist b]}
 psel:{[t;p]@[count[t]#0b;raze?[t;;();`i]each{flip(=;key x;sym each get x)}each p;:;1b]}
-used:{exec n from x where min'[v{x\'[til count x]}n?-1_'n]}
+used:{exec n from(update m:string n from x)where min'[v{x\'[til count x]}m?-1_'m]}
 sys:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
 sym:{$[-11h=type x;enlist x;x]}
 
@@ -57,7 +57,7 @@ matrix:{[t;g;a;w]
 pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string .so.asc distinct t x;x;z)]}
 
 / path constant
-paths:(([n:enlist(0#`)!0#`]v:enlist 1b);([n:()]v:til 0))
+paths:(([n:enlist(0#`)!()]v:enlist 1b);([n:()]v:til 0))
 
 / pivot-state constant
 state:(();();();())
@@ -101,7 +101,7 @@ sort:{[t;g;s;w]$[count s;tsort[t;$[count w 0;();g];key s]get s;(::)]}
 
 tsort:{[t;g;c;o]
  if[0=count g;:0,1+msort[1_t;c]o];
- if[`g_~first -1_c;c:`g__,1_c;t:update g__:?[l_>1;`;g_]from t];
+ if[`g_~first -1_c;c:`g__,1_c;t:update g__:?[l_>1;first 0#g_;g_]from t];
  n:reverse exec i by l__ from s:dsort[t;g;c;o]where l__>0;
  0,raze$[1=count n;s[`i__]n;merge[s;g]/[();key n;get n]]}
 

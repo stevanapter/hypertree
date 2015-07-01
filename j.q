@@ -2,7 +2,8 @@
 
 .hg.nnd:{$[99=type x;.z.s each(key[x]except`)#x;x]}
 .hg.sub:{flip each(1#x;.hg.idx[1_x]. y`start`end)}
-.hg.idx:{$[0 0W~y,z;x;y>=count x;0#x;((1+z-y)&count r)#r:y _ x]}
+.hg.idx:{$[0 0W~y,z;x;y>=count x;0#x;.hg.gsy((1+z-y)&count r)#r:y _ x]}
+.hg.gsy:{update g_:{$[11h=type x;x;`$string x]}g_ from x}
 .hg.ret:{if[99h=type x;:x,.hg.obj[]]}
 .hg.sym:{$[()~x;0#`;(t:abs type x)in 0 99h;.z.s each x;10=t;`$x;x]}
 .hg.inf:{k:exec c!t$1%0 from meta x where t in"ijf";![x;();0b;key[k]!({@[x;where x in y,neg y;:;first 0#x]};;)'[key k;get k]]}
@@ -14,7 +15,7 @@
                    (`groups 		;G);
                    (`groupable      ;H);
                    (`invisible      ;I);
-                   (`qtypes 		;@[Q;`g_;:;"s"]);
+                   (`qtypes 		;exec c!t from meta Z);
                    (`sorts 		;`cols`sorts!reverse each(key S;get S));
                    (`rows 		;R);
                    (`count 		;count get Z);
