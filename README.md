@@ -86,7 +86,7 @@ Trade at each time-step:
 	  by id from r;
 	 r,0!o}
 
-Calculate pnl:
+Trade, then calculate pnl:
 
 	calc:{[stocks;traders;date;time]
 	 trades,:trade[stocks;traders;date;time];
