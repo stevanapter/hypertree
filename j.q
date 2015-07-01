@@ -14,7 +14,7 @@
                    (`groups 		;G);
                    (`groupable      ;H);
                    (`invisible      ;I);
-                   (`qtypes 		;Q);
+                   (`qtypes 		;@[Q;`g_;:;"s"]);
                    (`sorts 		;`cols`sorts!reverse each(key S;get S));
                    (`rows 		;R);
                    (`count 		;count get Z);
