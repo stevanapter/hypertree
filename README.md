@@ -33,11 +33,11 @@ Hypertree is a q server which adds tree- and pivot-table calculation to [Hypergr
 
 Hypertree uses an improved version of the algorithm described [here](http://archive.vector.org.uk/art10500340).
 
-What follows is designed to teach you in the simplest way I know how to connect your data to Hypertree.
+What follows is designed to teach you how to connect your data to Hypertree.
 
-Hypertree consists of either one or two q servers.  The two-server configuration dedicates one server (s) to the data and the other (c) to the Hypergrid client.
+Hypertree uses either a one- or two-server configuration.  The two-server model dedicates one server (s) to the data and the other (c) to the Hypergrid client.
 
-We'll concentrate on the simpler of the two configurations, in which the single server (h) processes the data as well as the event- and display-processing of the Hypergrid client.
+We'll concentrate on the simpler of the two configurations, in which the single server (h) manages the data as well as the event- and display-processing of the Hypergrid client.
 
 The interface between Hypertree and your application is a single script, d.q.
 
