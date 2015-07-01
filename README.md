@@ -571,6 +571,7 @@ Scripts and Contexts
 	c.q             hypertree client process
 	s.q             hypertree server process
 
+	.so 			case-insensitive sort
 	.hg 			hypergrid context
 	.ht 			hypertree context
 	.hc 			hypercalc context
