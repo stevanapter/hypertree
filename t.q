@@ -87,19 +87,14 @@ qtype:{exec c!t from meta x where not(c=lower c)&c like"?_"}
 
 / order within nodes
 orders:{[t;a;j]
- if[0=count j;:t];
  S:{t:0!z;keys[z]xkey t x t y};A:S[iasc abs@];D:S[idesc abs@];
- j:update d:(xasc;xdesc;A;D)`a`d`A`D?d from j;
- r:keys[t]xkey order[0!t;a;0!j;()];
- r}
+ keys[t]xkey order[0!t;a;0!update(xasc;xdesc;A;D)`a`d`A`D?d from j;()]}
 
 order:{[t;a;j;w]
  if[0=count j;:?[t;w;0b;()]];
- v:first j;j:1_j;
- c:v`c;s:v`s;n:v`n;d:v`d;
+ v:first j;j:1_j;c:v`c;s:v`s;n:v`n;d:v`d;
  r:?[t;w;enlist[c]!enlist c;enlist[s]!enlist a s];
- k:{x,enlist(=;y;enlist z)}[w;c]each(n&count r)#?[d[s]r;();();c];
- raze .z.s[t;a;j]each k}
+ raze .z.s[t;a;j]each{x,enlist(=;y;enlist z)}[w;c]each(n&count r)#?[d[s]r;();();c]}
 
 / treetable sort
 sort:{[t;g;s;w]$[count s;tsort[t;$[count w 0;();g];key s]get s;(::)]}
