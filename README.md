@@ -49,44 +49,19 @@ At each simulation step, .5 percent of the traders will trade:
 
 	per:.005
 
-The raw trader table = 
-
- trader          unit                
- ------------------------------------..
- Don Aase        California Angels   
- Glenn Abbott    Seattle Mariners    
- Glenn Adams     Minnesota Twins     
- Luis Aguayo     Philadelphia Quakers
- Willie Aikens   Kansas City Royals  
- :
+The raw trader table:
 	
 	traders:get`:pnl/traders
 
-The raw stocks table = 
-
-symbol| name                             oprice sector            industry   ..
-------| ---------------------------------------------------------------------..
-
-MWG   | Morgan Stanley                   25.72  Finance           Finance: Co..
-MANU  | Manchester United Ltd.           15.77  Consumer Services Services-Mi..
-SXE   | Southcross Energy Partners, L.P. 15.39  Public Utilities  Natural Gas..
-:
+The raw stocks table: 
 
 	stocks:1!sym?get`:pnl/stocks
 
-strategies = 
+strategies:
 
 	strategies:`statarb`pairs`mergerarb`chart`other`distressed`arbitrage
 
-Generate the traders table = 
-
-id| unit              trader       strategy  symbol
---| -----------------------------------------------
-
-0 | California Angels Don Aase     arbitrage OGS   
-1 | California Angels Don Aase     arbitrage POL   
-2 | California Angels Don Aase     arbitrage NL  
-:  
+Generate the traders table: 
 
 	groups:{z,(1#x)!enlist(neg 1+rand count[y])?y}
 	traders:ungroup groups[`strategy;strategies]each traders
@@ -115,26 +90,9 @@ Calculate pnl:
 	 pnl::update vwap:0n from(update"j"$qty,pnl:real+unreal from select from u where not null qty)where vwap=0w;
 	 }
 
+Calculate the initial pnl:
+
 	calc[stocks;traders;.z.D].z.T
-
-A pnl table record:
-
-id      | 1
-unit    | `California Angels
-trader  | `Don Aase
-strategy| `arbitrage
-symbol  | `POL
-trades  | 2
-qty     | -100
-cprice  | 38.07067
-vwap    | 38.02206
-real    | -3802.206
-unreal  | -3807.067
-name    | `PolyOne Corporation
-oprice  | 38.09
-sector  | `Basic Industries
-industry| `Major Chemicals
-pnl     | -7609.274
 
 Input and ouput tables:
 
