@@ -118,7 +118,7 @@ Initial aggregated columns:
 
 Show top 7 trader-earners within top 5 unit-earners:
 
-	J:([c:`unit`trader]s:`pnl`pnl;n:5 7;d:`a`a)
+	J:([c:`unit`trader]s:`pnl`pnl;n:5 7;o:`a`a)
 
 Do not show leaves of the pnl table:
 
@@ -510,12 +510,12 @@ G: Grouping columns in order
 
 J: Ordering (top or bottom n)
 
-	J:([c:0#`]s:0#`;n:0#0;d:0#`)
+	J:([c:0#`]s:0#`;n:0#0;o:0#`)
 
 	For example, to see just the seven units with the highest pnl, and within each of
 	those, the top five traders with the highest pnl:
 
-		J:([c:`unit`trader]s:`pnl`pnl;n:5 7;d:`a`a)
+		J:([c:`unit`trader]s:`pnl`pnl;n:5 7;o:`a`a)
 
 	The selection is performed on T *before* Z is calculated, so the totals in Z do not
 	reflect absolute totals in T.

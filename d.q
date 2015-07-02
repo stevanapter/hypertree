@@ -39,7 +39,7 @@ Z:`z
 G:`strategy`unit`trader`symbol
 F:`pnl`real`unreal`qty`volume`trades`vwap
 
-/ J:([c:`unit`trader]s:`pnl`pnl;n:5 7;d:`a`a)
+J:([c:`unit`trader]s:`pnl`pnl;n:5 7;o:`a`a)
 
 L:0b
 

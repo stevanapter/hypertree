@@ -9,7 +9,7 @@ F:0#` 											/ aggregated columns
 G:0#` 											/ grouping columns
 H::.ht.groupable T 								/ groupable columns
 I::.ht.invisible[W;T;A;Q;F]G 					/ invisible columns
-J:([c:0#`]s:0#`;n:0#0;d:0#`)					/ rank table
+J:([c:0#`]s:0#`;n:0#0;o:0#`)					/ rank table
 K:(::) 											/ sort vector
 L:1b 											/ show leaves?
 M:()
