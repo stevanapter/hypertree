@@ -4,7 +4,7 @@ A:()!() 										/ aggregations
 B:()
 C::.ht.visible[Q;G]I 							/ visible columns
 D:()
-E:()
+E:(::) 											/ event function
 F:0#` 											/ aggregated columns
 G:0#` 											/ grouping columns
 H::.ht.groupable T 								/ groupable columns

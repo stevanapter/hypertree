@@ -160,6 +160,8 @@ Updates are on; trade and recalculate pnl every 5 seconds:
 	.z.ts:{calc[stocks;traders;.z.D].z.T;.hg.upd`;}
 	\t 5000
 
+Also see the section below on the general event processing callback E.
+
 
 Concepts
 --------
@@ -479,7 +481,15 @@ B: Not used
 
 D: Not used
 
-E: Not used
+E: Event function
+
+	E:(::)
+
+	E is called on every Hypertree event.  By default it takes and returns the result of
+	Hypertree processing.  For example, define E as E:0N! then click to expand a row.
+
+	E provides a simple mechanism for connecting Hypertree events to the application
+	in which it is embedded.
 
 F: Visible columns in order
 
