@@ -520,8 +520,6 @@ J: Ordering (top or bottom n)
 	The selection is performed on T *before* Z is calculated, so the totals in Z do not
 	reflect absolute totals in T.
 
-	(This parameter is commented out in the example d.q).
-
 <img src="images/ordering.gif">
 
 K: Sort vector
