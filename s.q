@@ -23,4 +23,4 @@
 .hg.upd:{if[U;if[not null .hg.K;Z set();P[1]:.ht.paths 1;`T set T;.hg.snd .hg.set()!()]]}
 
 / define Z
-.hg.set();
+.hg.set()!();

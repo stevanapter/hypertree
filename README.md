@@ -618,6 +618,14 @@ U: Update?
 
 	If U is boolean, then Play (1b) or Pause (0b) updates.
 
+	To update Hypertree, use:
+
+		.hg.upd`
+
+	For example,
+
+		.z.ts:{calc[stocks;traders;.z.D].z.T;.hg.upd`;}
+
 V: Not Used.
 
 W: Pivot state

@@ -15,9 +15,9 @@
 .hg.J:0Ni
 $[.z.K<3.3;
   [.z.pc:{[w]if[w=.hg.J;.hg.J:0Ni]};
-   .z.po:{.hg.J:.z.w;.hg.set()}];
+   .z.po:{.hg.J:.z.w;.hg.set()!()}];
   [.z.wc:{[w]if[w=.hg.J;.hg.J:0Ni]};
-   .z.wo:{.hg.J:.z.w;.hg.set()}]];
+   .z.wo:{.hg.J:.z.w;.hg.set()!()}]];
 
 .z.ws:{t:.z.z;.hg.snd .hg.exe .hg.sym a:.j.k x;.hg.log[t]a}
 
