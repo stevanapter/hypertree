@@ -4,7 +4,6 @@
 \t 2000
 
 \l j.q
-\l l.q
 
 \e 1
 
@@ -16,6 +15,7 @@
 
 / websocket communications
 .hg.J:0Ni
+
 $[.z.K<3.3;
   [.z.pc:{[w]$[w=.hg.J;.hg.J:0Ni;w=.hg.K;.hg.K:0Ni]};
    .z.po:{.hg.J:.z.w;neg[.hg.K](1#`fn)!1#`set}];
@@ -23,7 +23,7 @@ $[.z.K<3.3;
    .z.wc:{[w]if[w=.hg.J;.hg.J:0Ni]};
    .z.wo:{.hg.J:.z.w;neg[.hg.K](1#`fn)!1#`set}]];
 
-.z.ws:{t:.z.z;.hg.rcv .hg.sym a:.j.k x;.hg.log[t]a}
+.z.ws:{.hg.rcv .hg.sym .j.k x}
 
 / client utilities
 .hg.get:{`R set`start`end!"j"$x`start`end;.hg.ret x}

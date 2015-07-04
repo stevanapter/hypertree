@@ -31,7 +31,6 @@
 / event utilities
 .hg.sad:{$[count k:key y;k!{$[z in`a`d;z;not x[y]in"sc";z;lower z]}[x]'[k;get y];()!()]}
 .hg.cnv:{raze@[flip enlist z;i;{y$string x};upper q i:where"s"<>q:y count[z]#x]}
-.hg.exe:{E .hg[x`fn]x}
-.hg.var:{x in key[`.],raze{` sv'(`,x),/:1_key` sv`,x}each key`}
+.hg.exe:{.hg[x`fn]x}
 .hg.val:{$[.hg.var x;get x;()]}
 .hg.set:{Z set .ht.cons[.hg.val Z;0!get T;J;L;P;.ht.rollups[T;A;G]F;G]W;`Z set Z;`K set .ht.sort[get Z;G;S]W;.hg.ret x}

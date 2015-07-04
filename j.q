@@ -8,6 +8,7 @@
 .hg.sym:{$[()~x;0#`;(t:abs type x)in 0 99h;.z.s each x;10=t;`$x;x]}
 .hg.inf:{k:exec c!t$1%0 from meta x where t in"ijf";![x;();0b;key[k]!({@[x;where x in y,neg y;:;first 0#x]};;)'[key k;get k]]}
 .hg.opt:{$[0=count x 0;z;not`columns in key z;z;not x[0;0]in key z`columns;z;@[z;`columns;:;y!count[y]#z[`columns]x[0;0]]]}
+.hg.var:{x in key[`.],raze{` sv'(`,x),/:1_key` sv`,x}each key`}
 
 / object -> hypergrid
 .hg.obj:{(!). flip((`hypertree      ;.hg.sub[get[Z]K]R);
