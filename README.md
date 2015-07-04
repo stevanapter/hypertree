@@ -446,6 +446,15 @@ Hypertree behavior is controlled by a set of programmer-defined global variables
 
 Dependencies (*var::def) are internal functions and should not be redefined.  Other variables may be initialized on startup as part of d.q.
 
+The following variables must be defined by the application:
+
+	F
+	G (unless there are no grouping columns)
+	T (unless the underlying table = t)
+	Z (unless the underlying table = z)
+
+All other variables default to reasonable values.
+
 A: Rollups
 
 	Rollup expressions are q parse-trees:
