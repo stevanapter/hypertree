@@ -767,9 +767,41 @@ For this reason, the Hypertree parameters are defined in the root context as glo
 Enhancements
 ------------
 
-Static rollups (NOT YET IMPLEMENTED):
+The initial release of Hypertree supports drilldown and pivoting on a single input table T.  In what follows I will describe how this structure can be extended in several useful ways.
 
-	Create a dictionary whose keys are a subset of the permutations of G.
+There are two types of Hypertree instance:  a single process h, and a pair of communicating processes s and c, where s manages the data and update-events and c manages client-events.
+
+Think of a Hypertree instance of either type as a function taking T and the parameters A, B, C .. and returning Z.  Events such as updates, clicks, drag-and-drops and button-clicks cause Z to be recomputed.  
+
+I think of this system as a dynamic view of T.  So currently we have one view of one table per Hypertree instance.
+
+We can imagine extending a single Hypertree instance in two ways:
+
+1. Multiple views
+
+For example, Z1 is a view of T where G = `a`b`c and Z2 is a view of T where G = `d`e.
+
+2. Multiple tables
+
+For example, Z1 is a view of T1 and Z2 is a view of T2.
+
+3. Multiple instances
+
+We can also imagine extending Hypertree to support multiple communicating instances.  For example, if T1 and T2 are too large to fit comfortably in a single process of either the h or s type, or if calculation of multiple views is too expensive to permit responsive operation of the client h or c, we might want to implement our multi-view or multi-table design using multiple instances of Hypertree.  We are free to use as many instances as necessary, and to freely distribute tables and views among them.  (how we represent this structure in the gui is left open:  as tabs, as elements in dashboards, nested, tiled, &c.)
+
+Whether we use a single- or multiple-instance design we can define a linking operation on multiple views, which can be represented this way:
+
+	Z1 -> f=a -> Z2
+
+which means:
+
+	compute Z2 from: V2 & select from T2 where f=a
+
+where V2 is the filter used to compute Z2 from T2.
+
+4. Static rollups
+
+Create a dictionary whose keys are a subset of the permutations of G.
 
 	q).af.set`:t
 	q).af.get`:t
