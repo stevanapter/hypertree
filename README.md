@@ -777,15 +777,15 @@ I think of this system as a dynamic view of T.  So currently we have one view of
 
 We can imagine extending a single Hypertree instance in two ways:
 
-1. Multiple views
+- Multiple views
 
 For example, Z1 is a view of T where G = `a`b`c and Z2 is a view of T where G = `d`e.
 
-2. Multiple tables
+- Multiple tables
 
 For example, Z1 is a view of T1 and Z2 is a view of T2.
 
-3. Multiple instances
+- Multiple instances
 
 We can also imagine extending Hypertree to support multiple communicating instances.  For example, if T1 and T2 are too large to fit comfortably in a single process of either the h or s type, or if calculation of multiple views is too expensive to permit responsive operation of the client h or c, we might want to implement our multi-view or multi-table design using multiple instances of Hypertree.  We are free to use as many instances as necessary, and to freely distribute tables and views among them.  (how we represent this structure in the gui is left open:  as tabs, as elements in dashboards, nested, tiled, &c.)
 
@@ -799,7 +799,7 @@ which means:
 
 where V2 is the filter used to compute Z2 from T2.
 
-4. Static rollups
+- Static rollups
 
 Create a dictionary whose keys are a subset of the permutations of G.
 
