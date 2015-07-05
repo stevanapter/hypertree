@@ -767,7 +767,7 @@ For this reason, the Hypertree parameters are defined in the root context as glo
 Enhancements
 ------------
 
-The initial release of Hypertree supports drilldown and pivoting on a single input table T.  In what follows I will describe how this structure can be extended in several useful ways.
+The initial release of Hypertree supports treetable- and pivot-cube drilldown on a single input table T.  In what follows I will describe how this structure can be extended in several useful ways.
 
 There are two types of Hypertree instance:  a single process h, and a pair of communicating processes s and c, where s manages the data and update-events and c manages client-events.
 
