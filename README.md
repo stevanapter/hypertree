@@ -801,6 +801,8 @@ where V2 is the filter used to compute Z2 from T2.
 
 - Static rollups
 
+Implemented in an earlier version of Hypertree, but removed until a good use-case can be found.
+
 Create a dictionary whose keys are a subset of the permutations of G.
 
 	q).af.set`:t
