@@ -67,7 +67,7 @@ state:(();();();())
 valid:{[p;g](1!(0!p 0)where til[count g]{(count[y]#x)~y}/:g?/:key each exec n from p 0;paths 1)}
 
 / open/close to group (h=` -> open to leaves)
-opento:{[t;g;h]inst distinct(enlist(0#`)!0#`),raze t to/:(1+til count k)#\:k:(g?h)#g}
+opento:{[t;g;h]inst distinct(enlist(0#`)!()),raze t to/:(1+til count k)#\:k:(g?h)#g}
 inst:{[m]([n:m]v:count[m]#1b)}
 to:{(enlist(0#`)!0#`),y!/:flip distinct x y}
 expand:{[t;g](opento[t;g]last g;paths 1)}
@@ -88,7 +88,8 @@ qtype:{exec c!t from meta x where not(c=lower c)&c like"?_"}
 
 / order within nodes
 orders:{[t;a;j]
- S:{t:0!z;keys[z]xkey t x t y};A:S[iasc abs@];D:S[idesc abs@];f:(hxasc;hxdesc;A;D)`a`d`A`D?;
+ S:{t:0!z;keys[z]xkey t x t y};
+ A:S[iasc abs@];D:S[idesc abs@];f:(hxasc;hxdesc;A;D)`a`d`A`D?;
  keys[t]xkey order[0!t;a;0!update f o from j;()]}
 
 order:{[t;a;j;w]
