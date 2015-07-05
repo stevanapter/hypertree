@@ -120,6 +120,12 @@ Show top 7 trader-earners within top 5 unit-earners:
 
 	J:([c:`unit`trader]s:`pnl`pnl;n:5 7;o:`a`a)
 
+Filter pnl where qty>0:
+
+	V::exec i from pnl where qty>0
+
+(J and V are commented out in the example script.)
+
 Do not show leaves of the pnl table:
 
 	L:0b
@@ -645,7 +651,9 @@ U: Update?
 
 		.z.ts:{calc[stocks;traders;.z.D].z.T;.hg.upd`;}
 
-V: Not Used.
+V: View
+
+	V:(::)
 
 W: Pivot state
 

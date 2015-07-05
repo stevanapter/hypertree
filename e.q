@@ -33,4 +33,4 @@
 .hg.cnv:{raze@[flip enlist z;i;{y$string x};upper q i:where"s"<>q:y count[z]#x]}
 .hg.exe:{.hg[x`fn]x}
 .hg.val:{$[.hg.var x;get x;()]}
-.hg.set:{Z set .ht.cons[.hg.val Z;0!get T;J;L;P;.ht.rollups[T;A;G]F;G]W;`Z set Z;`K set .ht.sort[get Z;G;S]W;.hg.ret x}
+.hg.set:{Z set .ht.cons[.hg.val Z;(0!get T)V;J;L;P;.ht.rollups[T;A;G]F;G]W;`Z set Z;`K set .ht.sort[get Z;G;S]W;.hg.ret x}
