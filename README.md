@@ -779,7 +779,7 @@ We can imagine extending a single Hypertree instance in two ways:
 
 - Multiple views
 
-For example, Z1 is a view of T where G = `a`b`c and Z2 is a view of T where G = `d`e.
+For example, Z1 is a view of T where G:`a`b`c and Z2 is a view of T where G:`d`e.
 
 - Multiple tables
 
