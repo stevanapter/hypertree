@@ -124,8 +124,6 @@ Filter pnl where qty>0:
 
 	V::exec i from pnl where qty>0
 
-(J and V are commented out in the example script.)
-
 Do not show leaves of the pnl table:
 
 	L:0b
@@ -742,7 +740,6 @@ Scripts and Contexts
 	c.q             hypertree client process
 	s.q             hypertree server process
 
-	.so 			case-insensitive sort
 	.hg 			hypergrid context
 	.ht 			hypertree context
 	.hc 			hypercalc context

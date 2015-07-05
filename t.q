@@ -55,7 +55,7 @@ matrix:{[t;g;a;w]
  flip flip[z],`o_`p_`g_`e_`l_!(1b;0N;last each z`n_;1b;0)}
 
 / pivot table (h/t: nick psaris, Q-TIPS)
-pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string .so.asc distinct t x;x;z)]}
+pcalc:{[t;z;y;x]?[t;();y!y,:();({x#(`$string y)!z}`$string hasc distinct t x;x;z)]}
 
 / path constant
 paths:(([n:enlist(0#`)!()]v:enlist 1b);([n:()]v:til 0))
@@ -88,8 +88,8 @@ qtype:{exec c!t from meta x where not(c=lower c)&c like"?_"}
 
 / order within nodes
 orders:{[t;a;j]
- S:{t:0!z;keys[z]xkey t x t y};A:S[.so.iasc abs@];D:S[.so.idesc abs@];
- keys[t]xkey order[0!t;a;0!update(.so.xasc;.so.xdesc;A;D)`a`d`A`D?o from j;()]}
+ S:{t:0!z;keys[z]xkey t x t y};A:S[iasc abs@];D:S[idesc abs@];f:(hxasc;hxdesc;A;D)`a`d`A`D?;
+ keys[t]xkey order[0!t;a;0!update f o from j;()]}
 
 order:{[t;a;j;w]
  if[0=count j;:?[t;w;0b;()]];
@@ -107,12 +107,22 @@ tsort:{[t;g;c;o]
  0,raze$[1=count n;s[`i__]n;merge[s;g]/[();key n;get n]]}
 
 dsort:{[t;g;c;o]
- a:!/[g,/:(`i__`l__;`i`l_)];c:c!csort[c]o;o:(.so.iasc;.so.idesc)o in`d`D;
+ a:!/[g,/:(`i__`l__;`i`l_)];c:c!csort[c]o;o:(hiasc;hidesc)o in`d`D;
  $[1=count distinct o;?[t;();0b;a;0W;(first o;esort c)];?[t;();0b;a]rsort[t;c]o]}
 
-msort:{[t;c;o]{x y z x}/[::;(`a`d`A`D!(.so.iasc;.so.idesc;.so.iasc abs@;.so.idesc abs@))o;t c]}
+msort:{[t;c;o]{x y z x}/[::;(`a`d`A`D!(hiasc;hidesc;iasc abs@;idesc abs@))o;t c]}
 csort:{[c;o]@[flip(@;abs;c;c);i;:;c i:where o in`a`d]}
 rsort:{[t;c;o]{x y z x}/[::;reverse o;?[t;();();enlist,reverse get c]]}
 esort:{[c]$[1=count c;first c;(flip;(!;enlist key c;enlist,get c))]}
 level:{[s;g;n;i]c:((m:n&count g)#g),`i__;(delete i__ from t)!flip enlist(t:(c#s)i)`i__}
 merge:{[s;g;x;n;i]v:level[s;g;n;i];$[count x;@[v;(keys v)#key x;,;get x];v]}
+
+/ case-insensitive sort
+hsort:{$[type[y]in 10 11h;x lower@;x]y}
+hiasc:hsort iasc
+hidesc:hsort idesc
+hasc:{x hiasc x}
+hdesc:{x hdesc x}
+hxasc:{keys[y]xkey(0!y)hiasc?[y;();();x]}
+hxdesc:{keys[y]xkey(0!y)hidesc?[y;();();x]}
+
