@@ -653,6 +653,14 @@ V: View
 
 	V:(::)
 
+	V can be an index vector (type 6 or 7), e.g.
+
+		V::exec i from pnl where qty>0
+
+	or a function (type > 99), e.g.
+
+		V:{select from x where qty>0}
+
 W: Pivot state
 
 	W:.ht.state = (();();();())
