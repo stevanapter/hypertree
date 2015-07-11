@@ -98,7 +98,13 @@ order:{[t;a;j;w]
  r:?[t;w;enlist[c]!enlist c;enlist[s]!enlist a s];
  raze .z.s[t;a;j]each{x,enlist(=;y;enlist z)}[w;c]each(n&count r)#?[o[s]r;();();c]}
 
-/ treetable sort
+/ sort event
+sorts:{[t;g;q;s;w;c]
+ if[b:not c in key s;s[c]:`a];
+ if[not b;$[null n:$[q[c]in"bhijspmdznuvt";`d`@`a`d?;`d`A`D`@`a`d`A`D?]s c;s:c _ s;s[c]:n]];
+ (sort[t;g;s]w;s)}
+
+/ treetable/pivot sort
 sort:{[t;g;s;w]$[count s;tsort[t;$[count w 0;();g];key s]get s;(::)]}
 
 tsort:{[t;g;c;o]
