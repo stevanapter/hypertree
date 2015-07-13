@@ -37,9 +37,12 @@
 / icons
 .hg.cic:{$[0=count y;()!();[w:0=count z 0;n:count k:key[x]except `;((1#`g_)!1#`u` w),$[w;k!n#`d;(`,k)!`,n#`d` count[y]=2+count z 1]]]}
 
+/ version
+.hg.Version:"1.0(beta)"
+
 / state -> message
 .hg.msg:{[g;x;y;s;w]
- r:`Table`Rows`Index!(string T;string N;"/"sv string get R);
+ r:`Version`Table`Rows`Index!(.hg.Version;string T;string N;"/"sv string get R);
  if[count[w 0]&0=count w 1    ;r[`X]:x;r[`Y]:y;r[`Z]:string w[0;0]];
  if[count w 1                 ;r[`X]:x;r[`Y]:string y;r[`Z]:string w[0;0];r[`Where]:","sv({y,"=",z 0}.)each string w 1];
  if[(0=count w 0)&count g     ;r[`Groups]:","sv string g];
