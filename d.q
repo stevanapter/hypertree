@@ -40,7 +40,7 @@ G:`strategy`unit`trader`symbol
 F:`pnl`real`unreal`qty`volume`trades`vwap
 
 J:([c:`unit`trader]s:`pnl`pnl;n:5 7;o:`a`a)
-V::exec i from pnl where qty>0
+/ V::exec i from pnl where qty>0
 
 L:0b
 
