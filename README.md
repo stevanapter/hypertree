@@ -302,7 +302,7 @@ Finally, clicking on the up-triangle of the header of the Hierarchy column cause
 
 Hypertree thus provides drill-down interaction on both X, Y, and Z axes of a three-dimensional hierarchical pivot table.
 
-In a future version of Hypertree we will support condensing planes of the pivot cube into "super-cells" containing multiple z values.
+In a future version of Hypertree we will support "super-cells" containing multiple z values by condensing planes of the pivot cube.
 
 
 Structure
@@ -779,7 +779,7 @@ We can imagine extending a single Hypertree instance in two ways:
 
 - Multiple views
 
-For example, Z1 is a view of T where G = `a`b`c and Z2 is a view of T where G = `d`e.
+For example, Z1 and Z2 are different views of T.  In Z1 we have F = F1, G = G1, &c., and in Z2 we have F = F2, G = G2, &c.  In other words, we allow distinct independent sets of configuration variables.
 
 - Multiple tables
 
