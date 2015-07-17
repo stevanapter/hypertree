@@ -6,6 +6,7 @@
 .hg.cell:{[d].hg.col_ d;.hg.row`col _ d}
 .hg.sorts:{[d]`K`S set'.ht.sorts[get Z;G;Q;S;W]d`col;.hg.ret d}
 .hg.groups:{[d]`F`G set'.hg.sym d`visible`groups;`P set .ht.valid[P]G;Z set();.hg.set d}
+.hg.execute:{[d].hg.set d}
 
 / event functions
 .hg.row_:{[d]`P set .ht.paths;(Z,`W`G`S)set'.ht.row[get Z;X;W;G;Q;S].(Y;first d`row);d}

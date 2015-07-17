@@ -27,6 +27,7 @@
                    (`reorderable    ;0=count W 0);
                    (`cell           ;count[G]>2+count W 1);
                    (`buttons        ;.hg.buttons[G;U]W);
+                   (`execute        ;100h=type E);
                    (`message        ;.hg.msg[G;X;Y;S]W))}
 
 / buttons
