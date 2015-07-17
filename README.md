@@ -302,8 +302,6 @@ Finally, clicking on the up-triangle of the header of the Hierarchy column cause
 
 Hypertree thus provides drill-down interaction on both X, Y, and Z axes of a three-dimensional hierarchical pivot table.
 
-In a future version of Hypertree we will support "super-cells" containing multiple z values by condensing planes of the pivot cube.
-
 
 Structure
 ---------
@@ -798,6 +796,10 @@ which means:
 	compute Z2 from: V2 & select from T2 where f=a
 
 where V2 is the filter used to compute Z2 from T2.
+
+- Condense Z planes
+
+In a future version of Hypertree we will support "super-cells" containing multiple z values by condensing selected planes of the pivot cube.
 
 - Static rollups
 

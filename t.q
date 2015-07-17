@@ -21,11 +21,9 @@ node:{[t;l;w;g;a;k]h:k,first c:g except k;![calc[t;w;h!h;a]1_c;();0b;`g_`e_`n_`l
 virtual:{[a;b;c;u]$[count a:(b except c)#a;![u;();0b;?[0#u;();();(first 0#),/:enlist each a]];u]}
 calc:{[t;w;h;a;n]k:$[99h=type h;n,key h;n]_a;r:?[t;w;h;k];v:t[n][;0N];$[98h=type key r;@[0!r;n;:;v];r,n!v]}
 sel:{[t;k;p]$[0=count k;();all b:$[not[type p]|30>count p;psel[t]p;(k#t)in p];();enlist b]}
-psel:{[t;p]@[count[t]#0b;raze?[t;;();`i]each{flip(=;key x;sym each get x)}each p;:;1b]}
+psel:{[t;p]@[count[t]#0b;raze?[t;;();`i]each{flip(=;key x;{$[-11h=type x;enlist x;x]}each get x)}each p;:;1b]}
 used:{exec n from x where min each v{(x scan)each til count x}n?({$[count x;x;()]}each -1_)each n}
-
 sys:{update o_:i in p_ from update p_:n_?-1_'n_ from x}
-sym:{$[-11h=type x;enlist x;x]}
 
 / treetable row event = drilldown
 drill:{[b;p;g;n]`n xasc'(p[0],([n:enlist(count[n]#g)!n,()]v:enlist b);p 0)}
