@@ -27,8 +27,8 @@
                    (`reorderable    ;0=count W 0);
                    (`cell           ;count[G]>2+count W 1);
                    (`buttons        ;.hg.buttons[G;U]W);
-                   (`execute        ;100h=type E);
-                   (`message        ;.hg.msg[G;X;Y;S]W))}
+                   (`execute        ;not(::)~D);
+                   (`message        ;.hg.state[G;X;Y;S]W))}
 
 / buttons
 .hg.buttons:{[g;u;w]
@@ -41,8 +41,8 @@
 / version
 .hg.Version:"1.0(beta)"
 
-/ state -> message
-.hg.msg:{[g;x;y;s;w]
+/ state message
+.hg.state:{[g;x;y;s;w]
  r:`Version`Table`Rows`Index!(.hg.Version;string T;string N;"/"sv string get R);
  if[count[w 0]&0=count w 1    ;r[`X]:x;r[`Y]:y;r[`Z]:string w[0;0]];
  if[count w 1                 ;r[`X]:x;r[`Y]:string y;r[`Z]:string w[0;0];r[`Where]:","sv({y,"=",z 0}.)each string w 1];
