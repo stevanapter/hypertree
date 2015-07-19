@@ -36,6 +36,8 @@ calc[stocks;traders;.z.D].z.T
 T:`pnl
 Z:`z
 
+D:{0N!x;-3!@[get;x;::]}
+
 G:`strategy`unit`trader`symbol
 F:`pnl`real`unreal`qty`volume`trades`vwap
 
