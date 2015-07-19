@@ -35,16 +35,12 @@ calc[stocks;traders;.z.D].z.T
 
 T:`pnl
 Z:`z
-
 D:{0N!x;-3!@[get;x;{x," error"}]}
-
 G:`strategy`unit`trader`symbol
 F:`pnl`real`unreal`qty`volume`trades`vwap
-
 J:([c:`unit`trader]s:`pnl`pnl;n:5 7;o:`D`D)
-/ V::exec i from pnl where qty>0
-
 L:0b
+/ V::exec i from pnl where qty>0
 
 A:()!()
 A[`N_]:(count;`qty)
