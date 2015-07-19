@@ -490,7 +490,18 @@ B: Not used
 
 	C::.ht.visible[Q;G]I
 
-D: Not used
+D: Execute function
+
+	D:(::)
+
+	If D is defined as a (result-returning) monadic function:
+
+		output-string <- D input-string
+
+	then two rows are manifested in the Hypertree window, one for input, one for output.
+
+	The string typed into the input row is passed to D, and the result of D is written 
+	into the output row.
 
 E: Event function
 
