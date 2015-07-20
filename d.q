@@ -35,7 +35,7 @@ calc[stocks;traders;.z.D].z.T
 
 T:`pnl
 Z:`z
-D:{0N!x;-3!@[get;x;{x," error"}]}
+D:{0N!x;get x}
 G:`strategy`unit`trader`symbol
 F:`pnl`real`unreal`qty`volume`trades`vwap
 J:([c:`unit`trader]s:`pnl`pnl;n:5 7;o:`D`D)

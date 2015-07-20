@@ -7,7 +7,7 @@
 .hg.sorts:{[d]`K`S set'.ht.sorts[get Z;G;Q;S;W]d`col;.hg.ret d}
 .hg.groups:{[d]`F`G set'.hg.sym d`visible`groups;`P set .ht.valid[P]G;Z set();.hg.set d}
 .hg.execute:{[d]D d`input;.hg.set d}
-.hg.execute:{[d]if[not(::)~D;d[`output]:$[10h=r:D d`input;r;""]];.hg.set d}
+.hg.execute:{[d]if[not(::)~D;d[`output]:-3!@[D;d`input;{x," error"}]];.hg.set d}
 
 / event functions
 .hg.row_:{[d]`P set .ht.paths;(Z,`W`G`S)set'.ht.row[get Z;X;W;G;Q;S].(Y;first d`row);d}
