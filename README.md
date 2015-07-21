@@ -490,7 +490,7 @@ B: Not used
 
 	C::.ht.visible[Q;G]I
 
-D: Execute function
+D: Data function
 
 	D:(::)
 
