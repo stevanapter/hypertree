@@ -27,7 +27,7 @@
                    (`reorderable    ;0=count W 0);
                    (`cell           ;count[G]>2+count W 1);
                    (`buttons        ;.hg.buttons[G;U]W);
-                   (`execute        ;not(::)~D);
+                   (`data           ;not(::)~D);
                    (`message        ;.hg.state[G;X;Y;S]W))}
 
 / buttons
