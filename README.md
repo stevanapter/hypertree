@@ -750,7 +750,7 @@ Scripts and Contexts
 	i.q 			initial state (used by reset)
 	j.q             javascript interaction utilities
 	x.q             hypertree parameters
-	a.q             auxilliary functions
+	a.q             auxiliary functions
 
 	h.q             standalone hypertree process
 
