@@ -8,7 +8,7 @@ per:.005
 traders:get`:pnl/traders
 stocks:1!sym?get`:pnl/stocks
 strategies:`statarb`pairs`mergerarb`chart`other`distressed`arbitrage
-groups:{z,(1#x)!enlist(neg 1+rand count[y])?y}
+groups:{z,(1#x)!enlist(neg 1+rand count y)?y}
 traders:ungroup groups[`strategy;strategies]each traders
 traders:ungroup groups[`symbol;exec symbol from stocks]each traders
 traders:1!`id`unit`trader`strategy`symbol xcols update id:til count traders from traders
