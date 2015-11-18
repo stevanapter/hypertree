@@ -17,7 +17,7 @@
                    (`groupable      ;H);
                    (`invisible      ;I);
                    (`qtypes         ;exec c!t from meta Z);
-                   (`sorts          ;cols`sorts!reverse each(key S;get S));
+                   (`sorts          ;`cols`sorts!reverse each(key S;get S));
                    (`rows           ;R);
                    (`count          ;count get Z);
                    (`table          ;first T);

@@ -1,7 +1,7 @@
 // globals
 
 A:()!()                                         / aggregations
-B:()
+B:()                                         / (reserved for incremental aggregations)
 C::.ht.visible[Q;G]I                            / visible columns
 D:(::)                                          / input -> output
 E:(::)                                          / event function
