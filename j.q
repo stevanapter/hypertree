@@ -13,14 +13,14 @@
 / object -> hypergrid
 .hg.obj:{(!). flip((`hypertree      ;.hg.sub[get[Z]K]R);
                    (`visible        ;C);
-                   (`groups 		;G);
+                   (`groups         ;G);
                    (`groupable      ;H);
                    (`invisible      ;I);
-                   (`qtypes 		;exec c!t from meta Z);
-                   (`sorts 		;`cols`sorts!reverse each(key S;get S));
-                   (`rows 		;R);
-                   (`count 		;count get Z);
-                   (`table 		;first T);
+                   (`qtypes         ;exec c!t from meta Z);
+                   (`sorts          ;cols`sorts!reverse each(key S;get S));
+                   (`rows           ;R);
+                   (`count          ;count get Z);
+                   (`table          ;first T);
                    (`properties     ;.hg.nnd .hg.opt[W;C]O);
                    (`icons          ;.hg.cic[Q;G]W);
                    (`ungrouped      ;.hg.var T);
