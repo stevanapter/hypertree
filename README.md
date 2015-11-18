@@ -484,7 +484,7 @@ A: Rollups
 
 		A[`k]:parse"sum[l]+sum m"
 
-B: Not used
+B: NYI: Reserved for incremenetal update functions
 
 *C: Visible columns
 
@@ -811,6 +811,14 @@ where V2 is the filter used to compute Z2 from T2.
 - Condense Z planes
 
 In a future version of Hypertree we will support "super-cells" containing multiple z values by condensing selected planes of the pivot cube.
+
+- Incremental updates
+
+Updates to T trigger total recalculation of the hypertree.  But for some aggregation functions a in A we can imagine supplying b in B which avoid recalculation from the leaves.  For example, if a = sum x, then b would calculate the quantity to increment or decrement from each aggregation of x and apply it selectively.
+
+- Functional generalization of drilldown
+
+For example, select precalculated "totals" from auxiliary subtables to avoid recalculation of non-updating tables.
 
 - Static rollups
 

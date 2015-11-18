@@ -1,7 +1,7 @@
 // globals
 
 A:()!()                                         / aggregations
-B:()                                         / (reserved for incremental aggregations)
+B:()!()                                         / NYI: reserved for incremental update functions
 C::.ht.visible[Q;G]I                            / visible columns
 D:(::)                                          / input -> output
 E:(::)                                          / event function
