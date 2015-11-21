@@ -4,7 +4,7 @@
 .hg.row:{[d].hg.set$[0=count W 0;.hg.drill_ d;X<>last G;.hg.row_ d;d]}
 .hg.col:{[d].hg.set .hg.col_ d}
 .hg.cell:{[d].hg.col_ d;.hg.row`col _ d}
-.hg.sorts:{[d]`K`S set'.ht.sorts[get Z;G;Q;S;W]d`col;.hg.ret d}
+.hg.sorts:{[d]`K`S set'.ht.sorts[get Z;G;Q;S;W]d`col;Z set();.hg.set d}
 .hg.groups:{[d]`F`G set'.hg.sym d`visible`groups;`P set .ht.valid[P]G;Z set();.hg.set d}
 .hg.data:{[d]if[not(::)~D;d[`output]:-3!@[D;d`input;{x," error"}]];.hg.set d}
 
