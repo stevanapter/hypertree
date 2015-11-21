@@ -331,6 +331,10 @@ The Hypertree table structure is encoded in the six columns n_, e_, l_, o_, p_, 
 	p_:  parent vector
 	g_:  last each n_ (hierarchy column)
 
+	I_:	 temporary variable used in sorting
+	J_:  temporary variable used in sorting
+	G_:  temporary variable used in sorting
+
 
 Click Events
 ------------
@@ -814,7 +818,7 @@ In a future version of Hypertree we will support "super-cells" containing multip
 
 - Incremental updates
 
-Updates to T trigger total recalculation of the hypertree.  But for some aggregation functions a in A we can imagine supplying b in B which avoid recalculation from the leaves.  For example, if a = sum x, then b would calculate the quantity to increment or decrement from each aggregation of x and apply it selectively.
+Updates to T trigger total recalculation of the hypertree.  But for some aggregation functions a in A we can imagine supplying b in B which avoid recalculation from the leaves.  For example, if a = sum x, then b would calculate the quantity to add to or subtract from each aggregation of x and apply those changes selectively.
 
 - Functional generalization of drilldown
 
