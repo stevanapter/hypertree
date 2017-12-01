@@ -339,7 +339,7 @@ The Hypertree table structure is encoded in the six columns n_, e_, l_, o_, p_, 
 Click Events
 ------------
 
-	row:		in treetable mode, click on an element in the Hierarchy column to expand
+	row:        in treetable mode, click on an element in the Hierarchy column to expand
                 from or contract to that row.
 
                 in pivot mode, click on an element in the Hierarchy column to select that
@@ -349,35 +349,35 @@ Click Events
 
 <img src="images/rowpivot.gif">
 
-	col:		in treetable mode, click on a column to pivot the table on the column-value.
+	col:        in treetable mode, click on a column to pivot the table on the column-value.
 
-				in pivot mode, click on a column to select that column-value and explode on 
-				the next group.
+                in pivot mode, click on a column to select that column-value and explode on 
+                the next group.
 
 <img src="images/coltree.gif">
 
 <img src="images/colpivot.gif">
 
-	cell:		double-click on a cell to restrict the table to the row-value and pivot the 
-				resulting table on the column-value.
+	cell:       double-click on a cell to restrict the table to the row-value and pivot the 
+                resulting table on the column-value.
 
 <img src="images/cell.gif">
 
-	sorts:		table multi-sort.
+	sorts:      table multi-sort.
 
-				symbol and character columns have case-insensitive ascending (a) and
-				descending (d).
+                symbol and character columns have case-insensitive ascending (a) and
+                descending (d).
 
-				columns of other types have ascending (a), descending (d), ascending-
-				absolute (A), and descending-absolute (D).
+                columns of other types have ascending (a), descending (d), ascending-
+                absolute (A), and descending-absolute (D).
 
 <img src="images/sorts.gif">
 
-	groups:		press the alt/option key to summon the column-arrangement window which
-				allows drag-and-drop regrouping of the table, and selection of visible/
-				invisible columns.
+	groups:     press the alt/option key to summon the column-arrangement window which
+                allows drag-and-drop regrouping of the table, and selection of visible/
+                invisible columns.
 
-				columns may also be re-arranged directly with drag-and-drop.
+                columns may also be re-arranged directly with drag-and-drop.
 
 <img src="images/option.gif">
 
