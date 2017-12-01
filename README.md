@@ -403,23 +403,23 @@ Button Events
 
 <img src="images/backforth.gif">
 
-	Swap:		in treetable mode, swap G 0 and G 1:  G = x y .. z -> y x .. z
+	Swap:       in treetable mode, swap G 0 and G 1:  G = x y .. z -> y x .. z
 
-				in pivot mode, swap X and Y:  X Y -> Y X
+                in pivot mode, swap X and Y:  X Y -> Y X
 
 <img src="images/swaptree.gif">
 			
 <img src="images/swappivot.gif">
 			
-	Up:			rotate group-vector:  G = x y .. z -> z x y ..
+	Up:         rotate group-vector:  G = x y .. z -> z x y ..
 
-	Down:		rotate group-vector:  G = x y .. z -> y .. z x
+	Down:       rotate group-vector:  G = x y .. z -> y .. z x
 
 <img src="images/updown.gif">
 
-	Pause:		turn updates off.
+	Pause:      turn updates off.
 
-	Play:		turn updates on.
+	Play:       turn updates on.
 
 <img src="images/playpause.gif">
 
