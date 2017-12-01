@@ -331,7 +331,7 @@ The Hypertree table structure is encoded in the six columns n_, e_, l_, o_, p_, 
 	p_:  parent vector
 	g_:  last each n_ (hierarchy column)
 
-	I_:	 temporary variable used in sorting
+	I_:  temporary variable used in sorting
 	J_:  temporary variable used in sorting
 	G_:  temporary variable used in sorting
 
@@ -340,10 +340,10 @@ Click Events
 ------------
 
 	row:		in treetable mode, click on an element in the Hierarchy column to expand
-				from or contract to that row.
+                from or contract to that row.
 
-				in pivot mode, click on an element in the Hierarchy column to select that
-				row-value and explode on the next group.
+                in pivot mode, click on an element in the Hierarchy column to select that
+                row-value and explode on the next group.
 
 <img src="images/rowtree.gif">
 
@@ -373,7 +373,7 @@ Click Events
 
 <img src="images/sorts.gif">
 
-	groups:		press the alt/option key to summon the column-arrangement window which 
+	groups:		press the alt/option key to summon the column-arrangement window which
 				allows drag-and-drop regrouping of the table, and selection of visible/
 				invisible columns.
 
@@ -551,7 +551,7 @@ J: Ordering (top or bottom n)
 	For example, to see just the seven units with the highest pnl, and within each of
 	those, the top five traders with the highest pnl:
 
-		J:([c:`unit`trader]s:`pnl`pnl;n:5 7;o:`a`a)
+	J:([c:`unit`trader]s:`pnl`pnl;n:5 7;o:`a`a)
 
 	The selection is performed on T *before* Z is calculated, so the totals in Z do not
 	reflect absolute totals in T.
@@ -747,11 +747,11 @@ After starting either the single process or the two-process version of Hypergrid
 Scripts and Contexts
 --------------------
 
-	q.q 			enhance json to filter infinities
+	q.q             enhance json to filter infinities
 	d.q             data and parameter definition
 	e.q             hypergrid events
 	t.q             hypertree calculation
-	i.q 			initial state (used by reset)
+	i.q             initial state (used by reset)
 	j.q             javascript interaction utilities
 	x.q             hypertree parameters
 	a.q             auxiliary functions
