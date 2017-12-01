@@ -761,10 +761,10 @@ Scripts and Contexts
 	c.q             hypertree client process
 	s.q             hypertree server process
 
-	.hg 			hypergrid context
-	.ht 			hypertree context
-	.hc 			hypercalc context
-	. 				hypertree parameters A .. Z, A_ .. Z_
+	.hg             hypergrid context
+	.ht             hypertree context
+	.hc             hypercalc context
+	.               hypertree parameters A .. Z, A_ .. Z_
 
 
 Style
