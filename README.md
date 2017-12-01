@@ -387,19 +387,19 @@ Button Events
 
 <img src="images/coldragdrop.gif">
 
-	Reset:		clear sorts, expansions, pivots, &c.
+	Reset:      clear sorts, expansions, pivots, &c.
 
 <img src="images/reset.gif">
 
-	Expand:		expand the tree to the level of the last group.
+	Expand:     expand the tree to the level of the last group.
 
-	Collapse:	collapse the tree to the level of the first group.
+	Collapse    collapse the tree to the level of the first group.
 
 <img src="images/expandcollapse.gif">
 
-	Back:		Pick the previous column on the z-axis to pivot on.
+	Back:       Pick the previous column on the z-axis to pivot on.
 
-	Forth:		Pick the next column on the z-axis to pivot on.
+	Forth:      Pick the next column on the z-axis to pivot on.
 
 <img src="images/backforth.gif">
 
