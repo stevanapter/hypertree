@@ -488,7 +488,7 @@ A: Rollups
 
 		A[`k]:parse"sum[l]+sum m"
 
-B: NYI: Reserved for incremenetal update functions
+B: NYI: Reserved for incremental update functions
 
 *C: Visible columns
 
