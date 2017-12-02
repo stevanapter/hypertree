@@ -108,9 +108,9 @@ O.columns.quantity:`QTY
 
 / update
 .z.ts:{
- t[::;`quantity]+:-1 1[n?2]*n?100;t[::;`price]+:-.5+n?1.;		/ inputs to pnl
- t[::;`strategy]:n?strategy;									/ group col
- t::update pnl:quantity*price-prev price by symbol from t;		/ recalc pnl
+ t[::;`quantity]+:-1 1[n?2]*n?100;t[::;`price]+:-.5+n?1.;       / inputs to pnl
+ t[::;`strategy]:n?strategy;                                    / group col
+ t::update pnl:quantity*price-prev price by symbol from t;      / recalc pnl
  .hg.upd`;
  }
 
