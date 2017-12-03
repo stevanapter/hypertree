@@ -188,7 +188,7 @@ Data-elements are attached to the leaves of the tree:
 
 	0
 	 1
-	  2	- 20
+	  2 - 20
 	  3 - 30
 	 4
 	  5
