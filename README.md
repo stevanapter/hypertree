@@ -429,7 +429,7 @@ Scrolling and Update
 
 On scrolling, Hypergrid requests a subtable	of Z:
 
-	get:		send a subtable of the current state of Z to Hypergrid.
+	get:        send a subtable of the current state of Z to Hypergrid.
 
 Hypertree also supports update.  For example, if the underlying table is t:
 
