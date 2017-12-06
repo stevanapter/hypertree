@@ -29,7 +29,7 @@
 Getting Started
 ---------------
 
-Hypertree is a q server which adds tree- and pivot-table calculation to [Hypergrid](http://openfin.github.io/fin-hypergrid-polymer-demo/components/fin-hypergrid/demo.html).
+Hypertree is a q server which adds tree- and pivot-table calculation to [Hypergrid](https://github.com/stevewirts/hypergrid-lite).
 
 What follows is designed to teach you how to connect your data to Hypertree.
 
@@ -741,7 +741,7 @@ Two-process:
 
 	By default, both client and server start on the same host.
 
-After starting either the single process or the two-process version of Hypergrid, start [Hypergrid](http://openfin.github.io/fin-hypergrid/components/fin-hypergrid/demo.html?tab=4).
+After starting either the single process or the two-process version of Hypergrid, start [Hypergrid](http://nsl.com/hypertree).
 
 
 Scripts and Contexts
