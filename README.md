@@ -29,7 +29,7 @@
 Getting Started
 ---------------
 
-Hypertree is a q server which adds tree- and pivot-table calculation to [Hypergrid](https://github.com/stevewirts/hypergrid-lite).
+Hypertree is a q server which adds tree- and pivot-table calculation to Hypergrid.
 
 What follows is designed to teach you how to connect your data to Hypertree.
 
@@ -741,7 +741,7 @@ Two-process:
 
 	By default, both client and server start on the same host.
 
-After starting either the single process or the two-process version of Hypergrid, start [Hypergrid](http://nsl.com/hypertree).
+After starting either the single process or the two-process version of Hypergrid, start [Hypertree](http://nsl.com/hypertree/hypertree).
 
 
 Scripts and Contexts
