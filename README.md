@@ -741,7 +741,7 @@ Two-process:
 
 	By default, both client and server start on the same host.
 
-After starting either the single process or the two-process version of Hypergrid, start [Hypertree](http://nsl.com/hypertree/hypertree).
+After starting either the single process or the two-process version of Hypergrid, start [Hypertree](http://www.nsl.com/hypertree/hypertree).
 
 
 Scripts and Contexts
