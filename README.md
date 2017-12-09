@@ -798,7 +798,7 @@ For example, Z1 and Z2 are different views of T.  In Z1 we have F = F1, G = G1, 
 
 For example, Z1 is a view of T1 and Z2 is a view of T2.
 
-- Multiple instances
+- Multiple instances - linked views
 
 We can also imagine extending Hypertree to support multiple communicating instances.  For example, if T1 and T2 are too large to fit comfortably in a single process of either the h or s type, or if calculation of multiple views is too expensive to permit responsive operation of the client h or c, we might want to implement our multi-view or multi-table design using multiple instances of Hypertree.  We are free to use as many instances as necessary, and to freely distribute tables and views among them.  (how we represent this structure in the gui is left open:  as tabs, as elements in dashboards, nested, tiled, &c.)
 
@@ -811,6 +811,8 @@ which means:
 	compute Z2 from: V2 & select from T2 where f=a
 
 where V2 is the filter used to compute Z2 from T2.
+
+- Multiple instances - distributed hierarchy
 
 - Condense Z planes
 
