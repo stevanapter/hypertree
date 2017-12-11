@@ -55,6 +55,7 @@ A[`cprice]:(avg;`cprice)
 A[`vwap]:(avg;`vwap)
 
 S:()!()
+S[`g_]:`a
 S[`pnl]:`D
 
 O.columns.pnl:`USD
