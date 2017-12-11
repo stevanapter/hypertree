@@ -747,7 +747,7 @@ After starting either the single process or the two-process version of Hypergrid
 Scripts and Contexts
 --------------------
 
-	q.q             enhance json to filter infinities
+	q.q             enhance json to filter infinities (deprecated)
 	d.q             data and parameter definition
 	e.q             hypergrid events
 	t.q             hypertree calculation
