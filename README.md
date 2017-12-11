@@ -572,7 +572,7 @@ L: Expand to leaves?
 	is not desired (for example, because there are too many ultimate records, or because the
 	data at the leaves is not interesting), set L to 0b.
 
-M: Not used
+M: Sort at minimal group (not yet implemented)
 
 *N: Row count
 
