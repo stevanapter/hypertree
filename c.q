@@ -15,11 +15,9 @@
 
 / websocket communications
 .hg.J:0Ni
-
 .z.pc:{[w]if[w=.hg.K;.hg.K:0Ni]}
 .z.wc:{[w]if[w=.hg.J;.hg.J:0Ni]}
 .z.wo:{.hg.J:.z.w;neg[.hg.K](1#`fn)!1#`set}
-
 .z.ws:{.hg.rcv .hg.sym .j.k x}
 
 / client utilities
