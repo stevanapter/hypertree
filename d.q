@@ -2,7 +2,7 @@
 
 \e 1
 
-sym:50
+sym:1000
 per:.005
 
 traders:get`:pnl/traders
@@ -80,7 +80,7 @@ trader:`chico`harpo`groucho`zeppo`moe`larry`curly`shemp`abbott`costello
 sector:`energy`materials`industrials`financials`healthcare`utilities`infotech
 strategy:`statarb`pairs`mergerarb`house`chart`indexarb
 
-n:100000
+n:10000000
 t:([N:til n]
  symbol:n?symbol;
  sector:n?sector;
@@ -107,6 +107,10 @@ O.columns.wprice:`USD
 O.columns.pnl:`USD
 O.columns.quantity:`QTY
 
+S:()!()
+S[`g_]:`a
+S[`pnl]:`D
+
 / update
 .z.ts:{
  t[::;`quantity]+:-1 1[n?2]*n?100;t[::;`price]+:-.5+n?1.;       / inputs to pnl
@@ -114,7 +118,4 @@ O.columns.quantity:`QTY
  t::update pnl:quantity*price-prev price by symbol from t;      / recalc pnl
  .hg.upd`;
  }
-
-
-
 

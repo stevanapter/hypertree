@@ -107,7 +107,7 @@ sort:{[t;g;s;w]$[count s;tsort[t;$[count w 0;();g];key s]get s;(::)]}
 
 tsort:{[t;g;c;o]
  if[0=count g;:0,1+msort[1_t;c]o];
- if[`g_~first -1_c;c:`G_,1_c;t:update G_:?[l_>1;first 0#g_;g_]from t];
+ if[`g_~first -1_c;c:`G_,1_c;t[`G_]:@[t`g_;where 1<t`l_;first 0#]];
  n:reverse exec i by L_ from s:dsort[t;g;c;o]where L_>0;
  0,raze$[1=count n;s[`I_]n;merge[s;g]/[();key n;get n]]}
 
