@@ -728,12 +728,12 @@ Two-process:
 	Start hypertree client (default port 12345):
 
 		cd hypertree
-		q c.q
+		q hc.q
 
 	Start hypertree server (default port 12346):
 
 		cd hypertree
-		q s.q
+		q hs.q
 
 	Client and server processes may be started in either order.
 
@@ -758,8 +758,8 @@ Scripts and Contexts
 
 	h.q             standalone hypertree process
 
-	c.q             hypertree client process
-	s.q             hypertree server process
+	hc.q            hypertree client process
+	hs.q            hypertree server process
 
 	.hg             hypergrid context
 	.ht             hypertree context
@@ -770,7 +770,7 @@ Scripts and Contexts
 Style
 -----
 
-The coding style of Hypertree assumes that both client and server processes are detached from the application which uses them.  That is, h.q, c.q, and s.q are only executed via q h.q, q c.q, or q s.q, as opposed to being directly loaded into the application with \l.  
+The coding style of Hypertree assumes that both client and server processes are detached from the application which uses them.  That is, h.q, hc.q, and hs.q are only executed via q h.q, q hc.q, or q hs.q, as opposed to being directly loaded into the application with \l.  
 
 The d.q script is the API for hypertree, through which the application environment is presented to Hypertree by means of some combination of \l, file-reads, and interprocess communication.
 
